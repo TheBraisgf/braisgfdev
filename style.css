@@ -1,0 +1,151 @@
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: linear-gradient(45deg, #4cc9f0, #2cbb4f);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-photo {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #f4f4f4;
+  margin-bottom: 2rem;
+}
+
+.buttons .btn {
+  padding: 1rem 2rem;
+  background: #ffffff;
+  color: #1e1e1e;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  margin: 0.5rem;
+  transition: 0.3s ease;
+  border: 2px solid #4cc9f0;
+}
+
+.buttons .btn:hover {
+  background: #4cc9f0;
+  color: #ffffff;
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #0f0f0f;
+  color: #f4f4f4;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-content p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.social {
+  color: #4cc9f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social:hover {
+  text-decoration: underline;
+}
+
+/* Animaciones y fondo */
+canvas#bgCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .buttons .btn {
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+}
