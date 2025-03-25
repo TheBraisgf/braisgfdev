@@ -1,6 +1,7 @@
 {
-  "title": "Mi primer proyecto",
-  "content": "Este es el contenido completo del post, donde hablo de mi primer proyecto con tecnología...",
+  "title": "How I Built My First Personal Website with a Raspberry Pi 🧙‍♂️⚡",
+  "content": "Back in early 2025, I challenged myself to create a fully functional personal website hosted from my own Raspberry Pi 5. Why? Because I wanted to own my infrastructure, learn more about networking, and prove to myself that I could go full maker mode.\n\nI used a mix of NGINX, a lightweight tunnel via Cloudflare, and some HTML + Vanilla JS magic to make everything work. It wasn’t easy — I struggled with DNS settings, permissions, and power outages 😅 — but it was *so* worth it.\n\nThe best part? Everything runs locally from a small device on my desk, and anyone in the world can visit it at braisgf.dev 🚀\n\nLessons I learned:\n- Setting up a static server teaches you a LOT about security.\n- Raspberry Pi 5 is powerful enough for web serving.\n- Debugging DNS is a rite of passage.\n\nWould I recommend it? Absolutely. If you're a dev or a geek who loves control, give it a shot.\n\nIn the future I want to expand it with Node.js APIs, integrate blog posts like this one dynamically, and maybe even host an arcade game built in Unity or Godot. ✨",
   "date": "2025-03-20T14:00:00Z",
-  "image": ""
+  "image": "../assets/postsImg/pi.jpg",
+  "video": "videos/pi-demo.mp4"
 }

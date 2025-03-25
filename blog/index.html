@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog – Braisgf.dev</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="blog-container">
-    <h1>Blog</h1>
-    <div id="blog-posts" class="blog-posts"></div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Braisgf.dev</title>
+    <link rel="stylesheet" href="blog.css" />
+  </head>
+  <!-- Global modal -->
+  <div id="global-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" class="modal-image" style="display: none" />
+      <p id="modal-content"></p>
+      <video
+        id="modal-video"
+        class="modal-video"
+        controls
+        style="display: none"
+      >
+        <source id="modal-video-source" src="" type="video/mp4" />
+      </video>
+    </div>
   </div>
-  <a href="/" class="back-to-home">Volver al inicio</a>
 
-  <script src="blog.js"></script>
-</body>
+  <body>
+    <main class="blog-wrapper">
+      <h1 class="blog-title">📝 My Blog</h1>
+      <div id="blog-posts" class="blog-posts"></div>
+    </main>
+    <a href="/" class="btn">← Back to Home</a>
+    <!-- Footer como el de la landing -->
+    <footer class="footer">
+      <p>&copy; 2025 Braisgf.dev</p>
+      <a href="https://github.com/braisgf" class="social">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+    </footer>
+
+    <script src="blog.js"></script>
+  </body>
 </html>

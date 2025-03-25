@@ -1,45 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Braisgf.dev</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- Canvas for particles animation -->
+    <canvas id="bgCanvas"></canvas>
+
     <main class="container">
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero-content">
-          <img src="/assets/Braisgf.jpeg" alt="Brais" class="hero-photo" />
-          <div class="hero-text">
-            <h1>Braisgf.dev</h1>
-            <p>Desarrollador fullstack, creador y explorador digital.</p>
-            <div class="buttons">
-              <a href="/about" class="btn">Sobre mí 👤</a>
-               <a href="/career" class="btn">Career</a>
-                <a href="/stack" class="btn">My Tech Stack </a>
-              <a href="/lab" class="btn">Proyectos 🧪</a>
-              <a href="/blog" class="btn">Blog 📖</a>
+          <div class="hero-container">
+            <!-- Image of you -->
+            <img src="/assets/Braisgf.jpeg" alt="Braisgf" class="profile-img" />
+            <div class="hero-texts">
+              <!-- Name, Position and Motto -->
+              <h1>Braisgf.dev</h1>
+              <p class="position">Full Stack Dev and Creator</p>
+              <p class="motto">"Imagine, Code, Create, Share, Repeat"</p>
             </div>
+          </div>
+          <!-- Buttons Section -->
+          <div class="buttons">
+            <a href="/about" class="btn">About Me 👤</a>
+            <a href="/career" class="btn">Career 💼</a>
+            <a href="/wip" class="btn">Tech Stack 🧠</a>
+            <a href="/wip" class="btn">Projects 🧪</a>
+            <a href="/blog" class="btn">Blog 📖</a>
+            <a href="/wip" class="btn">Socials 🌐</a>
           </div>
         </div>
       </section>
-
-      <!-- Footer Section -->
-      <footer class="footer">
-        <div class="footer-content">
-          <p>Conectemos:</p>
-          <a href="https://github.com/braisgf" class="social">GitHub</a>
-          <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
-          <p>&copy; 2025 Braisgf.dev</p>
-        </div>
-      </footer>
     </main>
 
-    <canvas id="bgCanvas"></canvas>
-    <!-- Script at the end of the body -->
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p>&copy; 2025 Braisgf.dev</p>
+      <a href="https://github.com/braisgf" class="social">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+
+      <!-- Language Change -->
+      <!-- <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('es')">Español</button> -->
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

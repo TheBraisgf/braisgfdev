@@ -1,0 +1,171 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-bottom: 4rem;
+}
+
+.timeline-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #5b913b;
+  font-family: "Space Grotesk", sans-serif;
+  margin-bottom: 4rem;
+}
+
+/* TIMELINE LINE + ITEMS */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #5b913b;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item .content {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.timeline-item.active .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LEFT / RIGHT SPLIT */
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item.left .content {
+  margin-right: auto;
+  margin-left: 0;
+  text-align: center;
+}
+
+.timeline-item.right .content {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.content h3 {
+  color: #7be43e;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+.content .date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.content p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: transparent;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.footer .social {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer .social:hover {
+  color: #7be43e;
+}
+
+/* Logo inside timeline items */
+.logo {
+  width: 100px;
+  border-radius: 20%;
+  height: auto;
+  margin-bottom: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Reveal (parallax-style) animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 8px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 0;
+  }
+
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item.left {
+    left: 0;
+  }
+}

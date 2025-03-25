@@ -1,0 +1,170 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+
+/* === Fade-in Animation === */
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Main Container === */
+.about-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* === Top section (image + intro) === */
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #5b913b;
+  margin-bottom: 1rem;
+}
+
+.intro {
+  margin-left: 2rem;
+  max-width: 500px;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  color: #5b913b;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #77b254;
+  margin-top: 0.5rem;
+}
+
+.motto {
+  font-style: italic;
+  color: #99705d;
+  margin-top: 0.8rem;
+}
+
+/* === Content section === */
+.content {
+  margin-top: 2rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.content ul {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding-left: 0;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Button === */
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #5b913b;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #77b254;
+  transform: translateY(-2px);
+}
+
+/* === Footer === */
+.footer {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer .social {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.footer .social:hover {
+  text-decoration: underline;
+  color: #77b254;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .intro {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+}
