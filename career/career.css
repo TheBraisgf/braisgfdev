@@ -91,6 +91,22 @@ body {
   margin-bottom: 0.3rem;
   font-size: 1.5rem;
 }
+.btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #5b913b;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #77b254;
+  transform: translateY(-2px);
+}
 
 .content .date {
   font-size: 0.9rem;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Cloud – Braisgf.dev</title>
+    <link rel="stylesheet" href="stack.css" />
+  </head>
+  <body>
+    <main class="stack-wrapper">
+      <h1 class="stack-title">🧪 Skill Cloud</h1>
+
+      <!-- Filtros + Reroll -->
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="core">Core</button>
+        <button class="filter-btn" data-category="frontend">Frontend</button>
+        <button class="filter-btn" data-category="backend">Backend</button>
+        <button class="filter-btn" data-category="devops">DevOps</button>
+        <button class="filter-btn" data-category="tools">Tools</button>
+        <button class="filter-btn" data-category="creative">Creative</button>
+        <button class="filter-btn" data-category="maker">Maker</button>
+        <button class="reroll-btn">🔁 Reroll</button>
+      </div>
+
+      <!-- Nube -->
+      <div id="cloud" class="cloud"></div>
+
+      <a href="/" class="btn">← Back to Home</a>
+    </main>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip">
+      <div class="arrow"></div>
+      <p id="tooltip-content"></p>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Braisgf.dev</p>
+      <a href="https://github.com/braisgf" class="social">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+    </footer>
+
+    <script src="stack.js"></script>
+  </body>
+</html>

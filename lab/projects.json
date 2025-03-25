@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Color Dash",
+    "description": "Endless runner donde cambias de color para sobrevivir.",
+    "image": "",
+    "background": "",
+    "backgroundColor": "#0f2027",
+    "technologies": ["Unity", "C#", "Pixel Art"],
+    "video": ""
+  },
+  {
+    "title": "Geek Hub",
+    "description": "App para conocer gente por hobbies. Anti-Tinder.",
+    "image": "",
+    "background": "",
+    "backgroundColor": "#1c1c3c",
+    "technologies": ["React Native", "Node.js", "MongoDB"]
+  },
+  {
+    "title": "Blaze Shift",
+    "description": "Juego móvil que combina velocidad y color.",
+    "image": "",
+    "background": "",
+    "backgroundColor": "#1e2f45",
+    "technologies": ["Unity", "Tilt Controls", "C#"]
+  }
+]
