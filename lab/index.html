@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab | Braisgf.dev</title>
-    <link rel="stylesheet" href="/lab/lab.css" />
+    <title>Creators Lab | Braisgf.dev</title>
+    <link rel="stylesheet" href="lab.css" />
   </head>
   <body>
     <a href="/" class="btn">← Back to Home</a>
-    <div class="lab-container" id="lab-container"></div>
 
-    <!-- Scroll Hint -->
-    <div class="scroll-hint" id="scroll-hint">Scroll to explore ⟶</div>
+    <div class="lab-header">
+      <h1>> Initializing Creators Lab<span class="blinking-cursor">_</span></h1>
+      <p class="boot-log" id="boot-log"></p>
+    </div>
+
+    <div class="lab-grid" id="lab-grid"></div>
 
     <!-- Modal -->
     <div class="modal" id="project-modal">
@@ -31,6 +34,6 @@
       <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
     </footer>
 
-    <script src="/lab/lab.js"></script>
+    <script src="lab.js"></script>
   </body>
 </html>

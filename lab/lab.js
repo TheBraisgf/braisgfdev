@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const container = document.getElementById("lab-container");
-  const scrollHint = document.getElementById("scroll-hint");
+  const grid = document.getElementById("lab-grid");
+  const log = document.getElementById("boot-log");
+  const title = document.querySelector(".lab-header h1");
   const modal = document.getElementById("project-modal");
   const modalTitle = document.getElementById("modal-title");
   const modalImage = document.getElementById("modal-image");
@@ -9,73 +10,134 @@ document.addEventListener("DOMContentLoaded", async () => {
   const modalTechs = document.getElementById("modal-techs");
   const closeBtn = document.querySelector(".close-btn");
 
-  const projects = await fetch("/lab/projects.json").then((res) => res.json());
+  const projects = await fetch("projects.json").then((res) => res.json());
 
-  let current = 0;
+  const logs = [
+    "[🤖] Booting up retro console...",
+    "[☕] Brewing coffee for the AI...",
+    "[🧠] Synchronizing neural circuits...",
+    "[💾] Mounting diskettes...",
+    `[📁] ${projects.length} suspicious files found.`,
+    "[🔥] Compiling creativity...",
+    "[✨] Terminal glow intensity: 9000%",
+    "[READY] All systems nominal. Engage!",
+  ];
 
-  projects.forEach((project, index) => {
-    const slide = document.createElement("div");
-    slide.className = "slide";
-    slide.style.backgroundImage = project.background
-      ? `url(${project.background})`
-      : "none";
-    slide.style.backgroundColor = project.backgroundColor || "#111";
+  let logIndex = 0;
+  const randomDelay = () => Math.floor(1000 + Math.random() * 1000); // 1s to 2s
 
-    slide.innerHTML = `
-      <h2>${project.title}</h2>
-      <p>${project.description}</p>
-      <button>View more</button>
+  const showLogs = () => {
+    log.textContent = logs[logIndex++];
+    if (logIndex < logs.length) {
+      setTimeout(() => {
+        showLogs();
+      }, randomDelay());
+    } else {
+      setTimeout(() => {
+        title.textContent = "CREATORS LAB";
+        log.style.display = "none";
+        renderProjects();
+      }, randomDelay());
+    }
+  };
+
+  showLogs();
+
+  function renderProjects() {
+    grid.innerHTML = "";
+    const shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
+
+    shuffledProjects.forEach((project, index) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.setAttribute("data-extension", project.extension || ".EXE");
+      card.setAttribute("data-status", project.status || "stable");
+      card.style.setProperty("--delay", `${index * 0.3}s`);
+
+      const unlocked =
+        localStorage.getItem(`unlocked_${project.title}`) === "true";
+      const isLocked = project.status === "locked" && !unlocked;
+
+      // Mostrar contenido glitch si locked
+      const glitchText = () =>
+        [...Array(8)]
+          .map(() => String.fromCharCode(33 + Math.floor(Math.random() * 94)))
+          .join("");
+
+      card.innerHTML = `
+      ${
+        !isLocked && project.image
+          ? `<img src="${project.image}" alt="${project.title}" class="card-image" />`
+          : ""
+      }
+      <h2>> ${isLocked ? glitchText() : project.title}</h2>
+      <p>${
+        isLocked
+          ? `${glitchText()} ${glitchText()} ${glitchText()}`
+          : project.description
+      }</p>
     `;
 
-    const btn = slide.querySelector("button");
-    btn.addEventListener("click", () => {
-      modalTitle.textContent = project.title;
-      modalDesc.textContent = project.description;
-      modalImage.src = project.image || "";
-      modalImage.style.display = project.image ? "block" : "none";
-      modalVideo.src = project.video || "";
-      modalVideo.style.display = project.video ? "block" : "none";
-      modalTechs.textContent = `🔧 ${project.technologies.join(", ")}`;
-      modal.style.display = "flex";
+      if (isLocked) {
+        card.classList.add("locked");
+
+        card.addEventListener("click", () => {
+          if (card.querySelector(".unlock-input")) return;
+
+          const input = document.createElement("input");
+          input.className = "unlock-input";
+          input.placeholder = "Enter access code...";
+
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+              const value = input.value.trim();
+              if (value === project.unlockCode) {
+                localStorage.setItem(`unlocked_${project.title}`, "true");
+                renderProjects(); // Rerender con datos reales
+              } else {
+                input.value = "";
+                input.placeholder = "❌ Wrong code";
+              }
+            }
+          });
+
+          card.appendChild(input);
+          input.focus();
+        });
+      } else {
+        card.addEventListener("click", () => openModal(project));
+      }
+
+      grid.appendChild(card);
     });
+  }
 
-    // Partículas
-    for (let i = 0; i < 10; i++) {
-      const particle = document.createElement("div");
-      particle.className = "particle";
-      const size = Math.random() * 12 + 4;
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-      particle.style.top = `${Math.random() * 100}%`;
-      particle.style.left = `${Math.random() * 100}%`;
-      slide.appendChild(particle);
-    }
-
-    container.appendChild(slide);
-  });
-
-  const slides = document.querySelectorAll(".slide");
-  if (slides.length > 0) slides[0].classList.add("active");
-
-  let scrolling = false;
-
-  window.addEventListener("wheel", (e) => {
-    if (scrolling) return;
-    scrolling = true;
-    scrollHint.style.display = "none";
-
-    slides[current].classList.remove("active");
-
-    if (e.deltaY > 0) {
-      current = (current + 1) % slides.length;
-    } else {
-      current = (current - 1 + slides.length) % slides.length;
-    }
-
-    slides[current].classList.add("active");
-
-    setTimeout(() => (scrolling = false), 800);
-  });
+  function openModal(project) {
+    modal.style.display = "flex";
+    modalTitle.textContent = project.title;
+    modalDesc.textContent = project.description;
+    modalImage.src = project.image || "";
+    modalImage.style.display = project.image ? "block" : "none";
+    modalVideo.src = project.video || "";
+    modalVideo.style.display = project.video ? "block" : "none";
+    modalTechs.innerHTML = `
+      <strong>🔧 Technologies:</strong> ${
+        project.technologies?.join(", ") || "???"
+      }
+      ${
+        project.link
+          ? `<br/><strong>🌐 Link:</strong> <a href="${project.link}" target="_blank">${project.link}</a>`
+          : ""
+      }
+      ${
+        project.gallery
+          ? `<br/><strong>🖼️ Gallery:</strong><div class="gallery">${project.gallery
+              .map((img) => `<img src="${img}" class="gallery-img" />`)
+              .join("")}</div>`
+          : ""
+      }
+    `;
+  }
 
   closeBtn.addEventListener("click", () => {
     modal.style.display = "none";

@@ -1,27 +1,131 @@
 [
   {
-    "title": "Color Dash",
-    "description": "Endless runner donde cambias de color para sobrevivir.",
-    "image": "",
-    "background": "",
-    "backgroundColor": "#0f2027",
-    "technologies": ["Unity", "C#", "Pixel Art"],
-    "video": ""
-  },
-  {
-    "title": "Geek Hub",
-    "description": "App para conocer gente por hobbies. Anti-Tinder.",
-    "image": "",
-    "background": "",
+    "title": "💬 Geek Hub",
+    "description": "A social platform for geeks and introverts to find friends through hobbies — not romance. Join groups, chat in real time, and meet people who love what you love. Like Tinder, but for D&D parties.",
+    "image": "assets/geek-hub.png",
     "backgroundColor": "#1c1c3c",
-    "technologies": ["React Native", "Node.js", "MongoDB"]
+    "technologies": ["React Native", "Node.js", "MongoDB", "Socket.IO"],
+    "video": "assets/geek-hub.mp4",
+    "link": "https://braisgf.dev/geek-hub",
+    "gallery": ["assets/geek-hub-1.png", "assets/geek-hub-2.png"],
+    "extension": ".SOC",
+    "status": "beta"
   },
   {
-    "title": "Blaze Shift",
-    "description": "Juego móvil que combina velocidad y color.",
-    "image": "",
-    "background": "",
+    "title": "⚡ Blaze Shift",
+    "description": "A fast-paced mobile game set in a neon galaxy. Switch colors mid-flight to survive deadly barriers while dodging at hyperspeed. Built for tilt controls and cosmic chaos.",
+    "image": "assets/blaze-shift.png",
     "backgroundColor": "#1e2f45",
-    "technologies": ["Unity", "Tilt Controls", "C#"]
+    "technologies": ["Unity", "Tilt Controls", "C#", "Mobile"],
+    "video": "assets/blaze-shift.mp4",
+    "link": "https://braisgf.dev/blaze-shift",
+    "gallery": ["assets/blaze-shift-1.png", "assets/blaze-shift-2.png"],
+    "extension": ".ARC",
+    "status": "dev"
+  },
+  {
+    "title": "🛰️ braisgf.dev",
+    "description": "My official web HQ — part portfolio, part secret lab. Hosted on a Raspberry Pi, styled like a retro console, and hiding a few easter eggs. Welcome to my brain.",
+    "image": "assets/braisgf-dev.png",
+    "backgroundColor": "#1a1a1a",
+    "technologies": ["HTML", "CSS", "JavaScript", "Raspberry Pi Hosting"],
+    "video": "assets/braisgf-promo.mp4",
+    "link": "https://braisgf.dev",
+    "gallery": ["assets/braisgf-home.png", "assets/braisgf-lab.png"],
+    "extension": ".WEB",
+    "status": "stable"
+  },
+  {
+    "title": "📦 Video Transcoder (AWS)",
+    "description": "A backend tool that accepts video uploads, transcodes them via AWS Elastic Transcoder, and stores the results in S3. Built to automate and scale flawlessly.",
+    "image": "assets/video-transcoder.png",
+    "backgroundColor": "#141e30",
+    "technologies": ["AWS", "Python", "S3", "Elastic Transcoder", "Node.js"],
+    "video": "assets/video-transcoder.mp4",
+    "link": "https://braisgf.dev/aws-transcoder",
+    "gallery": ["assets/aws-1.png", "assets/aws-2.png"],
+    "extension": ".AWS",
+    "status": "stable"
+  },
+  {
+    "title": "🎲 Dice Duel",
+    "description": "A tabletop-inspired digital game where dice hold magical powers. Use combos, cast spells, and outroll your enemies. Available locally and online.",
+    "image": "assets/dice-duel.png",
+    "backgroundColor": "#222d35",
+    "technologies": ["Unity", "C#", "Multiplayer", "Game Design"],
+    "video": "assets/dice-duel.mp4",
+    "link": "https://braisgf.dev/dice-duel",
+    "gallery": ["assets/dice1.png", "assets/dice2.png"],
+    "extension": ".RPG",
+    "status": "concept"
+  },
+  {
+    "title": "🧠 RPi5 Dev Server",
+    "description": "A custom server built with a Raspberry Pi 5 that runs my dev environment, local hosting, and automations. Quiet, cheap, and full of power.",
+    "image": "assets/rpi-server.png",
+    "backgroundColor": "#0d0d0d",
+    "technologies": ["Raspberry Pi 5", "Linux", "Nginx", "Node.js", "Python"],
+    "video": "assets/rpi-server.mp4",
+    "link": "https://braisgf.dev/rpi-server",
+    "gallery": ["assets/rpi1.png", "assets/rpi2.png"],
+    "extension": ".SYS",
+    "status": "stable"
+  },
+  {
+    "title": "🚁 ROC – Racing Oriented Copter",
+    "description": "My personal FPV racing drone, built from scratch. Fast, twitchy, and ready to fly through any challenge. Includes FPV feed and onboard action cam.",
+    "image": "assets/roc-drone.png",
+    "backgroundColor": "#080d0f",
+    "technologies": ["FPV", "Custom Drone", "DIY Electronics", "BetaFlight"],
+    "video": "assets/roc-footage.mp4",
+    "link": "https://braisgf.dev/roc",
+    "gallery": ["assets/roc1.png", "assets/roc2.png"],
+    "extension": ".FPV",
+    "status": "stable"
+  },
+  {
+    "title": "🤖 Robuyutsu (Mobile Game)",
+    "description": "A competitive robot-fighting mobile game where you customize your mech, learn combos, and fight in underground circuits. Inspired by Beyblade, Street Fighter, and dreams of glory.",
+    "image": "assets/robuyutsu.png",
+    "backgroundColor": "#1a1a1a",
+    "technologies": ["Unity", "Mobile", "2D Art", "Combat System"],
+    "video": "assets/robuyutsu.mp4",
+    "link": "",
+    "gallery": ["assets/robuyutsu-1.png", "assets/robuyutsu-2.png"],
+    "extension": ".ARC",
+    "status": "locked",
+    "unlockCode": "jujutsu01"
+  },
+  {
+    "title": "⚙️ Combat Robot Mk.I",
+    "description": "A physical 1-pound battle robot designed to fight in real-life arenas. Equipped with weapons, armor, and attitude. First prototype already terrifying the cat.",
+    "image": "assets/real-robot.png",
+    "backgroundColor": "#000000",
+    "technologies": [
+      "Arduino",
+      "3D Printing",
+      "Mini Motors",
+      "RC",
+      "Battlebot Design"
+    ],
+    "video": "assets/robot-demo.mp4",
+    "link": "",
+    "gallery": ["assets/real-robot1.png", "assets/real-robot2.png"],
+    "extension": ".BOT",
+    "status": "locked",
+    "unlockCode": "poundmaster"
+  },
+  {
+    "title": "🕵️ Sarcasm Detector 9000",
+    "description": "An experimental AI that scans phrases and detects sarcasm using transformers, NLP and a built-in Spanish sense of humor. Great for Twitter arguments and passive-aggressive Slack messages.",
+    "image": "assets/sarcasm.png",
+    "backgroundColor": "#000000",
+    "technologies": ["Python", "NLP", "AI Transformers", "Humor Classifier"],
+    "video": "assets/sarcasm-demo.mp4",
+    "link": "https://braisgf.dev/sarcasm-detector",
+    "gallery": ["assets/sarcasm-1.png", "assets/sarcasm-2.png"],
+    "extension": ".AI",
+    "status": "locked",
+    "unlockCode": "s4rca5m"
   }
 ]
