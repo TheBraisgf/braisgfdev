@@ -24,14 +24,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   ];
 
   let logIndex = 0;
-  const randomDelay = () => Math.floor(1000 + Math.random() * 1000); // 1s to 2s
+  const randomDelay = () => Math.floor(1000 + Math.random() * 1000);
 
   const showLogs = () => {
     log.textContent = logs[logIndex++];
     if (logIndex < logs.length) {
-      setTimeout(() => {
-        showLogs();
-      }, randomDelay());
+      setTimeout(() => showLogs(), randomDelay());
     } else {
       setTimeout(() => {
         title.textContent = "CREATORS LAB";
@@ -54,29 +52,27 @@ document.addEventListener("DOMContentLoaded", async () => {
       card.setAttribute("data-status", project.status || "stable");
       card.style.setProperty("--delay", `${index * 0.3}s`);
 
-      const unlocked =
-        localStorage.getItem(`unlocked_${project.title}`) === "true";
-      const isLocked = project.status === "locked" && !unlocked;
+      const isLocked = project.status === "locked";
 
-      // Mostrar contenido glitch si locked
       const glitchText = () =>
         [...Array(8)]
           .map(() => String.fromCharCode(33 + Math.floor(Math.random() * 94)))
           .join("");
 
+      // CONTENIDO DE LA CARD
       card.innerHTML = `
-      ${
-        !isLocked && project.image
-          ? `<img src="${project.image}" alt="${project.title}" class="card-image" />`
-          : ""
-      }
-      <h2>> ${isLocked ? glitchText() : project.title}</h2>
-      <p>${
-        isLocked
-          ? `${glitchText()} ${glitchText()} ${glitchText()}`
-          : project.description
-      }</p>
-    `;
+        ${
+          !isLocked && project.image
+            ? `<img src="${project.image}" alt="${project.title}" class="card-image" />`
+            : ""
+        }
+        <h2>> ${isLocked ? glitchText() : project.title}</h2>
+        <p>${
+          isLocked
+            ? `${glitchText()} ${glitchText()} ${glitchText()}`
+            : project.description
+        }</p>
+      `;
 
       if (isLocked) {
         card.classList.add("locked");
@@ -92,8 +88,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (e.key === "Enter") {
               const value = input.value.trim();
               if (value === project.unlockCode) {
-                localStorage.setItem(`unlocked_${project.title}`, "true");
-                renderProjects(); // Rerender con datos reales
+                card.removeChild(input);
+                openModal(project); // Mostrar modal sin desbloquear permanentemente
               } else {
                 input.value = "";
                 input.placeholder = "❌ Wrong code";
