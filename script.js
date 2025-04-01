@@ -53,4 +53,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createParticles(100); // Initialize particles
   animate(); // Start the animation loop
+
+  const toggle = document.getElementById("lang-toggle");
+
+  // Inicializar el toggle con la cookie
+  const langCookie = document.cookie
+    .split("; ")
+    .find((c) => c.startsWith("preferredLang="));
+  const lang = langCookie?.split("=")[1];
+
+  if (lang === "es") toggle.checked = true;
+
+  // Cuando cambia el toggle
+  toggle.addEventListener("change", () => {
+    const selectedLang = toggle.checked ? "es" : "en";
+    document.cookie = `preferredLang=${selectedLang}; path=/; max-age=31536000`;
+
+    const isCurrentEs = window.location.pathname.startsWith("/es");
+    if (selectedLang === "es" && !isCurrentEs) {
+      window.location.href = "/es/";
+    } else if (selectedLang === "en" && isCurrentEs) {
+      window.location.href = "/";
+    }
+  });
+
+  // Detectar cookie y redirigir solo en la raíz
+  const userLangCookie = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith("preferredLang="));
+  const preferredLang = userLangCookie?.split("=")[1];
+
+  if (
+    preferredLang &&
+    window.location.pathname === "/" &&
+    preferredLang === "es"
+  ) {
+    window.location.href = "/es/";
+  }
+
+  const cookieAccepted = document.cookie
+    .split("; ")
+    .find((c) => c.startsWith("cookieAccepted="));
+
+  if (!cookieAccepted) {
+    document.getElementById("cookie-banner").style.display = "block";
+    document.getElementById("accept-cookies").addEventListener("click", () => {
+      document.cookie = "cookieAccepted=true; path=/; max-age=31536000";
+      document.getElementById("cookie-banner").style.display = "none";
+    });
+  }
 });

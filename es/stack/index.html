@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nube de Habilidades – Braisgf.dev</title>
+    <meta
+      name="description"
+      content="Explora la nube completa de tecnologías que usa Braisgf: desarrollo web, DevOps, diseño, electrónica y más."
+    />
+    <meta
+      name="keywords"
+      content="Braisgf, stack tecnológico, habilidades desarrollador, fullstack, frontend, backend, AWS, maker, herramientas, tecnologías"
+    />
+    <meta name="author" content="Braisgf" />
+    <link rel="canonical" href="https://braisgf.dev/es/stack" />
+    <link rel="alternate" hreflang="en" href="https://braisgf.dev/stack" />
+
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="./stack.css" />
+
+    <script type="application/ld+json" src="/stack/schema-stack.json"></script>
+  </head>
+  <body>
+    <div class="lang-switch-container">
+      <span class="flag">EN</span>
+      <label class="lang-toggle">
+        <input type="checkbox" id="lang-toggle" checked />
+        <span class="slider"></span>
+      </label>
+      <span class="flag">ES</span>
+    </div>
+
+    <main class="stack-wrapper">
+      <h1 class="stack-title">🧪 Nube de Habilidades</h1>
+
+      <div class="filters">
+        <button class="filter-btn active" data-category="all">Todas</button>
+        <button class="filter-btn" data-category="core">Base</button>
+        <button class="filter-btn" data-category="frontend">Frontend</button>
+        <button class="filter-btn" data-category="backend">Backend</button>
+        <button class="filter-btn" data-category="devops">DevOps</button>
+        <button class="filter-btn" data-category="tools">Herramientas</button>
+        <button class="filter-btn" data-category="creative">Creativo</button>
+        <button class="filter-btn" data-category="maker">Maker</button>
+        <button class="reroll-btn">🔁 Reordenar</button>
+      </div>
+
+      <div id="cloud" class="cloud"></div>
+      <a href="/es" class="btn">← Volver</a>
+    </main>
+
+    <div id="tooltip" class="tooltip">
+      <div class="arrow"></div>
+      <p id="tooltip-content"></p>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Braisgf.dev</p>
+      <a href="https://github.com/braisgf" class="social">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+    </footer>
+
+    <script src="./stack.js"></script>
+  </body>
+</html>

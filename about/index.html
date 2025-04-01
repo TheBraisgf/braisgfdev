@@ -2,81 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me – Braisgf.dev</title>
     <meta
       name="description"
-      content="Learn more about Brais, a fullstack developer and maker from A Coruña, Spain. Discover his background, passions and mission."
+      content="Meet Brais – fullstack developer, maker and multipotentialite creator from A Coruña. Learn about his passions, journey and skills."
     />
     <meta
       name="keywords"
-      content="Braisgf, About Me, Fullstack Developer, Maker, Portfolio, Tech Background"
+      content="About Braisgf, Fullstack Dev, Maker, Portfolio, Developer Spain, Personal Site"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/about" />
+    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/about" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="About Brais – Fullstack Dev & Maker" />
-    <meta
-      property="og:description"
-      content="I'm Brais, a fullstack developer and maker from Spain. Passionate about tech, games, and building cool things."
-    />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-    <meta property="og:url" content="https://braisgf.dev/about" />
-    <meta property="og:type" content="profile" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About Brais – Fullstack Dev & Maker" />
-    <meta
-      name="twitter:description"
-      content="Developer. Creator. Maker. Discover my journey and goals."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-
-    <!-- Manifest & Schema -->
-    <link rel="manifest" href="/manifest.json" />
-    <script type="application/ld+json" src="/about/schema-about.json"></script>
-
-    <!-- Styles -->
+    <link rel="icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="about.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-CVE80CP3QT");
-    </script>
+    <script type="application/ld+json" src="/about/schema-about.json"></script>
   </head>
   <body>
+    <div class="lang-switch-container">
+      <span class="flag">EN</span>
+      <label class="lang-toggle">
+        <input type="checkbox" id="lang-toggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="flag">ES</span>
+    </div>
+
     <main class="about-container fade-in">
       <section class="about-card">
         <div class="top">
           <img
             src="/assets/Braisgf.jpeg"
-            alt="Photo of Braisgf, fullstack developer and maker"
+            alt="Photo of Braisgf"
             class="profile-img"
           />
           <div class="intro">
             <h1>👋 Hey, I'm Brais</h1>
-            <p class="subtitle">Fullstack Developer • Maker • Curious Mind</p>
+            <p class="subtitle">
+              Fullstack Developer • Maker • Multipotentialite
+            </p>
             <p class="motto">"I build useful, fun or just plain cool stuff."</p>
           </div>
         </div>
@@ -84,16 +51,16 @@
         <div class="content">
           <p>
             I studied <strong>Telecommunications</strong> and trained as a
-            <strong>Fullstack Developer</strong>. I'm a builder at heart: from
-            websites and apps to Raspberry Pi projects, combat robots, or
-            papercraft models 🛠️🎮
+            <strong>Fullstack Developer</strong>. I'm passionate about building
+            things — from websites and apps to Raspberry Pi setups, battle
+            robots or model kits 🛠️
           </p>
 
           <ul>
             <li><strong>📍 Location:</strong> A Coruña, Spain</li>
             <li>
               <strong>🧠 Interests:</strong> Web Dev, AI, Electronics, Indie
-              Games, DIY & Makers
+              Games, DIY
             </li>
             <li>
               <strong>📚 Background:</strong> Telecommunications + Fullstack
@@ -107,13 +74,13 @@
               <strong>🎯 Goal:</strong> Grow every day and share what I learn
             </li>
             <li>
-              <strong>🎥 On socials:</strong> I share tech, geek culture,
-              science and more!
+              <strong>🎥 On socials:</strong> I talk about tech, geek life and
+              curiosity
             </li>
           </ul>
 
           <p>
-            I believe technology is our generation's magic. My mission? Build
+            I believe technology is our generation’s magic. My mission? Build
             things that inspire and spark curiosity 🚀
           </p>
 
@@ -127,5 +94,7 @@
       <a href="https://github.com/thebraisgf" class="social">GitHub</a>
       <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
     </footer>
+
+    <script src="./lang-toggle.js"></script>
   </body>
 </html>

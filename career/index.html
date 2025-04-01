@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Career – Braisgf.dev</title>
     <meta
@@ -15,156 +14,121 @@
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/career" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Career Roadmap – Braisgf.dev" />
-    <meta
-      property="og:description"
-      content="From engineering and film to AI, coding and creation – this is my path."
-    />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-    <meta property="og:url" content="https://braisgf.dev/career" />
-    <meta property="og:type" content="profile" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Career Roadmap – Braisgf.dev" />
-    <meta
-      name="twitter:description"
-      content="Explore my journey through code, creativity, and innovation."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-
-    <!-- PWA Manifest + Schema -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/career" />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="career.css" />
+    <link rel="stylesheet" href="../lang-toggle.css" />
     <script
       type="application/ld+json"
       src="/career/schema-career.json"
     ></script>
-
-    <link rel="stylesheet" href="career.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
-    </script>
   </head>
   <body>
+    <div class="lang-switch-container">
+      <span class="flag">EN</span>
+      <label class="lang-toggle">
+        <input type="checkbox" id="lang-toggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="flag">ES</span>
+    </div>
+
     <main class="timeline-wrapper">
       <h1 class="timeline-title">🚀 My Career Roadmap</h1>
       <div class="timeline">
-        <!-- ITEM: Telecomunicaciones -->
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="img/universidad.jpg" alt="Teleco logo" class="logo" />
+            <img
+              src="./img/universidad.jpg"
+              alt="University logo"
+              class="logo"
+            />
             <h3>🎓 Telecommunications Engineering</h3>
             <span class="date">2016 – 2020</span>
             <p>
-              I studied Telecommunications Engineering, building a strong
-              technical base in logic, hardware and system architecture.
+              I studied Telecommunications Engineering, where I gained strong
+              technical foundations in logic, hardware, and systems.
             </p>
           </div>
         </div>
 
-        <!-- ITEM: Cine -->
         <div class="timeline-item right reveal">
           <div class="content">
-            <img src="img/masterd.png" alt="Film logo" class="logo" />
-            <h3>🎬 Film Direction & Production</h3>
+            <img src="./img/masterd.png" alt="Filmmaking logo" class="logo" />
+            <h3>🎬 Filmmaking & Production</h3>
             <span class="date">2020 – 2021</span>
             <p>
-              This creative formation boosted my ability to communicate
-              visually, tell stories and craft emotional experiences — skills I
-              now apply to design and UX.
+              This creative journey taught me how to communicate visually, tell
+              stories, and create emotional experiences that translate
+              beautifully into UX and digital creation.
             </p>
           </div>
         </div>
 
-        <!-- ITEM: Bootcamp -->
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="img/hab.jpg" alt="Hack A Boss logo" class="logo" />
+            <img src="./img/hab.jpg" alt="Hack A Boss logo" class="logo" />
             <h3>💻 Fullstack Bootcamp – Hack A Boss</h3>
             <span class="date">2021</span>
             <p>
-              From frontend to backend, this bootcamp trained me in the full web
-              stack. It was the ignition point for everything that came after.
+              I trained intensively in fullstack web development, mastering both
+              frontend and backend. It was my official entry into tech.
             </p>
           </div>
         </div>
 
-        <!-- ITEM: Zara -->
         <div class="timeline-item right reveal">
           <div class="content">
-            <img src="img/zara.jpg" alt="Zara logo" class="logo" />
+            <img src="./img/zara.jpg" alt="Zara logo" class="logo" />
             <h3>🛍️ Zara.com – Frontend Developer</h3>
             <span class="date">2021 – 2023</span>
             <p>
-              Frontend development using JavaScript, React and Python for
-              internal tooling. I also collaborated in UX, branding, and
-              editorial workflows, crafting modular and scalable interfaces for
-              millions of users.
+              I worked on scalable interfaces and internal tools using React and
+              Python. I also contributed to UX, editorial content, and branding
+              for one of the most visited fashion sites globally.
             </p>
           </div>
         </div>
 
-        <!-- Santander grupo -->
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="img/santander.jpg" alt="Santander logo" class="logo" />
-            <h3>🏦 Santander – Web Components & AI Editor</h3>
+            <img src="./img/santander.jpg" alt="Santander logo" class="logo" />
+            <h3>🏦 Santander – AI Image Editor</h3>
             <span class="date">2023</span>
             <p>
-              Developed an AI-driven photo editor using Angular + LitElement,
-              integrating image masking and smart filters into a smooth user
-              flow.
+              I built an AI image editor with Angular and LitElement that
+              allowed smart mask editing, filters and prompt-based image
+              generation.
             </p>
           </div>
         </div>
 
         <div class="timeline-item right reveal">
           <div class="content">
-            <img src="img/santander.jpg" alt="Santander logo" class="logo" />
+            <img src="./img/santander.jpg" alt="Santander logo" class="logo" />
             <h3>📄 Santander – Smart Form Evaluator</h3>
             <span class="date">2023 – 2024</span>
             <p>
-              Created Angular UIs for ML-assisted legal form evaluations,
-              increasing user productivity and form accuracy.
+              I developed Angular interfaces that use AI to evaluate and
+              validate legal documents, streamlining a complex corporate
+              process.
             </p>
           </div>
         </div>
 
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="img/santander.jpg" alt="Santander logo" class="logo" />
-            <h3>🤖 Santander – Backend Developer with Python & AI</h3>
+            <img src="./img/santander.jpg" alt="Santander logo" class="logo" />
+            <h3>🤖 Santander – Python AI Backend</h3>
             <span class="date">2024 – Present</span>
             <p>
-              Built backend APIs in Python for image and text generation flows
-              using AI. Focused on prompt handling, scalability and integration
-              with external models.
+              I design Python APIs that connect with generative AI services to
+              generate content and score user inputs — scalable and powerful.
             </p>
           </div>
         </div>
       </div>
+
       <a href="/" class="btn">← Back to Home</a>
     </main>
 
@@ -174,6 +138,6 @@
       <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
     </footer>
 
-    <script src="career.js"></script>
+    <script src="./career.js"></script>
   </body>
 </html>

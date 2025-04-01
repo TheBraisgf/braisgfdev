@@ -1,0 +1,262 @@
+[
+  {
+    "name": "HTML",
+    "layer": "core",
+    "description": "Estructura de todas las páginas web.",
+    "favorite": true
+  },
+  {
+    "name": "CSS",
+    "layer": "core",
+    "description": "Estilo y diseño de interfaces.",
+    "favorite": true
+  },
+  {
+    "name": "JavaScript",
+    "layer": "core",
+    "description": "Lógica dinámica de la web.",
+    "favorite": true
+  },
+  {
+    "name": "Python",
+    "layer": "core",
+    "description": "Lenguaje multipropósito usado para scripts, backend e IA.",
+    "favorite": true
+  },
+  {
+    "name": "Git",
+    "layer": "core",
+    "description": "Sistema de control de versiones.",
+    "favorite": true
+  },
+  {
+    "name": "JSON",
+    "layer": "core",
+    "description": "Formato de intercambio de datos universal."
+  },
+  {
+    "name": "Markdown",
+    "layer": "core",
+    "description": "Sintaxis ligera para documentación."
+  },
+
+  {
+    "name": "Angular",
+    "layer": "frontend",
+    "description": "Framework estructurado para frontend.",
+    "favorite": true
+  },
+  {
+    "name": "React",
+    "layer": "frontend",
+    "description": "Librería de interfaces basada en componentes."
+  },
+  {
+    "name": "React Native",
+    "layer": "frontend",
+    "description": "Framework para apps móviles basado en React."
+  },
+  {
+    "name": "LitElement",
+    "layer": "frontend",
+    "description": "Constructor de web components."
+  },
+  {
+    "name": "SCSS",
+    "layer": "frontend",
+    "description": "Preprocesador de CSS con lógica."
+  },
+  {
+    "name": "Tailwind CSS",
+    "layer": "frontend",
+    "description": "Framework CSS basado en utilidades."
+  },
+
+  {
+    "name": "Node.js",
+    "layer": "backend",
+    "description": "Entorno de ejecución para backend con JavaScript."
+  },
+  {
+    "name": "Express",
+    "layer": "backend",
+    "description": "Framework web minimalista para backend."
+  },
+  {
+    "name": "Python",
+    "layer": "backend",
+    "description": "Usado para APIs, scripts y flujos de IA.",
+    "favorite": true
+  },
+  {
+    "name": "Flask",
+    "layer": "backend",
+    "description": "Framework web micro en Python."
+  },
+  {
+    "name": "MongoDB",
+    "layer": "backend",
+    "description": "Base de datos NoSQL orientada a documentos."
+  },
+  {
+    "name": "SQL",
+    "layer": "backend",
+    "description": "Lenguaje para bases de datos relacionales."
+  },
+  {
+    "name": "gRPC",
+    "layer": "backend",
+    "description": "Protocolo RPC de alto rendimiento."
+  },
+
+  {
+    "name": "AWS",
+    "layer": "devops",
+    "description": "Plataforma de computación en la nube."
+  },
+  {
+    "name": "S3",
+    "layer": "devops",
+    "description": "Servicio de almacenamiento de objetos."
+  },
+  {
+    "name": "Lambda",
+    "layer": "devops",
+    "description": "Servicio de cómputo sin servidor."
+  },
+  {
+    "name": "SNS",
+    "layer": "devops",
+    "description": "Servicio de mensajería y notificaciones push."
+  },
+  {
+    "name": "AWS Bedrock",
+    "layer": "devops",
+    "description": "Servicios de IA generativa en AWS."
+  },
+  {
+    "name": "Cloudflare Tunnels",
+    "layer": "devops",
+    "description": "URL públicas seguras para apps locales."
+  },
+  {
+    "name": "NGINX",
+    "layer": "devops",
+    "description": "Servidor web y proxy inverso."
+  },
+  {
+    "name": "Docker",
+    "layer": "devops",
+    "description": "Plataforma de contenedores."
+  },
+  {
+    "name": "Kubernetes",
+    "layer": "devops",
+    "description": "Orquestación de contenedores."
+  },
+  {
+    "name": "GitHub Actions",
+    "layer": "devops",
+    "description": "Automatización CI/CD en GitHub."
+  },
+
+  {
+    "name": "VSCode",
+    "layer": "tools",
+    "description": "Editor de código ligero.",
+    "favorite": true
+  },
+  {
+    "name": "Postman",
+    "layer": "tools",
+    "description": "Entorno para desarrollo de APIs."
+  },
+  {
+    "name": "Figma",
+    "layer": "tools",
+    "description": "Diseño y prototipado de interfaces."
+  },
+  {
+    "name": "Premiere",
+    "layer": "tools",
+    "description": "Software de edición de video."
+  },
+  {
+    "name": "OBS Studio",
+    "layer": "tools",
+    "description": "Grabación de pantalla y streaming."
+  },
+  {
+    "name": "Tinkercad",
+    "layer": "tools",
+    "description": "Diseño 3D y electrónica básica."
+  },
+
+  {
+    "name": "Unity",
+    "layer": "creative",
+    "description": "Motor de juegos 2D/3D multiplataforma."
+  },
+  {
+    "name": "Adobe Photoshop",
+    "layer": "creative",
+    "description": "Diseño y edición de imágenes."
+  },
+  {
+    "name": "Blender",
+    "layer": "creative",
+    "description": "Modelado 3D y animación."
+  },
+  {
+    "name": "Audacity",
+    "layer": "creative",
+    "description": "Edición y grabación de audio."
+  },
+
+  {
+    "name": "Raspberry Pi",
+    "layer": "maker",
+    "description": "Mini ordenador para proyectos DIY.",
+    "favorite": true
+  },
+  {
+    "name": "Arduino",
+    "layer": "maker",
+    "description": "Plataforma de microcontroladores para electrónica."
+  },
+  {
+    "name": "Impresión 3D",
+    "layer": "maker",
+    "description": "Fabricación de objetos físicos desde modelos digitales."
+  },
+  {
+    "name": "Carpintería",
+    "layer": "maker",
+    "description": "Fabricación y diseño en madera."
+  },
+  {
+    "name": "Soldadura",
+    "layer": "maker",
+    "description": "Unión de componentes electrónicos a mano."
+  },
+  {
+    "name": "Dremel",
+    "layer": "maker",
+    "description": "Herramienta rotativa para tallado y corte."
+  },
+  {
+    "name": "Maquetas",
+    "layer": "maker",
+    "description": "Miniaturas para kits y dioramas."
+  },
+  {
+    "name": "Multímetro",
+    "layer": "maker",
+    "description": "Instrumento para medir valores eléctricos."
+  },
+  {
+    "name": "Protoboard",
+    "layer": "maker",
+    "description": "Plataforma para diseñar circuitos no permanentes."
+  }
+]

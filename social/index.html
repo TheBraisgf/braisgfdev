@@ -15,6 +15,7 @@
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/social" />
+    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/social" />
 
     <!-- Favicon -->
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
@@ -69,6 +70,14 @@
     </script>
   </head>
   <body>
+    <div class="lang-switch-container">
+      <span class="flag">EN</span>
+      <label class="lang-toggle">
+        <input type="checkbox" id="lang-toggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="flag">ES</span>
+    </div>
     <button
       class="back-btn"
       onclick="window.location.href='/'"
@@ -80,7 +89,7 @@
     <div class="universe">
       <canvas id="stars" aria-hidden="true"></canvas>
       <div class="spaceship" role="img" aria-label="Spaceship emoji">🛸</div>
-      <div class="intro-text">🛸 Click a planet to explore its secrets...</div>
+      <div class="intro-text">Click a planet to explore its secrets...</div>
       <div
         class="planets"
         id="planet-container"

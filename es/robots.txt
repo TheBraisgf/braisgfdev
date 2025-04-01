@@ -1,0 +1,9 @@
+# robots.txt for braisgf.dev
+
+User-agent: *
+Disallow: /lab/
+Disallow: /test/
+Allow: /
+
+# Sitemap (optional but recommended)
+Sitemap: https://braisgf.dev/sitemap.xml
