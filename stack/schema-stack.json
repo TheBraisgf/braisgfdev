@@ -1,0 +1,297 @@
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Fullstack Skill Cloud by Braisgf",
+  "description": "A categorized glossary of technologies, tools, frameworks and maker skills used by Braisgf as a fullstack developer and creator.",
+  "url": "https://braisgf.dev/stack",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "HTML",
+      "description": "Structure of all web pages.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "CSS",
+      "description": "Style and design of interfaces.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "JavaScript",
+      "description": "Dynamic logic of the web.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Python",
+      "description": "Multipurpose language used in scripting, backend, AI and automations.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Git",
+      "description": "Distributed version control system to track code changes.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "JSON",
+      "description": "Lightweight data format for exchanging structured data.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Markdown",
+      "description": "Plain-text markup language for documentation.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Angular",
+      "description": "Component-based frontend web framework by Google.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "React",
+      "description": "JavaScript library for building user interfaces.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "React Native",
+      "description": "Framework for building native mobile apps using React.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "LitElement",
+      "description": "Modern base class for creating web components.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "SCSS",
+      "description": "CSS preprocessor that adds variables, nesting and logic to styles.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Tailwind CSS",
+      "description": "Utility-first CSS framework for building modern UIs quickly.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Node.js",
+      "description": "JavaScript runtime for building scalable backend services.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Express",
+      "description": "Minimal web framework for Node.js for creating APIs.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Flask",
+      "description": "Python microframework for lightweight backend apps.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "MongoDB",
+      "description": "NoSQL database based on JSON-like documents.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "SQL",
+      "description": "Structured query language for relational databases.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "gRPC",
+      "description": "RPC protocol for communication between services.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AWS",
+      "description": "Amazon Web Services – a cloud platform with compute, storage and AI tools.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "S3",
+      "description": "Scalable object storage service in AWS.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Lambda",
+      "description": "Serverless compute service that runs code on demand.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "SNS",
+      "description": "Pub/sub messaging and mobile push notification service.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AWS Bedrock",
+      "description": "Framework to deploy generative AI models on AWS.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cloudflare Tunnels",
+      "description": "Securely expose local services to the internet.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "NGINX",
+      "description": "High-performance web server and reverse proxy.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Docker",
+      "description": "Platform for containerizing applications and dependencies.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Kubernetes",
+      "description": "System for automating deployment, scaling and management of containerized apps.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "GitHub Actions",
+      "description": "CI/CD tool integrated with GitHub for automating workflows.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "VSCode",
+      "description": "Popular code editor with a strong extension ecosystem.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Postman",
+      "description": "Tool for testing, documenting and sharing APIs.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Figma",
+      "description": "Collaborative interface design tool for UI/UX.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Premiere",
+      "description": "Video editing software by Adobe.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "OBS Studio",
+      "description": "Open-source tool for streaming and recording video.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Tinkercad",
+      "description": "Online simulator for electronics and 3D modeling.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Unity",
+      "description": "Real-time development platform for games and interactive content.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Adobe Photoshop",
+      "description": "Photo editing and design tool.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Blender",
+      "description": "3D modeling, animation and rendering suite.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Audacity",
+      "description": "Audio editing and recording program.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Raspberry Pi",
+      "description": "Tiny affordable computer used for DIY electronics.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Arduino",
+      "description": "Open-source hardware and software platform for electronics projects.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "3D Printing",
+      "description": "Fabrication process of building physical objects layer by layer.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Carpentry",
+      "description": "Wood crafting and structural building skills.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Soldering",
+      "description": "Process of joining electronic components using melted metal.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Dremel",
+      "description": "Rotary tool for cutting, polishing and shaping materials.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Model Making",
+      "description": "Crafting miniatures and scale representations.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Multimeter",
+      "description": "Measurement tool for voltage, current and resistance.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Breadboard Prototyping",
+      "description": "Reusable platform for testing electronic circuits.",
+      "inDefinedTermSet": "https://braisgf.dev/stack"
+    }
+  ]
+}

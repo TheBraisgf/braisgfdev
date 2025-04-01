@@ -5,9 +5,9 @@
     "image": "assets/geek-hub.png",
     "backgroundColor": "#1c1c3c",
     "technologies": ["React Native", "Node.js", "MongoDB", "Socket.IO"],
-    "video": "assets/geek-hub.mp4",
+    "video": "",
     "link": "https://braisgf.dev/geek-hub",
-    "gallery": ["assets/geek-hub-1.png", "assets/geek-hub-2.png"],
+    "gallery": ["assets/geek-hub-1.png"],
     "extension": ".SOC",
     "status": "beta"
   },

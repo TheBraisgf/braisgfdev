@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   resizeCanvas();
   window.addEventListener("resize", resizeCanvas);
 
-  // === ESTRELLAS EN MOVIMIENTO ===
+  // === MOVING STARS ===
   const stars = Array.from({ length: 120 }, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   animateStars();
 
-  // === PLANETAS ===
+  // === PLANETS ===
   const socials = await fetch("/social/socials.json").then((res) => res.json());
   let focused = null;
   let orbitAnimation = null;
@@ -51,6 +51,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     el.style.background = data.gradient;
     el.style.zIndex = i;
 
+    // === ICON INSIDE PLANET ===
+    const icon = document.createElement("img");
+    icon.src = data.icon;
+    icon.alt = data.name;
+    icon.style.width = "50%";
+    icon.style.height = "50%";
+    icon.style.objectFit = "contain";
+    icon.style.pointerEvents = "none";
+    el.appendChild(icon);
+
+    // === INFO POPUP ===
     const info = document.createElement("div");
     info.className = "planet-info";
     info.innerHTML = `
@@ -62,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     container.appendChild(el);
 
-    // === FLOTAR PLANETAS ===
+    // === FLOAT ANIMATION ===
     const baseTop = parseFloat(data.position.top);
     const baseLeft = parseFloat(data.position.left);
     const offset = 30 + Math.random() * 40;
@@ -72,8 +83,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     function float(t) {
       if (!el.classList.contains("focused")) {
         const angle = angleStart + t * speed;
-        const top = baseTop + Math.sin(angle) * offset;
-        const left = baseLeft + Math.cos(angle) * offset;
         el.style.top = `calc(${baseTop}% + ${Math.sin(angle) * offset}px)`;
         el.style.left = `calc(${baseLeft}% + ${Math.cos(angle) * offset}px)`;
       }
@@ -81,7 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     requestAnimationFrame(float);
 
-    // === CLICK ZOOM ===
+    // === ZOOM ON CLICK ===
     el.addEventListener("click", () => {
       if (focused && focused !== el) focused.classList.remove("focused");
       const isSame = el.classList.contains("focused");
@@ -102,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
-  // === NAVE ESPACIAL FLUIDA ===
+  // === SMOOTH SPACESHIP MOVEMENT ===
   function moveSpaceshipToPlanet(planetEl) {
     const rect = planetEl.getBoundingClientRect();
     const destX = rect.left + rect.width / 2;
@@ -121,7 +130,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       vx += dx * 0.01;
       vy += dy * 0.01;
 
-      vx *= 0.9; // amortiguación
+      vx *= 0.9;
       vy *= 0.9;
 
       posX += vx;
@@ -141,7 +150,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     requestAnimationFrame(flyToTarget);
   }
 
-  // === ORBITA DESPUÉS DE LLEGAR ===
+  // === ORBIT AFTER ARRIVING ===
   function orbitPlanet(planetEl) {
     const rect = planetEl.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -160,7 +169,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     orbitAnimation = requestAnimationFrame(orbit);
   }
 
-  // === GRAVEDAD SIMPLIFICADA ===
+  // === BASIC GRAVITY SIMULATION ===
   function simulateGravity(planets) {
     setInterval(() => {
       for (let i = 0; i < planets.length; i++) {

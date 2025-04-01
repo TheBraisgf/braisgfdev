@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const closeBtn = document.querySelector(".close-btn");
 
   try {
-    const files = ["posts/post1.json", "posts/post2.json"];
+    const files = ["posts/post1.json", "posts/post2.json", "posts/post3.json"];
 
     const posts = await Promise.all(
       files.map((file) => fetch(file).then((res) => res.json()))
@@ -37,10 +37,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       blogContainer.appendChild(postCard);
 
-      // Al hacer clic en "Read more"
       postCard.querySelector(".read-more-btn").addEventListener("click", () => {
         modalTitle.textContent = post.title;
-        modalContent.textContent = post.content;
+        modalContent.innerHTML = marked.parse(post.content);
 
         if (post.image) {
           modalImage.src = post.image;
@@ -63,12 +62,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
 
-    // Cerrar modal al hacer clic en la X
     closeBtn.addEventListener("click", () => {
       modal.style.display = "none";
     });
 
-    // Cerrar modal al hacer clic fuera del contenido
     window.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.style.display = "none";
@@ -79,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error(err);
   }
 
-  // PARTICULAS
+  // Particle animation
   const canvas = document.getElementById("stars");
   if (canvas) {
     const ctx = canvas.getContext("2d");

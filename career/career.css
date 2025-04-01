@@ -84,6 +84,7 @@ body {
 .timeline-item.right .content {
   margin-left: auto;
   margin-right: 0;
+  text-align: center;
 }
 
 .content h3 {

@@ -1,35 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- SEO BASICS -->
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Braisgf.dev</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <title>Braisgf.dev – Fullstack Developer & Maker</title>
+    <meta
+      name="description"
+      content="Welcome to Braisgf.dev – A geeky digital lab, fullstack dev portfolio, and experimental playground built and hosted on Raspberry Pi by Brais, a developer and creator from Spain."
+    />
+    <meta
+      name="keywords"
+      content="Braisgf, fullstack developer, portfolio, Raspberry Pi, maker, indie dev, software, Unity, AWS, JavaScript, blog, tech"
+    />
+    <meta name="author" content="Braisgf" />
+    <link rel="canonical" href="https://braisgf.dev/" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+    <!-- FONTS -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- OPEN GRAPH / FACEBOOK -->
+    <meta property="og:title" content="Braisgf.dev – Fullstack Dev & Maker" />
+    <meta
+      property="og:description"
+      content="Explore projects, blogs, experiments and fullstack builds by Brais. Hosted on Raspberry Pi. Made with ❤️ by a maker."
+    />
+    <meta
+      property="og:image"
+      content="https://braisgf.dev/assets/Braisgf.jpeg"
+    />
+    <meta property="og:url" content="https://braisgf.dev/" />
+    <meta property="og:type" content="website" />
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Braisgf.dev – Fullstack Dev & Maker" />
+    <meta
+      name="twitter:description"
+      content="Personal dev lab by Braisgf – featuring code, hardware, projects and ideas."
+    />
+    <meta
+      name="twitter:image"
+      content="https://braisgf.dev/assets/Braisgf.jpeg"
+    />
+
+    <!-- PWA MANIFEST -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json" src="/schema.json"></script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CVE80CP3QT");
+    </script>
   </head>
   <body>
-    <!-- Canvas for particles animation -->
     <canvas id="bgCanvas"></canvas>
-
     <main class="container">
-      <!-- Hero Section -->
       <section class="hero">
         <div class="hero-content">
           <div class="hero-container">
-            <!-- Image of you -->
-            <img src="/assets/Braisgf.jpeg" alt="Braisgf" class="profile-img" />
+            <img
+              src="/assets/Braisgf.jpeg"
+              alt="Photo of Braisgf"
+              class="profile-img"
+            />
             <div class="hero-texts">
-              <!-- Name, Position and Motto -->
               <h1>Braisgf.dev</h1>
-              <p class="position">Full Stack Dev and Creator</p>
+              <p class="position">Full Stack Developer & Creator</p>
               <p class="motto">"Imagine, Code, Create, Share, Repeat"</p>
             </div>
           </div>
-          <!-- Buttons Section -->
           <div class="buttons">
             <a href="/about" class="btn">About Me 👤</a>
             <a href="/career" class="btn">My Career 💼</a>
@@ -41,18 +102,11 @@
         </div>
       </section>
     </main>
-
-    <!-- Footer Section -->
     <footer class="footer">
       <p>&copy; 2025 Braisgf.dev</p>
       <a href="https://github.com/thebraisgf" class="social">GitHub</a>
       <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
-
-      <!-- Language Change -->
-      <!-- <button onclick="changeLanguage('en')">English</button>
-      <button onclick="changeLanguage('es')">Español</button> -->
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>

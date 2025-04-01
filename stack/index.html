@@ -2,15 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skill Cloud – Braisgf.dev</title>
+    <title>Stack & Skills – Braisgf.dev</title>
+    <meta
+      name="description"
+      content="A full-stack cloud of skills by Braisgf: from HTML to AI, Unity to AWS, DevOps, and electronics."
+    />
+    <meta
+      name="keywords"
+      content="Braisgf, tech stack, developer skills, fullstack, frontend, backend, AWS, maker, tools, portfolio, technologies"
+    />
+    <meta name="author" content="Braisgf" />
+    <link rel="canonical" href="https://braisgf.dev/stack" />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fullstack Skill Cloud – Braisgf.dev" />
+    <meta
+      property="og:description"
+      content="Explore the full universe of technologies used by Braisgf: coding, devops, design, electronics and game engines."
+    />
+    <meta
+      property="og:image"
+      content="https://braisgf.dev/assets/stack-og.png"
+    />
+    <meta property="og:url" content="https://braisgf.dev/stack" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stack & Skills – Braisgf.dev" />
+    <meta
+      name="twitter:description"
+      content="A dynamic cloud of skills and tools from the fullstack multiverse."
+    />
+    <meta
+      name="twitter:image"
+      content="https://braisgf.dev/assets/stack-twitter.png"
+    />
+
+    <!-- Schema -->
+    <script type="application/ld+json" src="/stack/schema-stack.json"></script>
+
     <link rel="stylesheet" href="stack.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CVE80CP3QT");
+    </script>
   </head>
   <body>
     <main class="stack-wrapper">
       <h1 class="stack-title">🧪 Skill Cloud</h1>
 
-      <!-- Filtros + Reroll -->
       <div class="filters">
         <button class="filter-btn active" data-category="all">All</button>
         <button class="filter-btn" data-category="core">Core</button>
@@ -23,13 +80,10 @@
         <button class="reroll-btn">🔁 Reroll</button>
       </div>
 
-      <!-- Nube -->
       <div id="cloud" class="cloud"></div>
-
       <a href="/" class="btn">← Back to Home</a>
     </main>
 
-    <!-- Tooltip -->
     <div id="tooltip" class="tooltip">
       <div class="arrow"></div>
       <p id="tooltip-content"></p>

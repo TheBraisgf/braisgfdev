@@ -233,7 +233,7 @@ body {
 
 /* FOOTER */
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -269,4 +269,63 @@ body {
   .modal-content {
     padding: 1.5rem;
   }
+}
+#modal-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin-top: 1rem;
+}
+
+#modal-content p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+#modal-content p::first-letter {
+  font-weight: bold;
+  color: #7be43e;
+}
+/* CONTENIDO DEL MODAL FORMATEADO */
+#modal-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+}
+
+#modal-content p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+#modal-content ul {
+  margin-left: 1.5rem;
+  list-style-type: square;
+}
+
+#modal-content a {
+  color: #42d1ff;
+  text-decoration: underline;
+}
+
+/* BOTÓN DE VOLVER BONITO */
+.btn-back {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 4rem;
+  padding: 0.8rem 2rem;
+  background: #111;
+  border: 1px solid #7be43e;
+  border-radius: 30px;
+  color: #7be43e;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background: #7be43e;
+  color: #000;
 }

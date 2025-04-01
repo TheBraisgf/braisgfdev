@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Creator Blog",
+  "url": "https://braisgf.dev/blog",
+  "description": "Tech blog by Braisgf – Fullstack Developer and Maker. Stories, reflections, experiments and side projects.",
+  "author": {
+    "@type": "Person",
+    "name": "Brais",
+    "url": "https://braisgf.dev",
+    "sameAs": [
+      "https://linkedin.com/in/braisgf",
+      "https://github.com/thebraisgf"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "braisgf.dev",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://braisgf.dev/assets/favicon.ico"
+    }
+  }
+}

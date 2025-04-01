@@ -2,18 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me – Braisgf.dev</title>
+    <meta
+      name="description"
+      content="Learn more about Brais, a fullstack developer and maker from A Coruña, Spain. Discover his background, passions and mission."
+    />
+    <meta
+      name="keywords"
+      content="Braisgf, About Me, Fullstack Developer, Maker, Portfolio, Tech Background"
+    />
+    <meta name="author" content="Braisgf" />
+    <link rel="canonical" href="https://braisgf.dev/about" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Brais – Fullstack Dev & Maker" />
+    <meta
+      property="og:description"
+      content="I'm Brais, a fullstack developer and maker from Spain. Passionate about tech, games, and building cool things."
+    />
+    <meta
+      property="og:image"
+      content="https://braisgf.dev/assets/Braisgf.jpeg"
+    />
+    <meta property="og:url" content="https://braisgf.dev/about" />
+    <meta property="og:type" content="profile" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Brais – Fullstack Dev & Maker" />
+    <meta
+      name="twitter:description"
+      content="Developer. Creator. Maker. Discover my journey and goals."
+    />
+    <meta
+      name="twitter:image"
+      content="https://braisgf.dev/assets/Braisgf.jpeg"
+    />
+
+    <!-- Manifest & Schema -->
+    <link rel="manifest" href="/manifest.json" />
+    <script type="application/ld+json" src="/about/schema-about.json"></script>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="about.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-CVE80CP3QT");
+    </script>
   </head>
   <body>
     <main class="about-container fade-in">
       <section class="about-card">
-        <!-- Profile Header -->
         <div class="top">
           <img
             src="/assets/Braisgf.jpeg"
-            alt="Brais profile photo"
+            alt="Photo of Braisgf, fullstack developer and maker"
             class="profile-img"
           />
           <div class="intro">
@@ -23,7 +81,6 @@
           </div>
         </div>
 
-        <!-- Bio & Info -->
         <div class="content">
           <p>
             I studied <strong>Telecommunications</strong> and trained as a
@@ -65,7 +122,6 @@
       </section>
     </main>
 
-    <!-- Simple Footer, consistent with landing -->
     <footer class="footer">
       <p>&copy; 2025 Braisgf.dev</p>
       <a href="https://github.com/thebraisgf" class="social">GitHub</a>
