@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const modalTechs = document.getElementById("modal-techs");
   const closeBtn = document.querySelector(".close-btn");
 
-  const projects = await fetch("projects.json").then((res) => res.json());
+  const projects = await fetch("projects_es.json").then((res) => res.json());
 
   const logs = [
     "[🤖] Iniciando consola retro...",
@@ -58,12 +58,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         [...Array(8)]
           .map(() => String.fromCharCode(33 + Math.floor(Math.random() * 94)))
           .join("");
-
+      console.log(shuffledProjects);
       // CONTENIDO DE LA CARD
       card.innerHTML = `
         ${
-          !isLocked && project.image
-            ? `<img src="${project.image}" alt="${project.title}" class="card-image" />`
+          project.image
+            ? `<img src="${project.image}" alt="WIP" class="card-image" />`
             : ""
         }
         <h2>> ${isLocked ? glitchText() : project.title}</h2>
@@ -112,27 +112,45 @@ document.addEventListener("DOMContentLoaded", async () => {
     modal.style.display = "flex";
     modalTitle.textContent = project.title;
     modalDesc.textContent = project.description;
-    modalImage.src = project.image || "";
-    modalImage.style.display = project.image ? "block" : "none";
-    modalVideo.src = project.video || "";
-    modalVideo.style.display = project.video ? "block" : "none";
+
+    // Mostrar imagen solo si existe
+    if (project.image) {
+      modalImage.src = project.image;
+      modalImage.style.display = "block";
+    } else {
+      modalImage.style.display = "none";
+    }
+
+    // Mostrar video solo si existe
+    if (project.video) {
+      modalVideo.src = project.video;
+      modalVideo.style.display = "block";
+    } else {
+      modalVideo.style.display = "none";
+    }
+    console.log(project.gallery);
+
+    // Mostrar tecnologías, link y galería solo si están disponibles
+    const galleryHTML =
+      project.gallery && project.gallery.length
+        ? `<br/><div class="gallery">${project.gallery
+            .map((img) => `<img src="${img}" class="gallery-img" />`)
+            .join("")}</div>`
+        : "";
+
     modalTechs.innerHTML = `
-      <strong>🔧 Technologies:</strong> ${
-        project.technologies?.join(", ") || "???"
-      }
-      ${
-        project.link
-          ? `<br/><strong>🌐 Link:</strong> <a href="${project.link}" target="_blank">${project.link}</a>`
-          : ""
-      }
-      ${
-        project.gallery
-          ? `<br/><strong>🖼️ Gallery:</strong><div class="gallery">${project.gallery
-              .map((img) => `<img src="${img}" class="gallery-img" />`)
-              .join("")}</div>`
-          : ""
-      }
-    `;
+    <strong>🔧 Technologies:</strong> ${
+      project.technologies?.join(", ") || "???"
+    }
+    ${
+      project.link
+        ? `<br/><strong>🌐 Link:</strong> <a href="${project.link}" target="_blank">${project.link}</a>`
+        : ""
+    }
+  
+  `;
+
+    //  // ${galleryHTML}
   }
 
   closeBtn.addEventListener("click", () => {
