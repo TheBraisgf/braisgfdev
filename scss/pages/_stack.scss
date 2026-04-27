@@ -1,0 +1,144 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-stack {
+  font-family: $font-display;
+
+  .stack-wrapper {
+    padding: $spacing-2xl $spacing-xl;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .stack-title {
+    font-size: 3rem;
+    color: $color-primary-dark;
+    margin-bottom: $spacing-xl;
+    font-family: $font-display;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+  }
+
+  .filter-btn,
+  .reroll-btn {
+    padding: 0.4rem $spacing-md;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: $radius-lg;
+    color: $color-text;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background $transition-fast;
+
+    &.active,
+    &:hover {
+      background: $color-primary-dark;
+    }
+  }
+
+  .cloud {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+  }
+
+  .bubble {
+    position: absolute;
+    padding: 0.6rem 1.4rem 0.6rem 2.2rem;
+    border-radius: $radius-pill;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    color: $color-text;
+    cursor: pointer;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    animation: fadeInPop 0.4s ease;
+    transition: top 0.5s ease, left 0.5s ease, transform $transition-base, opacity $transition-slow;
+    z-index: 1;
+
+    &.show { opacity: 1; }
+
+    // Category icons
+    &.core::before { content: "\1F9F1"; position: absolute; left: 0.8rem; }
+    &.frontend::before { content: "\1F3A8"; position: absolute; left: 0.8rem; }
+    &.backend::before { content: "\2699\FE0F"; position: absolute; left: 0.8rem; }
+    &.devops::before { content: "\2601\FE0F"; position: absolute; left: 0.8rem; }
+    &.tools::before { content: "\1F6E0\FE0F"; position: absolute; left: 0.8rem; }
+    &.creative::before { content: "\1F3AE"; position: absolute; left: 0.8rem; }
+    &.maker::before { content: "\1F527"; position: absolute; left: 0.8rem; }
+
+    &.favorite {
+      border: 2px solid gold;
+
+      &::after {
+        content: "\2B50";
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Category glass gradients
+  .core { background: linear-gradient(145deg, rgba(47, 97, 47, 0.2), rgba(47, 97, 47, 0.05)); }
+  .frontend { background: linear-gradient(145deg, rgba(91, 145, 59, 0.2), rgba(91, 145, 59, 0.05)); }
+  .backend { background: linear-gradient(145deg, rgba(46, 112, 161, 0.2), rgba(46, 112, 161, 0.05)); }
+  .devops { background: linear-gradient(145deg, rgba(161, 121, 46, 0.2), rgba(161, 121, 46, 0.05)); }
+  .tools { background: linear-gradient(145deg, rgba(114, 59, 161, 0.2), rgba(114, 59, 161, 0.05)); }
+  .creative { background: linear-gradient(145deg, rgba(59, 124, 145, 0.2), rgba(59, 124, 145, 0.05)); }
+  .maker { background: linear-gradient(145deg, rgba(145, 59, 59, 0.2), rgba(145, 59, 59, 0.05)); }
+
+  .tooltip {
+    position: absolute;
+    background: rgba(30, 30, 30, 0.95);
+    color: $color-text;
+    padding: $spacing-md 1.2rem;
+    border-radius: $radius-md;
+    max-width: 240px;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba($color-primary, 0.4);
+    display: none;
+    z-index: 999;
+    animation: fadeIn 0.2s ease-out;
+    font-family: $font-display;
+
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 10px solid rgba(30, 30, 30, 0.95);
+      position: absolute;
+      top: -10px;
+      left: 20px;
+    }
+  }
+
+  @include mobile {
+    .cloud {
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+      justify-content: center;
+    }
+
+    .bubble {
+      position: static !important;
+    }
+  }
+}

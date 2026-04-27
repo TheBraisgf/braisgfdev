@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "home_title": "Braisgf.dev – Fullstack Developer & Maker",
+    "home_description": "Welcome to Braisgf.dev – A geeky digital lab, fullstack dev portfolio, and experimental playground built and hosted on Raspberry Pi by Brais, a developer and creator from Spain.",
+    "about_title": "About Me – Braisgf.dev",
+    "about_description": "Meet Brais – fullstack developer, maker and multipotentialite creator from A Coruña. Learn about his passions, journey and skills.",
+    "blog_title": "Creator Blog – Braisgf.dev",
+    "blog_description": "Discover tech blog posts by Braisgf – Fullstack Developer, Maker & Creator.",
+    "career_title": "My Career – Braisgf.dev",
+    "career_description": "Explore the professional path of Braisgf – from telecom and filmmaking to fullstack development and AI at Santander.",
+    "lab_title": "Creators Lab – Braisgf.dev",
+    "lab_description": "A retro-inspired interactive lab of creative experiments, games and tools made by Braisgf.",
+    "stack_title": "Stack & Skills – Braisgf.dev",
+    "stack_description": "A full-stack cloud of skills by Braisgf: from HTML to AI, Unity to AWS, DevOps, and electronics.",
+    "social_title": "Social Multiverse – Braisgf.dev",
+    "social_description": "Explore Braisgf's social presence across the galaxy: YouTube, TikTok, GitHub, Twitch and more.",
+    "privacy_title": "Privacy Policy – Braisgf.dev",
+    "privacy_description": "General privacy policy for all apps, games and tools developed by Braisgf.dev.",
+    "wip_title": "Work In Progress – Braisgf.dev"
+  },
+  "nav": {
+    "about": "About Me",
+    "career": "My Career",
+    "stack": "Skill Cloud",
+    "lab": "Creators Lab",
+    "blog": "Creator Blog",
+    "social": "Social Media",
+    "back": "Back to Home"
+  },
+  "home": {
+    "position": "Full Stack Developer & Creator",
+    "motto": "\"Imagine, Code, Create, Share, Repeat\""
+  },
+  "about": {
+    "greeting": "Hey, I'm Brais",
+    "subtitle": "Fullstack Developer • Maker • Multipotentialite",
+    "motto": "\"I build useful, fun or just plain cool stuff.\"",
+    "bio": "I studied <strong>Telecommunications</strong> and trained as a <strong>Fullstack Developer</strong>. I'm passionate about building things — from websites and apps to Raspberry Pi setups, battle robots or model kits",
+    "location_label": "Location:",
+    "location": "A Coruña, Spain",
+    "interests_label": "Interests:",
+    "interests": "Web Dev, AI, Electronics, Indie Games, DIY",
+    "background_label": "Background:",
+    "background": "Telecommunications + Fullstack Bootcamp",
+    "tech_label": "Tech Stack:",
+    "tech": "JS, Node, React, Python, MongoDB, AWS",
+    "goal_label": "Goal:",
+    "goal": "Grow every day and share what I learn",
+    "socials_label": "On socials:",
+    "socials": "I talk about tech, geek life and curiosity",
+    "closing": "I believe technology is our generation's magic. My mission? Build things that inspire and spark curiosity"
+  },
+  "blog": {
+    "title": "Creator Blog",
+    "read_more": "Read more",
+    "error": "Error loading posts."
+  },
+  "career": {
+    "title": "My Career Roadmap",
+    "telecom_title": "Telecommunications Engineering",
+    "telecom_date": "2016 – 2020",
+    "telecom_desc": "I studied Telecommunications Engineering, where I gained strong technical foundations in logic, hardware, and systems.",
+    "film_title": "Filmmaking & Production",
+    "film_date": "2020 – 2021",
+    "film_desc": "This creative journey taught me how to communicate visually, tell stories, and create emotional experiences that translate beautifully into UX and digital creation.",
+    "bootcamp_title": "Fullstack Bootcamp – Hack A Boss",
+    "bootcamp_date": "2021",
+    "bootcamp_desc": "I trained intensively in fullstack web development, mastering both frontend and backend. It was my official entry into tech.",
+    "zara_title": "Zara.com – Frontend Developer",
+    "zara_date": "2021 – 2023",
+    "zara_desc": "I worked on scalable interfaces and internal tools using React and Python. I also contributed to UX, editorial content, and branding for one of the most visited fashion sites globally.",
+    "santander_ai_title": "Santander – AI Image Editor",
+    "santander_ai_date": "2023",
+    "santander_ai_desc": "I built an AI image editor with Angular and LitElement that allowed smart mask editing, filters and prompt-based image generation.",
+    "santander_form_title": "Santander – Smart Form Evaluator",
+    "santander_form_date": "2023 – 2024",
+    "santander_form_desc": "I developed Angular interfaces that use AI to evaluate and validate legal documents, streamlining a complex corporate process.",
+    "santander_python_title": "Santander – Python AI Backend",
+    "santander_python_date": "2024 – Present",
+    "santander_python_desc": "I design Python APIs that connect with generative AI services to generate content and score user inputs — scalable and powerful."
+  },
+  "lab": {
+    "boot_title": "Initializing Creators Lab",
+    "title": "CREATORS LAB",
+    "technologies": "Technologies:",
+    "link": "Link:",
+    "logs": [
+      "[BOT] Booting up retro console...",
+      "[COFFEE] Brewing coffee for the AI...",
+      "[BRAIN] Synchronizing neural circuits...",
+      "[DISK] Mounting diskettes...",
+      "[FILES] suspicious files found.",
+      "[FIRE] Compiling creativity...",
+      "[SPARK] Terminal glow intensity: 9000%",
+      "[READY] All systems nominal. Engage!"
+    ],
+    "enter_code": "Enter access code...",
+    "wrong_code": "Wrong code"
+  },
+  "stack": {
+    "title": "Skill Cloud",
+    "all": "All",
+    "core": "Core",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Tools",
+    "creative": "Creative",
+    "maker": "Maker",
+    "reroll": "Reroll"
+  },
+  "social": {
+    "intro": "Click a planet to explore its secrets...",
+    "visit": "Visit",
+    "back": "Back to Landing"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "last_update": "Last update: April 2025",
+    "applies_to": "Applies to all products from Braisgf.dev",
+    "intro_text": "This privacy policy applies to all products developed and published by <strong>Braisgf.dev</strong>, including mobile apps, video games, websites, tools and software now or in the future.",
+    "section1_title": "1. Information We Collect",
+    "section1_text": "We do not directly collect any personally identifiable information. However, third-party services integrated into our products may collect technical data such as:",
+    "section1_items": ["Device ID", "Operating system and version", "Language and region", "App interaction", "Approximate location"],
+    "section2_title": "2. Third-party Services Used",
+    "section2_text": "The following services may be present in our products:",
+    "section2_items": ["<strong>Google AdMob</strong> – for displaying ads", "<strong>Google Play Services</strong>", "<strong>Unity Analytics</strong> or <strong>Firebase</strong> (if applicable)"],
+    "section2_link": "Refer to <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Google's Privacy Policy</a> for more details.",
+    "section3_title": "3. Advertising",
+    "section3_text": "Some products may display personalized or non-personalized ads. You can manage your preferences in your device settings.",
+    "section4_title": "4. Websites and Cookies",
+    "section4_text": "Our websites may use cookies for functional and analytical purposes. No personal data is stored without user consent.",
+    "section5_title": "5. User Rights",
+    "section5_text": "You can contact us if you want to exercise your rights regarding data managed by third-party services.",
+    "section6_title": "6. Changes",
+    "section6_text": "This policy may change over time. Updates will be posted on this page.",
+    "section7_title": "7. Contact",
+    "section7_text": "If you have any questions, feel free to contact <a href=\"mailto:braisgf@gmail.com\">braisgf.dev@gmail.com</a>.",
+    "back_btn": "Back to main site"
+  },
+  "wip": {
+    "title": "Work in Progress",
+    "line1": "This section of <strong>Braisgf.dev</strong> is still under development.",
+    "line2": "I'm probably coding it right now, drinking water, and listening to lo-fi beats",
+    "back": "Back to safety"
+  },
+  "cookie": {
+    "message": "This site uses cookies to save your preferences.",
+    "accept": "Accept"
+  },
+  "footer": {
+    "copyright": "2025 Braisgf.dev"
+  }
+}

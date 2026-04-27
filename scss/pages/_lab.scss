@@ -1,0 +1,185 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-lab {
+  font-family: $font-mono;
+  color: $color-lab-green;
+  background-color: $color-lab-bg;
+
+  .lab-header {
+    padding: $spacing-xl;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+  }
+
+  .blinking-cursor {
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  .boot-log {
+    font-size: 0.9rem;
+    margin-top: $spacing-md;
+    color: $color-lab-green-light;
+    min-height: 2rem;
+  }
+
+  .lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: $spacing-md;
+    padding: $spacing-md;
+    animation: fadeIn 2s ease-in;
+  }
+
+  .card {
+    opacity: 0;
+    animation: disketLoad 0.8s ease-out forwards;
+    animation-delay: calc(var(--delay, 0s));
+    background-color: $color-bg-elevated;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    border: 2px solid $color-lab-green;
+    box-shadow: 0 0 10px $color-lab-green;
+    position: relative;
+    cursor: pointer;
+    transition: transform $transition-base;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px $color-lab-green-light;
+    }
+
+    &::before {
+      content: attr(data-extension);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #0f0;
+      color: $color-bg;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.7rem;
+      border-radius: 0 $radius-md 0 $radius-md;
+    }
+
+    h2 {
+      color: $color-lab-heading;
+      font-size: 1.3rem;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $color-lab-text;
+    }
+
+    &[data-extension=".RUN"] {
+      border-color: #ff8800;
+      box-shadow: 0 0 10px #ff8800;
+    }
+    &[data-extension=".SOC"] {
+      border-color: #00bfff;
+      box-shadow: 0 0 10px #00bfff;
+    }
+    &[data-extension=".ARC"] {
+      border-color: #ff00ff;
+      box-shadow: 0 0 10px #ff00ff;
+    }
+    &[data-extension=".SYS"] {
+      border-color: #ff0033;
+      box-shadow: 0 0 10px #ff0033;
+    }
+  }
+
+  .card-image {
+    width: 100%;
+    border-radius: $radius-sm;
+    margin-bottom: $spacing-sm;
+  }
+
+  .card.locked {
+    animation: lockedGlitch 2.5s infinite ease-in-out;
+    filter: hue-rotate(330deg) brightness(1.2);
+  }
+
+  .unlock-input {
+    display: block;
+    width: 100%;
+    margin-top: $spacing-sm;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid $color-lab-green;
+    color: $color-lab-green;
+    font-family: $font-mono;
+    border-radius: $radius-sm;
+    outline: none;
+  }
+
+  .gallery {
+    margin-top: $spacing-md;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    justify-content: center;
+  }
+
+  .gallery-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #0f0;
+    border-radius: 4px;
+  }
+
+  .modal {
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+
+    &-content {
+      background: $color-bg-elevated;
+      color: #0f0;
+      border: 2px solid #0f0;
+      border-radius: $radius-md;
+      max-width: 600px;
+      text-align: center;
+
+      img,
+      video {
+        width: 100%;
+        margin-top: $spacing-md;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .close-btn {
+    color: #0f0;
+  }
+
+  .btn {
+    display: inline-block;
+    background: #0f0;
+    color: $color-bg;
+    padding: 0.6rem $spacing-md;
+    margin: $spacing-md;
+    border-radius: $radius-sm;
+    font-weight: bold;
+    border: none;
+
+    &:hover {
+      background: $color-lab-green-light;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    padding: $spacing-md;
+    font-size: 0.9rem;
+    color: $color-text-muted;
+
+    .social {
+      margin: 0 $spacing-sm;
+      color: $color-lab-green;
+    }
+  }
+}

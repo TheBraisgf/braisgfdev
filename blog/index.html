@@ -2,125 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creator Blog – Braisgf.dev</title>
     <meta
       name="description"
-      content="Discover tech blog posts by Braisgf – Fullstack Developer, Maker & Creator. Thoughts, tutorials, and personal growth."
+      content="Discover tech blog posts by Braisgf – Fullstack Developer, Maker & Creator."
     />
     <meta
       name="keywords"
-      content="Tech Blog, Developer Blog, Fullstack, Programming, Maker, Raspberry Pi, Braisgf"
+      content="Braisgf Blog, Tech Blog, Fullstack Developer, Raspberry Pi, DIY Projects"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/blog" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/blog" />
-
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Creator Blog – Braisgf.dev" />
-    <meta
-      property="og:description"
-      content="Explore my blog: stories, experiments and reflections on tech, coding and creation."
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/postsImg/landing.jpg"
-    />
-    <meta property="og:url" content="https://braisgf.dev/blog" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Creator Blog – Braisgf.dev" />
-    <meta
-      name="twitter:description"
-      content="Stories and insights from a fullstack developer & maker."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/postsImg/unicorn.jpg"
-    />
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Schema (JSON-LD) -->
-    <script type="application/ld+json" src="/blog/schema-blog.json"></script>
-
-    <!-- Estilos y Markdown -->
-    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
-    </script>
   </head>
-  <body>
+  <body class="page-blog" data-page="blog">
     <div class="lang-switch-container">
       <span class="flag">EN</span>
-      <label class="lang-toggle">
+      <label class="lang-toggle" aria-label="Toggle language">
         <input type="checkbox" id="lang-toggle" />
         <span class="slider"></span>
       </label>
       <span class="flag">ES</span>
     </div>
-    <!-- Modal -->
-    <div id="global-modal" class="modal" role="dialog" aria-modal="true">
+
+    <main class="blog-wrapper">
+      <h1 class="blog-title" data-i18n="blog.title">Creator Blog</h1>
+      <div id="blog-posts" class="blog-posts" aria-live="polite"></div>
+
+      <a href="/" class="btn-back" data-i18n="nav.back">&larr; Back to Home</a>
+    </main>
+
+    <div id="blogModal" class="modal" role="dialog" aria-modal="true">
       <div class="modal-content">
-        <span class="close-btn" aria-label="Close">&times;</span>
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <img id="modal-image" class="modal-image" alt="" />
         <h2 id="modal-title"></h2>
-        <img
-          id="modal-image"
-          class="modal-image"
-          style="display: none"
-          alt="Post image"
-        />
         <div id="modal-content"></div>
-        <video
-          id="modal-video"
-          class="modal-video"
-          controls
-          style="display: none"
-        >
-          <source id="modal-video-source" src="" type="video/mp4" />
-        </video>
+        <video id="modal-video" class="modal-video" controls></video>
       </div>
     </div>
 
-    <!-- Main Blog Section -->
-    <main class="blog-wrapper">
-      <h1 class="blog-title">📝 Creator Blog</h1>
-      <div id="blog-posts" class="blog-posts"></div>
-    </main>
-
-    <!-- Back -->
-    <a href="/" class="btn-back">← Back to Home</a>
-
-    <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/thebraisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+      <p>&copy; <span data-i18n="footer.copyright">2025 Braisgf.dev</span></p>
+      <a href="https://github.com/thebraisgf" class="social" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social" target="_blank" rel="noopener">LinkedIn</a>
     </footer>
 
-    <!-- Canvas stars -->
-    <canvas id="stars"></canvas>
-
-    <!-- Script -->
-    <script src="blog.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/blog.js"></script>
   </body>
 </html>

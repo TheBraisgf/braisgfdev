@@ -1,0 +1,133 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-career {
+  padding-bottom: $spacing-2xl;
+
+  .timeline-wrapper {
+    max-width: $max-width-wide;
+    margin: 0 auto;
+    padding: $spacing-2xl $spacing-xl;
+  }
+
+  .timeline-title {
+    text-align: center;
+    font-size: 3rem;
+    color: $color-primary-dark;
+    font-family: $font-heading;
+    margin-bottom: $spacing-2xl;
+  }
+
+  .timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: $color-primary-dark;
+      transform: translateX(-50%);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: $spacing-md $spacing-xl;
+
+    &.left {
+      left: 0;
+
+      .content {
+        margin-right: auto;
+        margin-left: 0;
+      }
+    }
+
+    &.right {
+      left: 50%;
+
+      .content {
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.07);
+      padding: $spacing-lg;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+
+      h3 {
+        color: $color-primary;
+        margin-bottom: $spacing-xs;
+        font-size: 1.5rem;
+      }
+
+      .date {
+        font-size: 0.9rem;
+        color: $color-text-subtle;
+        margin-bottom: $spacing-md;
+        display: block;
+      }
+
+      p {
+        color: $color-text-muted;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    &.active .content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .logo {
+    width: 100px;
+    border-radius: 20%;
+    height: auto;
+    margin-bottom: 0.8rem;
+    opacity: 0.7;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @include mobile {
+    .timeline::after {
+      left: 8px;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding-left: $spacing-xl;
+      padding-right: 0;
+
+      &.right,
+      &.left {
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,403 @@
+[
+  {
+    "name": "HTML",
+    "layer": "core",
+    "description": {
+      "en": "Structure of all web pages.",
+      "es": "Estructura de todas las páginas web."
+    },
+    "favorite": true
+  },
+  {
+    "name": "CSS",
+    "layer": "core",
+    "description": {
+      "en": "Style and design of interfaces.",
+      "es": "Estilo y diseño de interfaces."
+    },
+    "favorite": true
+  },
+  {
+    "name": "JavaScript",
+    "layer": "core",
+    "description": {
+      "en": "Dynamic logic of the web.",
+      "es": "Lógica dinámica de la web."
+    },
+    "favorite": true
+  },
+  {
+    "name": "Python",
+    "layer": "core",
+    "description": {
+      "en": "Multipurpose language, used in scripting, backend and AI.",
+      "es": "Lenguaje multipropósito usado para scripts, backend e IA."
+    },
+    "favorite": true
+  },
+  {
+    "name": "Git",
+    "layer": "core",
+    "description": {
+      "en": "Version control system.",
+      "es": "Sistema de control de versiones."
+    },
+    "favorite": true
+  },
+  {
+    "name": "JSON",
+    "layer": "core",
+    "description": {
+      "en": "Universal data exchange format.",
+      "es": "Formato de intercambio de datos universal."
+    }
+  },
+  {
+    "name": "Markdown",
+    "layer": "core",
+    "description": {
+      "en": "Lightweight syntax for documentation.",
+      "es": "Sintaxis ligera para documentación."
+    }
+  },
+  {
+    "name": "Angular",
+    "layer": "frontend",
+    "description": {
+      "en": "Structured frontend framework.",
+      "es": "Framework estructurado para frontend."
+    },
+    "favorite": true
+  },
+  {
+    "name": "React",
+    "layer": "frontend",
+    "description": {
+      "en": "Component-based UI library.",
+      "es": "Librería de interfaces basada en componentes."
+    }
+  },
+  {
+    "name": "React Native",
+    "layer": "frontend",
+    "description": {
+      "en": "React-based mobile app framework.",
+      "es": "Framework para apps móviles basado en React."
+    }
+  },
+  {
+    "name": "LitElement",
+    "layer": "frontend",
+    "description": {
+      "en": "Web components builder.",
+      "es": "Constructor de web components."
+    }
+  },
+  {
+    "name": "SCSS",
+    "layer": "frontend",
+    "description": {
+      "en": "CSS preprocessor with logic.",
+      "es": "Preprocesador de CSS con lógica."
+    }
+  },
+  {
+    "name": "Tailwind CSS",
+    "layer": "frontend",
+    "description": {
+      "en": "Utility-first CSS framework.",
+      "es": "Framework CSS basado en utilidades."
+    }
+  },
+  {
+    "name": "Node.js",
+    "layer": "backend",
+    "description": {
+      "en": "JavaScript backend runtime.",
+      "es": "Entorno de ejecución para backend con JavaScript."
+    }
+  },
+  {
+    "name": "Express",
+    "layer": "backend",
+    "description": {
+      "en": "Minimalist backend web framework.",
+      "es": "Framework web minimalista para backend."
+    }
+  },
+  {
+    "name": "Python",
+    "layer": "backend",
+    "description": {
+      "en": "Used for APIs, scripting and AI workflows.",
+      "es": "Usado para APIs, scripts y flujos de IA."
+    },
+    "favorite": true
+  },
+  {
+    "name": "Flask",
+    "layer": "backend",
+    "description": {
+      "en": "Python micro web framework.",
+      "es": "Framework web micro en Python."
+    }
+  },
+  {
+    "name": "MongoDB",
+    "layer": "backend",
+    "description": {
+      "en": "NoSQL document-oriented database.",
+      "es": "Base de datos NoSQL orientada a documentos."
+    }
+  },
+  {
+    "name": "SQL",
+    "layer": "backend",
+    "description": {
+      "en": "Language for relational databases.",
+      "es": "Lenguaje para bases de datos relacionales."
+    }
+  },
+  {
+    "name": "gRPC",
+    "layer": "backend",
+    "description": {
+      "en": "High-performance remote procedure call protocol.",
+      "es": "Protocolo RPC de alto rendimiento."
+    }
+  },
+  {
+    "name": "AWS",
+    "layer": "devops",
+    "description": {
+      "en": "Cloud computing platform.",
+      "es": "Plataforma de computación en la nube."
+    }
+  },
+  {
+    "name": "S3",
+    "layer": "devops",
+    "description": {
+      "en": "Scalable object storage service.",
+      "es": "Servicio de almacenamiento de objetos."
+    }
+  },
+  {
+    "name": "Lambda",
+    "layer": "devops",
+    "description": {
+      "en": "Serverless compute service.",
+      "es": "Servicio de cómputo sin servidor."
+    }
+  },
+  {
+    "name": "SNS",
+    "layer": "devops",
+    "description": {
+      "en": "Push notification & messaging service.",
+      "es": "Servicio de mensajería y notificaciones push."
+    }
+  },
+  {
+    "name": "AWS Bedrock",
+    "layer": "devops",
+    "description": {
+      "en": "Generative AI services on AWS.",
+      "es": "Servicios de IA generativa en AWS."
+    }
+  },
+  {
+    "name": "Cloudflare Tunnels",
+    "layer": "devops",
+    "description": {
+      "en": "Secure public URLs to local apps.",
+      "es": "URL públicas seguras para apps locales."
+    }
+  },
+  {
+    "name": "NGINX",
+    "layer": "devops",
+    "description": {
+      "en": "Reverse proxy and web server.",
+      "es": "Servidor web y proxy inverso."
+    }
+  },
+  {
+    "name": "Docker",
+    "layer": "devops",
+    "description": {
+      "en": "Containerization platform.",
+      "es": "Plataforma de contenedores."
+    }
+  },
+  {
+    "name": "Kubernetes",
+    "layer": "devops",
+    "description": {
+      "en": "Container orchestration system.",
+      "es": "Orquestación de contenedores."
+    }
+  },
+  {
+    "name": "GitHub Actions",
+    "layer": "devops",
+    "description": {
+      "en": "CI/CD automation on GitHub.",
+      "es": "Automatización CI/CD en GitHub."
+    }
+  },
+  {
+    "name": "VSCode",
+    "layer": "tools",
+    "description": {
+      "en": "Lightweight code editor.",
+      "es": "Editor de código ligero."
+    },
+    "favorite": true
+  },
+  {
+    "name": "Postman",
+    "layer": "tools",
+    "description": {
+      "en": "API development environment.",
+      "es": "Entorno para desarrollo de APIs."
+    }
+  },
+  {
+    "name": "Figma",
+    "layer": "tools",
+    "description": {
+      "en": "Interface design and prototyping.",
+      "es": "Diseño y prototipado de interfaces."
+    }
+  },
+  {
+    "name": "Premiere",
+    "layer": "tools",
+    "description": {
+      "en": "Video editing software.",
+      "es": "Software de edición de video."
+    }
+  },
+  {
+    "name": "OBS Studio",
+    "layer": "tools",
+    "description": {
+      "en": "Streaming and screen recording software.",
+      "es": "Grabación de pantalla y streaming."
+    }
+  },
+  {
+    "name": "Tinkercad",
+    "layer": "tools",
+    "description": {
+      "en": "Simple electronics and 3D design tool.",
+      "es": "Diseño 3D y electrónica básica."
+    }
+  },
+  {
+    "name": "Unity",
+    "layer": "creative",
+    "description": {
+      "en": "2D/3D cross-platform game engine.",
+      "es": "Motor de juegos 2D/3D multiplataforma."
+    }
+  },
+  {
+    "name": "Adobe Photoshop",
+    "layer": "creative",
+    "description": {
+      "en": "Image editing & design.",
+      "es": "Diseño y edición de imágenes."
+    }
+  },
+  {
+    "name": "Blender",
+    "layer": "creative",
+    "description": {
+      "en": "3D modeling and animation suite.",
+      "es": "Modelado 3D y animación."
+    }
+  },
+  {
+    "name": "Audacity",
+    "layer": "creative",
+    "description": {
+      "en": "Audio editing and recording tool.",
+      "es": "Edición y grabación de audio."
+    }
+  },
+  {
+    "name": "Raspberry Pi",
+    "layer": "maker",
+    "description": {
+      "en": "Tiny computer for DIY projects.",
+      "es": "Mini ordenador para proyectos DIY."
+    },
+    "favorite": true
+  },
+  {
+    "name": "Arduino",
+    "layer": "maker",
+    "description": {
+      "en": "Microcontroller platform for electronics.",
+      "es": "Plataforma de microcontroladores para electrónica."
+    }
+  },
+  {
+    "name": "3D Printing",
+    "layer": "maker",
+    "description": {
+      "en": "Creating physical objects from digital models.",
+      "es": "Fabricación de objetos físicos desde modelos digitales."
+    }
+  },
+  {
+    "name": "Carpentry",
+    "layer": "maker",
+    "description": {
+      "en": "Wood-based fabrication & design.",
+      "es": "Fabricación y diseño en madera."
+    }
+  },
+  {
+    "name": "Soldering",
+    "layer": "maker",
+    "description": {
+      "en": "Connecting electronic components by hand.",
+      "es": "Unión de componentes electrónicos a mano."
+    }
+  },
+  {
+    "name": "Dremel",
+    "layer": "maker",
+    "description": {
+      "en": "Multi-tool for shaping, carving and cutting.",
+      "es": "Herramienta rotativa para tallado y corte."
+    }
+  },
+  {
+    "name": "Model Making",
+    "layer": "maker",
+    "description": {
+      "en": "Miniature craft for dioramas and kits.",
+      "es": "Miniaturas para kits y dioramas."
+    }
+  },
+  {
+    "name": "Multimeter",
+    "layer": "maker",
+    "description": {
+      "en": "Tool for measuring electrical values.",
+      "es": "Instrumento para medir valores eléctricos."
+    }
+  },
+  {
+    "name": "Breadboard Prototyping",
+    "layer": "maker",
+    "description": {
+      "en": "Non-permanent circuit design platform.",
+      "es": "Plataforma para diseñar circuitos no permanentes."
+    }
+  }
+]

@@ -6,27 +6,25 @@
     <title>My Career – Braisgf.dev</title>
     <meta
       name="description"
-      content="Explore the professional path of Braisgf – from telecom and filmmaking to fullstack development and AI at Santander."
+      content="Explore the professional path of Braisgf – from telecom and filmmaking to fullstack development and AI."
     />
     <meta
       name="keywords"
-      content="Braisgf, Developer Career, Fullstack, Frontend, Backend, Santander, Zara, Bootcamp"
+      content="Braisgf, Career, Fullstack, Frontend, Backend, Santander, Zara, Developer"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/career" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/career" />
     <link rel="icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="career.css" />
-    <link rel="stylesheet" href="../lang-toggle.css" />
-    <script
-      type="application/ld+json"
-      src="/career/schema-career.json"
-    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body>
+  <body class="page-career" data-page="career">
     <div class="lang-switch-container">
       <span class="flag">EN</span>
-      <label class="lang-toggle">
+      <label class="lang-toggle" aria-label="Toggle language">
         <input type="checkbox" id="lang-toggle" />
         <span class="slider"></span>
       </label>
@@ -34,18 +32,15 @@
     </div>
 
     <main class="timeline-wrapper">
-      <h1 class="timeline-title">🚀 My Career Roadmap</h1>
+      <h1 class="timeline-title" data-i18n="career.title">My Career Roadmap</h1>
+
       <div class="timeline">
         <div class="timeline-item left reveal">
           <div class="content">
-            <img
-              src="./img/universidad.jpg"
-              alt="University logo"
-              class="logo"
-            />
-            <h3>🎓 Telecommunications Engineering</h3>
-            <span class="date">2016 – 2020</span>
-            <p>
+            <img src="/career/img/universidad.jpg" alt="University" class="logo" />
+            <h3 data-i18n="career.telecom_title">Telecommunications Engineering</h3>
+            <span class="date" data-i18n="career.telecom_date">2016 – 2020</span>
+            <p data-i18n="career.telecom_desc">
               I studied Telecommunications Engineering, where I gained strong
               technical foundations in logic, hardware, and systems.
             </p>
@@ -54,90 +49,85 @@
 
         <div class="timeline-item right reveal">
           <div class="content">
-            <img src="./img/masterd.png" alt="Filmmaking logo" class="logo" />
-            <h3>🎬 Filmmaking & Production</h3>
-            <span class="date">2020 – 2021</span>
-            <p>
+            <img src="/career/img/masterd.png" alt="Film school" class="logo" />
+            <h3 data-i18n="career.film_title">Filmmaking & Production</h3>
+            <span class="date" data-i18n="career.film_date">2020 – 2021</span>
+            <p data-i18n="career.film_desc">
               This creative journey taught me how to communicate visually, tell
-              stories, and create emotional experiences that translate
-              beautifully into UX and digital creation.
+              stories, and create emotional experiences.
             </p>
           </div>
         </div>
 
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="./img/hab.jpg" alt="Hack A Boss logo" class="logo" />
-            <h3>💻 Fullstack Bootcamp – Hack A Boss</h3>
-            <span class="date">2021</span>
-            <p>
-              I trained intensively in fullstack web development, mastering both
-              frontend and backend. It was my official entry into tech.
+            <img src="/career/img/hab.jpg" alt="Hack A Boss" class="logo" />
+            <h3 data-i18n="career.bootcamp_title">Fullstack Bootcamp – Hack A Boss</h3>
+            <span class="date" data-i18n="career.bootcamp_date">2021</span>
+            <p data-i18n="career.bootcamp_desc">
+              I trained intensively in fullstack web development. It was my
+              official entry into tech.
             </p>
           </div>
         </div>
 
         <div class="timeline-item right reveal">
           <div class="content">
-            <img src="./img/zara.jpg" alt="Zara logo" class="logo" />
-            <h3>🛍️ Zara.com – Frontend Developer</h3>
-            <span class="date">2021 – 2023</span>
-            <p>
+            <img src="/career/img/zara.jpg" alt="Zara" class="logo" />
+            <h3 data-i18n="career.zara_title">Zara.com – Frontend Developer</h3>
+            <span class="date" data-i18n="career.zara_date">2021 – 2023</span>
+            <p data-i18n="career.zara_desc">
               I worked on scalable interfaces and internal tools using React and
-              Python. I also contributed to UX, editorial content, and branding
-              for one of the most visited fashion sites globally.
+              Python.
             </p>
           </div>
         </div>
 
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="./img/santander.jpg" alt="Santander logo" class="logo" />
-            <h3>🏦 Santander – AI Image Editor</h3>
-            <span class="date">2023</span>
-            <p>
-              I built an AI image editor with Angular and LitElement that
-              allowed smart mask editing, filters and prompt-based image
-              generation.
+            <img src="/career/img/santander.jpg" alt="Santander" class="logo" />
+            <h3 data-i18n="career.santander_ai_title">Santander – AI Image Editor</h3>
+            <span class="date" data-i18n="career.santander_ai_date">2023</span>
+            <p data-i18n="career.santander_ai_desc">
+              I built an AI image editor with Angular and LitElement.
             </p>
           </div>
         </div>
 
         <div class="timeline-item right reveal">
           <div class="content">
-            <img src="./img/santander.jpg" alt="Santander logo" class="logo" />
-            <h3>📄 Santander – Smart Form Evaluator</h3>
-            <span class="date">2023 – 2024</span>
-            <p>
-              I developed Angular interfaces that use AI to evaluate and
-              validate legal documents, streamlining a complex corporate
-              process.
+            <img src="/career/img/santander.jpg" alt="Santander" class="logo" />
+            <h3 data-i18n="career.santander_form_title">Santander – Smart Form Evaluator</h3>
+            <span class="date" data-i18n="career.santander_form_date">2023 – 2024</span>
+            <p data-i18n="career.santander_form_desc">
+              I developed Angular interfaces that use AI to evaluate and validate
+              legal documents.
             </p>
           </div>
         </div>
 
         <div class="timeline-item left reveal">
           <div class="content">
-            <img src="./img/santander.jpg" alt="Santander logo" class="logo" />
-            <h3>🤖 Santander – Python AI Backend</h3>
-            <span class="date">2024 – Present</span>
-            <p>
-              I design Python APIs that connect with generative AI services to
-              generate content and score user inputs — scalable and powerful.
+            <img src="/career/img/santander.jpg" alt="Santander" class="logo" />
+            <h3 data-i18n="career.santander_python_title">Santander – Python AI Backend</h3>
+            <span class="date" data-i18n="career.santander_python_date">2024 – Present</span>
+            <p data-i18n="career.santander_python_desc">
+              I design Python APIs that connect with generative AI services.
             </p>
           </div>
         </div>
       </div>
 
-      <a href="/" class="btn">← Back to Home</a>
+      <a href="/" class="btn-back" data-i18n="nav.back">&larr; Back to Home</a>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/thebraisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+      <p>&copy; <span data-i18n="footer.copyright">2025 Braisgf.dev</span></p>
+      <a href="https://github.com/thebraisgf" class="social" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social" target="_blank" rel="noopener">LinkedIn</a>
     </footer>
 
-    <script src="./career.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/career.js"></script>
   </body>
 </html>

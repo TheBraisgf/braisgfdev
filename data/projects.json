@@ -1,0 +1,228 @@
+[
+  {
+    "title": "💬 Gleenk",
+    "description": {
+      "en": "A social platform for geeks and introverts to find friends through hobbies — not romance. Join groups, chat in real time, and meet people who love what you love. Like Tinder, but for geeks.",
+      "es": "Una plataforma social para frikis e introvertidos que quieren encontrar amigos mediante hobbies — no citas. Únete a grupos, chatea en tiempo real y conecta con gente que ama lo mismo que tú. Como Tinder, pero para partidas de D&D."
+    },
+    "image": "/assets/labImg/gleenk.jpg",
+    "backgroundColor": "#1c1c3c",
+    "technologies": [
+      "React Native",
+      "Node.js",
+      "MongoDB",
+      "Socket.IO"
+    ],
+    "video": "",
+    "link": "",
+    "gallery": [
+      "/assets/labImg/gleenk.jpg"
+    ],
+    "extension": ".SOC",
+    "status": "beta"
+  },
+  {
+    "title": "⚡ Blaze Shift",
+    "description": {
+      "en": "A fast-paced mobile game set in a peaceful forest. Change the color of your flame to survive while dodging at top speed. Designed for tilt controls and fiery mayhem.",
+      "es": "Un juego móvil frenético ambientado en un bosque. Cambia el color de tu llama para sobrevivir mientras esquivas a toda velocidad. Diseñado para controles por inclinación y caos ardiente."
+    },
+    "image": "/assets/labImg/blaze.jpg",
+    "backgroundColor": "#1e2f45",
+    "technologies": [
+      "Unity",
+      "Tilt Controls",
+      "C#",
+      "Mobile"
+    ],
+    "video": "",
+    "link": "https://github.com/TheBraisgf/Blaze-Shift",
+    "gallery": [
+      "/assets/labImg/blaze.jpg"
+    ],
+    "extension": ".ARC",
+    "status": "dev"
+  },
+  {
+    "title": "🛰️ braisgf.dev",
+    "description": {
+      "en": "My official web HQ — part portfolio, part secret lab. Hosted on a Raspberry Pi, styled like a retro console, and hiding a few easter eggs. Welcome to my brain.",
+      "es": "Mi cuartel general digital — parte portfolio, parte laboratorio secreto. Está alojado en una Raspberry Pi, con estética de consola retro y algunos easter eggs ocultos. Bienvenido a mi cabeza."
+    },
+    "image": "/assets/labImg/braisgfdev.jpg",
+    "backgroundColor": "#1a1a1a",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Raspberry Pi Hosting"
+    ],
+    "video": "",
+    "link": "https://braisgf.dev",
+    "gallery": [
+      "/assets/labImg/braisgfdev.jpg"
+    ],
+    "extension": ".WEB",
+    "status": "stable"
+  },
+  {
+    "title": "📦 Video Transcoder (AWS)",
+    "description": {
+      "en": "A backend tool that accepts video uploads, transcodes them via AWS Elastic Transcoder, and stores the results in S3. Built to automate and scale flawlessly.",
+      "es": "Herramienta backend que recibe vídeos, los transcodifica con AWS Elastic Transcoder y guarda los resultados en S3. Hecho para escalar de forma automática y eficiente."
+    },
+    "image": "/assets/labImg/awstranscoder.jpeg",
+    "backgroundColor": "#141e30",
+    "technologies": [
+      "AWS",
+      "Python",
+      "S3",
+      "Elastic Transcoder",
+      "Node.js"
+    ],
+    "video": "",
+    "link": "https://braisgf.dev/blog",
+    "gallery": [
+      "/assets/labImg/awstranscoder.jpeg"
+    ],
+    "extension": ".AWS",
+    "status": "stable"
+  },
+  {
+    "title": "🎲 Dice Duel",
+    "description": {
+      "en": "A tabletop-inspired digital game where dice hold magical powers. Use combos, cast spells, and outroll your enemies. Available locally and online.",
+      "es": "Un juego digital inspirado en los de mesa, donde los dados tienen poderes mágicos. Usa combinaciones, lanza hechizos y supera a tus rivales. Disponible en local y online."
+    },
+    "image": "/assets/labImg/diceduel.jpeg",
+    "backgroundColor": "#222d35",
+    "technologies": [
+      "Unity",
+      "C#",
+      "Multiplayer",
+      "Game Design"
+    ],
+    "video": "",
+    "link": "https://braisgf.dev/dice-duel",
+    "gallery": [
+      "/assets/labImg/diceduel.jpeg"
+    ],
+    "extension": ".RPG",
+    "status": "concept"
+  },
+  {
+    "title": "🧠 RPi5 Dev Server",
+    "description": {
+      "en": "A custom server built with a Raspberry Pi 5 that runs my dev environment, local hosting, and automations. Quiet, cheap, and full of power.",
+      "es": "Servidor personalizado construido en Raspberry Pi 5 que aloja mi entorno de desarrollo, webs locales y automatizaciones. Silencioso, barato y con mucha potencia."
+    },
+    "image": "/assets/labImg/PI.jpg",
+    "backgroundColor": "#0d0d0d",
+    "technologies": [
+      "Raspberry Pi 5",
+      "Linux",
+      "Nginx",
+      "Node.js",
+      "Python"
+    ],
+    "video": "",
+    "link": "https://braisgf.dev/blog",
+    "gallery": [
+      "/assets/labImg/PI.jpg"
+    ],
+    "extension": ".SYS",
+    "status": "stable"
+  },
+  {
+    "title": "🚁 ROC – Racing Oriented Copter",
+    "description": {
+      "en": "My personal FPV racing drone, built from scratch. Fast, twitchy, and ready to fly through any challenge. Includes FPV feed and onboard action cam.",
+      "es": "Mi propio dron de carreras FPV, montado desde cero. Rápido, preciso y listo para volar cualquier circuito. Lleva cámara FPV y cámara de acción integrada."
+    },
+    "image": "/assets/labImg/roc.jpg",
+    "backgroundColor": "#080d0f",
+    "technologies": [
+      "FPV",
+      "Custom Drone",
+      "DIY Electronics",
+      "BetaFlight"
+    ],
+    "video": "",
+    "link": "https://braisgf.dev/blog",
+    "gallery": [
+      "/assets/labImg/roc.jpg"
+    ],
+    "extension": ".FPV",
+    "status": "stable"
+  },
+  {
+    "title": "🤖 Robuyutsu (Mobile Game)",
+    "description": {
+      "en": "A competitive robot-fighting mobile game where you customize your mech, learn combos, and fight in underground circuits. Inspired by Beyblade, Street Fighter, and dreams of glory.",
+      "es": "Un juego móvil competitivo de lucha entre robots, donde puedes personalizar tu mecha, aprender combos y pelear en circuitos clandestinos. Inspirado en Beyblade, Street Fighter y sueños de gloria."
+    },
+    "image": "/assets/labImg/wip.jpeg",
+    "backgroundColor": "#1a1a1a",
+    "technologies": [
+      "Unity",
+      "Mobile",
+      "2D Art",
+      "Combat System"
+    ],
+    "video": "",
+    "link": "",
+    "gallery": [
+      "/assets/labImg/wip.jpeg"
+    ],
+    "extension": ".ARC",
+    "status": "locked",
+    "unlockCode": "5labs"
+  },
+  {
+    "title": "⚙️ Combat Robot Mk.I",
+    "description": {
+      "en": "A physical 1-pound battle robot designed to fight in real-life arenas. Equipped with weapons, armor, and attitude. First prototype already terrifying the cat.",
+      "es": "Robot de combate físico de una libra diseñado para batallas reales. Con armas, armadura y mucha actitud. El primer prototipo ya asustó al gato."
+    },
+    "image": "/assets/labImg/wip.jpeg",
+    "backgroundColor": "#000000",
+    "technologies": [
+      "Arduino",
+      "3D Printing",
+      "Mini Motors",
+      "RC",
+      "Battlebot Design"
+    ],
+    "video": "",
+    "link": "",
+    "gallery": [
+      "/assets/labImg/wip.jpeg"
+    ],
+    "extension": ".BOT",
+    "status": "locked",
+    "unlockCode": "poundmaster"
+  },
+  {
+    "title": "🕵️ Sarcasm Detector 9000",
+    "description": {
+      "en": "An experimental AI that scans phrases and detects sarcasm using transformers, NLP and a built-in Spanish sense of humor. Great for Twitter arguments and passive-aggressive Slack messages.",
+      "es": "Una IA experimental que analiza frases y detecta sarcasmo usando NLP, transformers y humor español. Perfecto para discusiones en Twitter o mensajes pasivo-agresivos en Slack."
+    },
+    "image": "/assets/labImg/wip.jpeg",
+    "backgroundColor": "#000000",
+    "technologies": [
+      "Python",
+      "NLP",
+      "AI Transformers",
+      "Humor Classifier"
+    ],
+    "video": "",
+    "link": "https://braisgf.dev/sarcasm-detector",
+    "gallery": [
+      "/assets/labImg/wip.jpeg"
+    ],
+    "extension": ".AI",
+    "status": "locked",
+    "unlockCode": "essarcasmo"
+  }
+]

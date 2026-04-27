@@ -6,25 +6,26 @@
     <title>About Me – Braisgf.dev</title>
     <meta
       name="description"
-      content="Meet Brais – fullstack developer, maker and multipotentialite creator from A Coruña. Learn about his passions, journey and skills."
+      content="Meet Brais – fullstack developer, maker and multipotentialite creator from A Coruña."
     />
     <meta
       name="keywords"
-      content="About Braisgf, Fullstack Dev, Maker, Portfolio, Developer Spain, Personal Site"
+      content="About Braisgf, Fullstack Developer, Maker, Portfolio, Personal Website, Tech"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/about" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/about" />
-
     <link rel="icon" href="/assets/favicon.ico" />
-    <link rel="stylesheet" href="about.css" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
     <script type="application/ld+json" src="/about/schema-about.json"></script>
   </head>
-  <body>
+  <body class="page-about" data-page="about">
     <div class="lang-switch-container">
       <span class="flag">EN</span>
-      <label class="lang-toggle">
+      <label class="lang-toggle" aria-label="Toggle language">
         <input type="checkbox" id="lang-toggle" />
         <span class="slider"></span>
       </label>
@@ -32,69 +33,75 @@
     </div>
 
     <main class="about-container fade-in">
-      <section class="about-card">
+      <article class="about-card">
         <div class="top">
           <img
             src="/assets/Braisgf.jpeg"
-            alt="Photo of Braisgf"
+            alt="Braisgf profile photo"
             class="profile-img"
           />
           <div class="intro">
-            <h1>👋 Hey, I'm Brais</h1>
-            <p class="subtitle">
-              Fullstack Developer • Maker • Multipotentialite
+            <h1 data-i18n="about.greeting">Hey, I'm Brais</h1>
+            <p class="subtitle" data-i18n="about.subtitle">
+              Fullstack Developer &bull; Maker &bull; Multipotentialite
             </p>
-            <p class="motto">"I build useful, fun or just plain cool stuff."</p>
+            <p class="motto" data-i18n="about.motto">
+              "I build useful, fun or just plain cool stuff."
+            </p>
           </div>
         </div>
 
         <div class="content">
-          <p>
+          <p data-i18n="about.bio">
             I studied <strong>Telecommunications</strong> and trained as a
             <strong>Fullstack Developer</strong>. I'm passionate about building
-            things — from websites and apps to Raspberry Pi setups, battle
-            robots or model kits 🛠️
+            things — from websites and apps to Raspberry Pi setups, battle robots
+            or model kits
           </p>
 
           <ul>
-            <li><strong>📍 Location:</strong> A Coruña, Spain</li>
             <li>
-              <strong>🧠 Interests:</strong> Web Dev, AI, Electronics, Indie
-              Games, DIY
+              <strong data-i18n="about.location_label">Location:</strong>
+              <span data-i18n="about.location">A Coruña, Spain</span>
             </li>
             <li>
-              <strong>📚 Background:</strong> Telecommunications + Fullstack
-              Bootcamp
+              <strong data-i18n="about.interests_label">Interests:</strong>
+              <span data-i18n="about.interests">Web Dev, AI, Electronics, Indie Games, DIY</span>
             </li>
             <li>
-              <strong>🧩 Tech Stack:</strong> JS, Node, React, Python, MongoDB,
-              AWS
+              <strong data-i18n="about.background_label">Background:</strong>
+              <span data-i18n="about.background">Telecommunications + Fullstack Bootcamp</span>
             </li>
             <li>
-              <strong>🎯 Goal:</strong> Grow every day and share what I learn
+              <strong data-i18n="about.tech_label">Tech Stack:</strong>
+              <span data-i18n="about.tech">JS, Node, React, Python, MongoDB, AWS</span>
             </li>
             <li>
-              <strong>🎥 On socials:</strong> I talk about tech, geek life and
-              curiosity
+              <strong data-i18n="about.goal_label">Goal:</strong>
+              <span data-i18n="about.goal">Grow every day and share what I learn</span>
+            </li>
+            <li>
+              <strong data-i18n="about.socials_label">On socials:</strong>
+              <span data-i18n="about.socials">I talk about tech, geek life and curiosity</span>
             </li>
           </ul>
 
-          <p>
-            I believe technology is our generation’s magic. My mission? Build
-            things that inspire and spark curiosity 🚀
+          <p data-i18n="about.closing">
+            I believe technology is our generation's magic. My mission? Build
+            things that inspire and spark curiosity
           </p>
 
-          <a href="/" class="btn">← Back to Home</a>
+          <a href="/" class="btn" data-i18n="nav.back">&larr; Back to Home</a>
         </div>
-      </section>
+      </article>
     </main>
 
     <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/thebraisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+      <p>&copy; <span data-i18n="footer.copyright">2025 Braisgf.dev</span></p>
+      <a href="https://github.com/thebraisgf" class="social" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social" target="_blank" rel="noopener">LinkedIn</a>
     </footer>
 
-    <script src="./lang-toggle.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

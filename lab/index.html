@@ -2,105 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Creators Lab – Braisgf.dev</title>
     <meta
       name="description"
-      content="A retro-inspired interactive lab of creative experiments, games and tools made by Braisgf. From Raspberry Pi hosting to robot combat AI."
+      content="A retro-inspired interactive lab of creative experiments, games and tools made by Braisgf."
     />
     <meta
       name="keywords"
-      content="Braisgf, Creators Lab, indie dev, fullstack, Unity, Raspberry Pi, AI projects, robot fighting, FPV, portfolio"
+      content="Braisgf Lab, Creative Lab, Web Projects, Indie Games, Tech Experiments"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/lab" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/lab" />
-    <!-- Favicon & Manifest -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Creators Lab – Braisgf.dev" />
-    <meta
-      property="og:description"
-      content="Welcome to the lab. Explore fullstack builds, indie games, AWS tools and robotic chaos made by Braisgf."
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/braisgf-dev.png"
-    />
-    <meta property="og:url" content="https://braisgf.dev/lab" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Creators Lab – Braisgf.dev" />
-    <meta
-      name="twitter:description"
-      content="Explore creative experiments built with code and caffeine."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/braisgf-lab.png"
-    />
-
-    <!-- Schema -->
-    <script type="application/ld+json" src="/lab/schema-lab.json"></script>
-
-    <!-- Styles and Scripts -->
-    <link rel="stylesheet" href="lab.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
-    </script>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body>
+  <body class="page-lab" data-page="lab">
     <div class="lang-switch-container">
       <span class="flag">EN</span>
-      <label class="lang-toggle">
+      <label class="lang-toggle" aria-label="Toggle language">
         <input type="checkbox" id="lang-toggle" />
         <span class="slider"></span>
       </label>
       <span class="flag">ES</span>
     </div>
-    <a href="/" class="btn">← Back to Home</a>
 
-    <div class="lab-header">
-      <h1>> Initializing Creators Lab<span class="blinking-cursor">_</span></h1>
-      <p class="boot-log" id="boot-log"></p>
+    <header class="lab-header">
+      <h1>
+        > <span data-i18n="lab.boot_title">Initializing Creators Lab</span
+        ><span class="blinking-cursor">_</span>
+      </h1>
+      <p class="boot-log" aria-live="polite"></p>
+    </header>
+
+    <main class="lab-grid" aria-label="Project cards"></main>
+
+    <div id="labModal" class="modal" role="dialog" aria-modal="true">
+      <div class="modal-content"></div>
     </div>
 
-    <div class="lab-grid" id="lab-grid"></div>
-
-    <!-- Modal -->
-    <div class="modal" id="project-modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <h2 id="modal-title"></h2>
-        <img id="modal-image" src="" alt="" />
-        <p id="modal-desc"></p>
-        <video id="modal-video" controls></video>
-        <div id="modal-techs"></div>
-      </div>
-    </div>
+    <a href="/" class="btn" data-i18n="nav.back">&larr; Back to Home</a>
 
     <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/braisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+      <p>&copy; <span data-i18n="footer.copyright">2025 Braisgf.dev</span></p>
+      <a href="https://github.com/thebraisgf" class="social" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social" target="_blank" rel="noopener">LinkedIn</a>
     </footer>
 
-    <script src="lab.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/lab.js"></script>
   </body>
 </html>

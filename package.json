@@ -1,0 +1,15 @@
+{
+  "name": "braisgfdev",
+  "version": "2.0.0",
+  "description": "Personal website of Braisgf - Fullstack Developer & Maker",
+  "private": true,
+  "scripts": {
+    "scss:build": "sass scss/main.scss css/main.css --style=compressed --no-source-map",
+    "scss:watch": "sass scss/main.scss css/main.css --watch",
+    "build": "npm run scss:build",
+    "dev": "npm run scss:watch"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

@@ -1,0 +1,82 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-about {
+  padding: $spacing-xl $spacing-md;
+
+  .about-container {
+    max-width: $max-width-content;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+    z-index: 2;
+  }
+
+  .about-card {
+    @include glass-card;
+    padding: $spacing-xl;
+    color: #eee;
+  }
+
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .intro {
+    margin-left: $spacing-xl;
+    max-width: 500px;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      @include gradient-text;
+      @include shimmer-effect;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: $color-primary-light;
+    margin-top: $spacing-sm;
+  }
+
+  .motto {
+    font-style: italic;
+    color: $color-text-highlight;
+    margin-top: 0.8rem;
+  }
+
+  .content {
+    margin-top: $spacing-xl;
+    line-height: 1.6;
+    font-size: 1.05rem;
+
+    ul {
+      margin: $spacing-lg 0;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  @include mobile {
+    .top {
+      flex-direction: column;
+    }
+
+    .intro {
+      margin-left: 0;
+      margin-top: $spacing-md;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

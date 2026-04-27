@@ -1,0 +1,102 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-home {
+  .container {
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero {
+    @include glass-card;
+    padding: 2.5rem;
+    max-width: $max-width-content;
+    width: 90%;
+    transition: all $transition-slow;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.4s;
+
+    h1 {
+      font-family: $font-heading;
+      font-size: 3.5rem;
+      @include gradient-text;
+      @include shimmer-effect;
+      font-weight: 700;
+      margin-bottom: $spacing-md;
+    }
+
+    .position {
+      font-size: 1.2rem;
+      color: $color-primary-light;
+      margin-bottom: $spacing-md;
+      letter-spacing: 1px;
+    }
+
+    .motto {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: $color-text-accent;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-texts {
+    @include flex-column;
+    margin-left: 3rem;
+    align-items: flex-start;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: $spacing-xl;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include mobile {
+    .hero-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-texts {
+      margin: $spacing-md 0 0 0;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .buttons {
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+  }
+}
