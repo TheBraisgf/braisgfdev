@@ -1,0 +1,133 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-blog {
+  .blog-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: $spacing-2xl $spacing-xl 6rem;
+    z-index: 2;
+    position: relative;
+  }
+
+  .blog-title {
+    font-size: 3rem;
+    color: $color-primary-dark;
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    font-family: $font-heading;
+    @include shimmer-effect;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  .blog-posts {
+    @include flex-column;
+    gap: $spacing-xl;
+  }
+
+  .blog-post {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: $radius-lg;
+    padding: $spacing-xl;
+    box-shadow: $shadow-card;
+    transition: all $transition-slow;
+    animation: fadeInUp 0.8s ease;
+    position: relative;
+    border: 1px solid $color-border;
+
+    &:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+  }
+
+  .blog-post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+
+    h2 {
+      font-size: 1.6rem;
+      color: $color-primary;
+    }
+  }
+
+  .post-date {
+    font-size: 0.9rem;
+    color: $color-text-subtle;
+  }
+
+  .blog-summary {
+    margin-top: $spacing-md;
+    font-size: 1.1rem;
+    color: $color-text-muted;
+    line-height: 1.5;
+  }
+
+  .post-image {
+    margin-top: $spacing-md;
+    width: 100%;
+    height: auto;
+    border-radius: $radius-md;
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .read-more-btn {
+    margin-top: $spacing-lg;
+    background: rgba($color-primary, 0.2);
+    border: 1px solid $color-primary;
+    color: $color-text;
+    padding: 0.6rem 1.5rem;
+    border-radius: $radius-pill;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background $transition-base;
+    backdrop-filter: blur(8px);
+
+    &:hover {
+      background: $color-primary;
+      color: $color-bg;
+    }
+  }
+
+  #modal-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: $color-text-muted;
+    margin-top: $spacing-md;
+
+    p {
+      margin-bottom: $spacing-md;
+      text-align: justify;
+
+      &::first-letter {
+        font-weight: bold;
+        color: $color-primary;
+      }
+    }
+
+    ul {
+      margin-left: $spacing-lg;
+      list-style-type: square;
+    }
+
+    a {
+      color: #42d1ff;
+      text-decoration: underline;
+    }
+  }
+
+  @include mobile {
+    .blog-title {
+      font-size: 2.2rem;
+    }
+
+    .blog-post {
+      padding: $spacing-lg;
+    }
+  }
+}

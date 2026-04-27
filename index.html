@@ -1,125 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- SEO BASICS -->
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Braisgf.dev – Fullstack Developer & Maker</title>
     <meta
       name="description"
-      content="Welcome to Braisgf.dev – A geeky digital lab, fullstack dev portfolio, and experimental playground built and hosted on Raspberry Pi by Brais, a developer and creator from Spain."
+      content="Welcome to Braisgf.dev – A geeky digital lab, fullstack dev portfolio, and experimental playground built and hosted on Raspberry Pi."
     />
     <meta
       name="keywords"
-      content="Braisgf, fullstack developer, portfolio, Raspberry Pi, maker, indie dev, software, Unity, AWS, JavaScript, blog, tech"
+      content="Braisgf, Fullstack Developer, Web Developer, Maker, Raspberry Pi, Portfolio, Creative Lab"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/" />
     <link rel="alternate" hreflang="en" href="https://braisgf.dev/" />
-
-    <!-- FAVICON -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-
-    <!-- FONTS -->
+    <link rel="alternate" hreflang="es" href="https://braisgf.dev/" />
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- OPEN GRAPH / FACEBOOK -->
-    <meta property="og:title" content="Braisgf.dev – Fullstack Dev & Maker" />
-    <meta
-      property="og:description"
-      content="Explore projects, blogs, experiments and fullstack builds by Brais. Hosted on Raspberry Pi. Made with ❤️ by a maker."
-    />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-    <meta property="og:url" content="https://braisgf.dev/" />
-    <meta property="og:type" content="website" />
-
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Braisgf.dev – Fullstack Dev & Maker" />
-    <meta
-      name="twitter:description"
-      content="Personal dev lab by Braisgf – featuring code, hardware, projects and ideas."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-
-    <!-- PWA MANIFEST -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- STRUCTURED DATA -->
+    <link rel="stylesheet" href="/css/main.css" />
     <script type="application/ld+json" src="/schema.json"></script>
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
-    </script>
   </head>
-  <body>
-    <canvas id="bgCanvas"></canvas>
-
-    <main class="container">
-      <section class="hero">
-        <div class="hero-content">
-          <div class="hero-container">
-            <img
-              src="/assets/Braisgf.jpeg"
-              alt="Photo of Braisgf"
-              class="profile-img"
-            />
-            <div class="hero-texts">
-              <h1>Braisgf.dev</h1>
-              <p class="position">Full Stack Developer & Creator</p>
-              <p class="motto">"Imagine, Code, Create, Share, Repeat"</p>
-            </div>
-          </div>
-          <div class="buttons">
-            <a href="/about" class="btn">About Me 👤</a>
-            <a href="/career" class="btn">My Career 💼</a>
-            <a href="/stack" class="btn">Skill Cloud 🧠</a>
-            <a href="/lab" class="btn">Creators Lab 🧪</a>
-            <a href="/blog" class="btn">Creator Blog 📖</a>
-            <a href="/social" class="btn">Social Media 🌐</a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/thebraisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
-    </footer>
+  <body class="page-home" data-page="home">
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
 
     <div class="lang-switch-container">
       <span class="flag">EN</span>
-      <label class="lang-toggle">
+      <label class="lang-toggle" aria-label="Toggle language">
         <input type="checkbox" id="lang-toggle" />
         <span class="slider"></span>
       </label>
       <span class="flag">ES</span>
     </div>
 
-    <script src="script.js"></script>
+    <main class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-container">
+          <img
+            src="/assets/Braisgf.jpeg"
+            alt="Braisgf profile photo"
+            class="profile-img"
+          />
+          <div class="hero-texts">
+            <h1 id="hero-title">Braisgf.dev</h1>
+            <p class="position" data-i18n="home.position">
+              Full Stack Developer & Creator
+            </p>
+            <p class="motto" data-i18n="home.motto">
+              "Imagine, Code, Create, Share, Repeat"
+            </p>
+          </div>
+        </div>
+        <nav class="buttons" aria-label="Site navigation">
+          <a href="/about/" class="btn" data-i18n="nav.about">About Me</a>
+          <a href="/career/" class="btn" data-i18n="nav.career">My Career</a>
+          <a href="/stack/" class="btn" data-i18n="nav.stack">Skill Cloud</a>
+          <a href="/lab/" class="btn" data-i18n="nav.lab">Creators Lab</a>
+          <a href="/blog/" class="btn" data-i18n="nav.blog">Creator Blog</a>
+          <a href="/social/" class="btn" data-i18n="nav.social">Social Media</a>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; <span data-i18n="footer.copyright">2025 Braisgf.dev</span></p>
+      <a href="https://github.com/thebraisgf" class="social" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social" target="_blank" rel="noopener">LinkedIn</a>
+    </footer>
+
+    <div class="cookie-banner" id="cookie-banner">
+      <span data-i18n="cookie.message">This site uses cookies to save your preferences.</span>
+      <button id="cookie-accept" data-i18n="cookie.accept">Accept</button>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/home.js"></script>
   </body>
 </html>

@@ -1,0 +1,34 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+body,
+html {
+  font-family: $font-body;
+  height: 100%;
+  background: $color-bg;
+  color: $color-text;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  @include flex-column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+}
+
+// Shared canvas background
+canvas#bgCanvas,
+canvas#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

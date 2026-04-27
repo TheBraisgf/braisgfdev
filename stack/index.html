@@ -2,107 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stack & Skills – Braisgf.dev</title>
     <meta
       name="description"
-      content="A full-stack cloud of skills by Braisgf: from HTML to AI, Unity to AWS, DevOps, and electronics."
+      content="A full-stack cloud of skills by Braisgf: from HTML to AI, Unity to AWS."
     />
     <meta
       name="keywords"
-      content="Braisgf, tech stack, developer skills, fullstack, frontend, backend, AWS, maker, tools, portfolio, technologies"
+      content="Tech Stack, Skills, Braisgf, React, Node, Python, AWS, Unity, DevOps, Maker"
     />
     <meta name="author" content="Braisgf" />
     <link rel="canonical" href="https://braisgf.dev/stack" />
-
-    <!-- Favicon & Manifest -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Fullstack Skill Cloud – Braisgf.dev" />
-    <meta
-      property="og:description"
-      content="Explore the full universe of technologies used by Braisgf: coding, devops, design, electronics and game engines."
+    <link rel="icon" href="/assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/stack-og.png"
-    />
-    <meta property="og:url" content="https://braisgf.dev/stack" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Stack & Skills – Braisgf.dev" />
-    <meta
-      name="twitter:description"
-      content="A dynamic cloud of skills and tools from the fullstack multiverse."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/stack-twitter.png"
-    />
-
-    <!-- Schema -->
-    <script type="application/ld+json" src="/stack/schema-stack.json"></script>
-
-    <link rel="stylesheet" href="stack.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
-    </script>
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
-  <body>
+  <body class="page-stack" data-page="stack">
     <div class="lang-switch-container">
       <span class="flag">EN</span>
-      <label class="lang-toggle">
+      <label class="lang-toggle" aria-label="Toggle language">
         <input type="checkbox" id="lang-toggle" />
         <span class="slider"></span>
       </label>
       <span class="flag">ES</span>
     </div>
-    <main class="stack-wrapper">
-      <h1 class="stack-title">🧪 Skill Cloud</h1>
 
-      <div class="filters">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="core">Core</button>
-        <button class="filter-btn" data-category="frontend">Frontend</button>
-        <button class="filter-btn" data-category="backend">Backend</button>
-        <button class="filter-btn" data-category="devops">DevOps</button>
-        <button class="filter-btn" data-category="tools">Tools</button>
-        <button class="filter-btn" data-category="creative">Creative</button>
-        <button class="filter-btn" data-category="maker">Maker</button>
-        <button class="reroll-btn">🔁 Reroll</button>
+    <main class="stack-wrapper">
+      <h1 class="stack-title" data-i18n="stack.title">Skill Cloud</h1>
+
+      <div class="filters" role="group" aria-label="Filter skills">
+        <button class="filter-btn active" data-filter="all" data-i18n="stack.all">All</button>
+        <button class="filter-btn" data-filter="core" data-i18n="stack.core">Core</button>
+        <button class="filter-btn" data-filter="frontend" data-i18n="stack.frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend" data-i18n="stack.backend">Backend</button>
+        <button class="filter-btn" data-filter="devops" data-i18n="stack.devops">DevOps</button>
+        <button class="filter-btn" data-filter="tools" data-i18n="stack.tools">Tools</button>
+        <button class="filter-btn" data-filter="creative" data-i18n="stack.creative">Creative</button>
+        <button class="filter-btn" data-filter="maker" data-i18n="stack.maker">Maker</button>
+        <button class="reroll-btn" data-i18n="stack.reroll">Reroll</button>
       </div>
 
-      <div id="cloud" class="cloud"></div>
-      <a href="/" class="btn">← Back to Home</a>
+      <div class="cloud" aria-live="polite"></div>
     </main>
 
-    <div id="tooltip" class="tooltip">
-      <div class="arrow"></div>
-      <p id="tooltip-content"></p>
-    </div>
+    <a href="/" class="btn-back" data-i18n="nav.back">&larr; Back to Home</a>
 
     <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/braisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
+      <p>&copy; <span data-i18n="footer.copyright">2025 Braisgf.dev</span></p>
+      <a href="https://github.com/thebraisgf" class="social" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/braisgf" class="social" target="_blank" rel="noopener">LinkedIn</a>
     </footer>
 
-    <script src="stack.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/stack.js"></script>
   </body>
 </html>

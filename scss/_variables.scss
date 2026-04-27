@@ -1,0 +1,63 @@
+// === Colors ===
+$color-primary: #7be43e;
+$color-primary-dark: #5b913b;
+$color-primary-light: #b6ff9e;
+$color-primary-glow: rgba(123, 228, 62, 0.5);
+
+$color-bg: #000;
+$color-bg-card: rgba(20, 20, 20, 0.5);
+$color-bg-overlay: rgba(0, 0, 0, 0.4);
+$color-bg-elevated: #111;
+
+$color-text: #fff;
+$color-text-muted: #ccc;
+$color-text-subtle: #aaa;
+$color-text-accent: #a7ffa2;
+$color-text-highlight: #c2ffd6;
+
+$color-border: rgba(123, 228, 62, 0.2);
+$color-border-solid: #7be43e;
+
+// Lab-specific colors
+$color-lab-green: #00ff88;
+$color-lab-green-light: #00ffaa;
+$color-lab-bg: #0d0d0d;
+$color-lab-text: #b0ffcc;
+$color-lab-heading: #7affd8;
+
+// === Fonts ===
+$font-body: "Roboto", sans-serif;
+$font-heading: "Space Grotesk", sans-serif;
+$font-mono: "Share Tech Mono", monospace;
+$font-display: "Orbitron", sans-serif;
+
+// === Spacing ===
+$spacing-xs: 0.3rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 4rem;
+
+// === Border Radius ===
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-pill: 30px;
+
+// === Breakpoints ===
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+
+// === Transitions ===
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.4s ease-in-out;
+
+// === Shadows ===
+$shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+$shadow-glow: 0 0 20px $color-primary-glow;
+
+// === Layout ===
+$max-width-content: 900px;
+$max-width-wide: 1100px;

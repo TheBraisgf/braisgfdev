@@ -1,0 +1,65 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-privacy {
+  padding: $spacing-xl $spacing-md;
+
+  .privacy-container {
+    max-width: $max-width-content;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+  }
+
+  .privacy-card {
+    @include glass-card;
+    padding: $spacing-xl;
+  }
+
+  .intro {
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      @include gradient-text;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: $color-primary-light;
+    margin-top: $spacing-sm;
+  }
+
+  .motto {
+    font-style: italic;
+    color: $color-text-highlight;
+    margin-top: 0.8rem;
+  }
+
+  .content {
+    margin-top: $spacing-xl;
+    line-height: 1.6;
+    font-size: 1.05rem;
+
+    h2 {
+      color: $color-primary;
+      margin-top: $spacing-lg;
+      margin-bottom: $spacing-sm;
+    }
+
+    ul {
+      margin: $spacing-lg 0;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+
+    li {
+      margin-bottom: $spacing-sm;
+    }
+
+    a {
+      color: #42d1ff;
+      text-decoration: underline;
+    }
+  }
+}

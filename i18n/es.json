@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "home_title": "Braisgf.dev – Desarrollador Fullstack & Maker",
+    "home_description": "Bienvenido a Braisgf.dev – Laboratorio digital, portfolio fullstack y zona experimental geek, creado y alojado en Raspberry Pi por Brais, desarrollador y creador desde España.",
+    "about_title": "Sobre mí – Braisgf.dev",
+    "about_description": "Conoce a Brais – desarrollador fullstack, maker y creador multipotencial de A Coruña. Descubre sus pasiones, trayectoria y habilidades.",
+    "blog_title": "Blog – Braisgf.dev",
+    "blog_description": "Descubre artículos de tecnología de Braisgf – Desarrollador Fullstack, Maker y Creador.",
+    "career_title": "Mi Trayectoria – Braisgf.dev",
+    "career_description": "Descubre la carrera profesional de Braisgf – desde telecomunicaciones y cine hasta desarrollo fullstack e inteligencia artificial en Santander.",
+    "lab_title": "Creators Lab – Braisgf.dev",
+    "lab_description": "Un laboratorio interactivo con estética retro de experimentos creativos, juegos y herramientas creadas por Braisgf.",
+    "stack_title": "Stack & Skills – Braisgf.dev",
+    "stack_description": "Una nube completa de habilidades de Braisgf: desde HTML a IA, Unity a AWS, DevOps y electrónica.",
+    "social_title": "Multiverso Social – Braisgf.dev",
+    "social_description": "Explora la presencia social de Braisgf en la galaxia: YouTube, TikTok, GitHub, Twitch y más.",
+    "privacy_title": "Política de Privacidad – Braisgf.dev",
+    "privacy_description": "Política de privacidad general para todas las apps, juegos y herramientas desarrolladas por Braisgf.dev.",
+    "wip_title": "En Construcción – Braisgf.dev"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "career": "Mi carrera",
+    "stack": "Nube de Skills",
+    "lab": "Creators Lab",
+    "blog": "Blog",
+    "social": "Redes sociales",
+    "back": "Volver"
+  },
+  "home": {
+    "position": "Desarrollador Fullstack & Creador",
+    "motto": "\"Imaginar, Programar, Crear, Compartir, Repetir\""
+  },
+  "about": {
+    "greeting": "Hola, soy Brais",
+    "subtitle": "Desarrollador Fullstack • Maker • Multipotencial",
+    "motto": "\"Construyo cosas útiles, divertidas o simplemente chulas.\"",
+    "bio": "Estudié <strong>Telecomunicaciones</strong> y me formé como <strong>Desarrollador Fullstack</strong>. Me apasiona construir cosas: desde webs y apps hasta montajes con Raspberry Pi, robots de combate o maquetas",
+    "location_label": "Ubicación:",
+    "location": "A Coruña, España",
+    "interests_label": "Intereses:",
+    "interests": "Desarrollo Web, IA, Electrónica, Juegos Indie, DIY",
+    "background_label": "Formación:",
+    "background": "Telecomunicaciones + Bootcamp Fullstack",
+    "tech_label": "Stack:",
+    "tech": "JS, Node, React, Python, MongoDB, AWS",
+    "goal_label": "Objetivo:",
+    "goal": "Mejorar cada día y compartir lo que aprendo",
+    "socials_label": "En redes:",
+    "socials": "Hablo de tecnología, cultura geek y curiosidades",
+    "closing": "Creo que la tecnología es la magia de nuestra generación. ¿Mi misión? Crear cosas que inspiren y despierten la curiosidad"
+  },
+  "blog": {
+    "title": "Blog",
+    "read_more": "Leer más",
+    "error": "Error al cargar los posts."
+  },
+  "career": {
+    "title": "Mi Trayectoria Profesional",
+    "telecom_title": "Ingeniería de Telecomunicación",
+    "telecom_date": "2016 – 2020",
+    "telecom_desc": "Estudié Ingeniería de Telecomunicación, donde adquirí una sólida base en lógica, hardware y sistemas.",
+    "film_title": "Dirección y Producción Cinematográfica",
+    "film_date": "2020 – 2021",
+    "film_desc": "Esta etapa creativa me enseñó a comunicar visualmente, contar historias y generar experiencias memorables en digital.",
+    "bootcamp_title": "Bootcamp Fullstack – Hack A Boss",
+    "bootcamp_date": "2021",
+    "bootcamp_desc": "Formación intensiva en desarrollo web fullstack. Aquí comenzó oficialmente mi carrera como desarrollador.",
+    "zara_title": "Zara.com – Frontend Developer",
+    "zara_date": "2021 – 2023",
+    "zara_desc": "Desarrollé interfaces escalables y herramientas internas con React y Python. También colaboré en UX, contenido editorial y branding para uno de los sitios más visitados del mundo.",
+    "santander_ai_title": "Santander – Editor de Imágenes con IA",
+    "santander_ai_date": "2023",
+    "santander_ai_desc": "Creé un editor de imágenes inteligente con Angular y LitElement, integrando máscaras, filtros y generación por prompt.",
+    "santander_form_title": "Santander – Evaluador de Formularios",
+    "santander_form_date": "2023 – 2024",
+    "santander_form_desc": "Desarrollé interfaces en Angular que utilizan IA para evaluar y validar documentos legales.",
+    "santander_python_title": "Santander – Backend Python IA",
+    "santander_python_date": "2024 – Actualidad",
+    "santander_python_desc": "Diseño APIs backend en Python para conectar con servicios de IA generativa. Me centro en la escalabilidad y optimización de prompts."
+  },
+  "lab": {
+    "boot_title": "Inicializando Creators Lab",
+    "title": "CREATORS LAB",
+    "technologies": "Tecnologías:",
+    "link": "Enlace:",
+    "logs": [
+      "[BOT] Arrancando la consola retro...",
+      "[CAFE] Preparando café para la IA...",
+      "[CEREBRO] Sincronizando circuitos neuronales...",
+      "[DISCO] Montando disquetes...",
+      "[ARCHIVOS] archivos sospechosos encontrados.",
+      "[FUEGO] Compilando creatividad...",
+      "[CHISPA] Intensidad del terminal: 9000%",
+      "[LISTO] Todos los sistemas operativos. ¡Adelante!"
+    ],
+    "enter_code": "Introduce el código de acceso...",
+    "wrong_code": "Código incorrecto"
+  },
+  "stack": {
+    "title": "Nube de Skills",
+    "all": "Todos",
+    "core": "Core",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Herramientas",
+    "creative": "Creativo",
+    "maker": "Maker",
+    "reroll": "Reordenar"
+  },
+  "social": {
+    "intro": "Haz clic en un planeta para explorar sus secretos...",
+    "visit": "Visitar",
+    "back": "Volver al inicio"
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "last_update": "Última actualización: abril de 2025",
+    "applies_to": "Aplica a todos los productos de Braisgf.dev",
+    "intro_text": "Esta política de privacidad se aplica a todos los productos desarrollados y publicados por <strong>Braisgf.dev</strong>, incluyendo aplicaciones móviles, videojuegos, sitios web, herramientas y software presente o futuro.",
+    "section1_title": "1. Información que recopilamos",
+    "section1_text": "No recopilamos información personal identificable de forma directa. Sin embargo, los servicios de terceros integrados en nuestros productos pueden recopilar datos técnicos como:",
+    "section1_items": ["ID del dispositivo", "Sistema operativo y versión", "Idioma y región", "Interacción con la app", "Ubicación aproximada"],
+    "section2_title": "2. Servicios de terceros utilizados",
+    "section2_text": "Los siguientes servicios pueden estar presentes en nuestros productos:",
+    "section2_items": ["<strong>Google AdMob</strong> – para mostrar anuncios", "<strong>Google Play Services</strong>", "<strong>Unity Analytics</strong> o <strong>Firebase</strong> (si aplica)"],
+    "section2_link": "Consulta la <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Política de privacidad de Google</a> para más información.",
+    "section3_title": "3. Publicidad",
+    "section3_text": "Algunos productos pueden mostrar anuncios personalizados o no personalizados. Puedes gestionar tus preferencias en la configuración de tu dispositivo.",
+    "section4_title": "4. Sitios web y cookies",
+    "section4_text": "Nuestros sitios web pueden utilizar cookies con fines funcionales y analíticos. No se almacena información personal sin consentimiento.",
+    "section5_title": "5. Derechos del usuario",
+    "section5_text": "Puedes contactarnos si deseas ejercer tus derechos respecto a los datos gestionados por servicios de terceros.",
+    "section6_title": "6. Cambios",
+    "section6_text": "Esta política puede actualizarse con el tiempo. Los cambios se publicarán en esta página.",
+    "section7_title": "7. Contacto",
+    "section7_text": "Si tienes cualquier duda, puedes escribir a <a href=\"mailto:braisgf@gmail.com\">braisgf.dev@gmail.com</a>.",
+    "back_btn": "Volver a la web"
+  },
+  "wip": {
+    "title": "En Construcción",
+    "line1": "Esta sección de <strong>Braisgf.dev</strong> está todavía en desarrollo.",
+    "line2": "Probablemente esté programando ahora mismo, bebiendo agua y escuchando lo-fi",
+    "back": "Volver a la seguridad"
+  },
+  "cookie": {
+    "message": "Este sitio usa cookies para guardar tus preferencias.",
+    "accept": "Aceptar"
+  },
+  "footer": {
+    "copyright": "2025 Braisgf.dev"
+  }
+}

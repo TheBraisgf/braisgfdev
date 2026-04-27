@@ -1,0 +1,132 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-social {
+  font-family: $font-heading;
+  height: 100%;
+  overflow: hidden;
+
+  .spaceship {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    z-index: 999;
+    transition: top 1s ease, left 1s ease;
+    pointer-events: none;
+  }
+
+  .intro-text {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: $color-primary;
+    z-index: 999;
+    animation: fadeInText 2s ease;
+  }
+
+  .back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.05);
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-pill;
+    font-weight: bold;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background $transition-base;
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+    }
+  }
+
+  .universe {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .planets {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .planet {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    transition: all $transition-slow;
+    @include flex-center;
+    cursor: pointer;
+
+    &.focused {
+      width: 300px;
+      height: 300px;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1.1);
+      z-index: 10;
+
+      .planet-info {
+        display: block;
+      }
+    }
+  }
+
+  .planet-info {
+    display: none;
+    position: absolute;
+    bottom: -140px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    width: 250px;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid $color-primary;
+    backdrop-filter: blur(10px);
+    animation: fadeIn $transition-base;
+
+    a {
+      color: $color-primary;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  @include mobile {
+    .planet {
+      width: 80px;
+      height: 80px;
+
+      &.focused {
+        width: 240px;
+        height: 240px;
+
+        .planet-info {
+          width: 200px;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}

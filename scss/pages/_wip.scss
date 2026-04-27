@@ -1,0 +1,33 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.page-wip {
+  .wip-container {
+    @include flex-center;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: $spacing-2xl $spacing-xl;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .wip-content {
+    @include glass-card;
+    padding: $spacing-xl;
+    max-width: 600px;
+
+    h1 {
+      font-size: 2.5rem;
+      @include gradient-text;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: $color-text-muted;
+      margin-bottom: $spacing-md;
+      line-height: 1.6;
+    }
+  }
+}

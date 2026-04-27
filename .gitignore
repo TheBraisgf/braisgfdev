@@ -19,3 +19,4 @@ build/
 *.swp
 .cache/
 coverage/
+package-lock.json
