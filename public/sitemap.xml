@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://braisgf.dev/</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es"/><priority>1.0</priority></url>
+  <url><loc>https://braisgf.dev/es</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es"/><priority>0.9</priority></url>
+  <url><loc>https://braisgf.dev/about</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/about"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/about"/><priority>0.8</priority></url>
+  <url><loc>https://braisgf.dev/es/about</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/about"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/about"/><priority>0.8</priority></url>
+  <url><loc>https://braisgf.dev/career</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/career"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/career"/><priority>0.7</priority></url>
+  <url><loc>https://braisgf.dev/es/career</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/career"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/career"/><priority>0.7</priority></url>
+  <url><loc>https://braisgf.dev/experiments</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments"/><priority>0.9</priority></url>
+  <url><loc>https://braisgf.dev/es/experiments</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments"/><priority>0.9</priority></url>
+  <url><loc>https://braisgf.dev/experiments/001</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/001"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/001"/><priority>0.8</priority></url>
+  <url><loc>https://braisgf.dev/experiments/002</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/002"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/002"/><priority>0.8</priority></url>
+  <url><loc>https://braisgf.dev/experiments/003</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/003"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/003"/><priority>0.8</priority></url>
+  <url><loc>https://braisgf.dev/notes</loc><priority>0.5</priority></url>
+  <url><loc>https://braisgf.dev/es/notes</loc><priority>0.5</priority></url>
+</urlset>
