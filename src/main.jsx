@@ -5,6 +5,7 @@ import App from './App.jsx'
 import './styles/global.css'
 import './styles/navigation.css'
 import './styles/resources.css'
+import './styles/about.css'
 import './i18n/config.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
