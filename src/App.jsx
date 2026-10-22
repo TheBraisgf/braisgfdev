@@ -5,7 +5,6 @@ import { Layout } from './components/Layout.jsx'
 import { Home } from './pages/Home.jsx'
 import { Archive } from './pages/Archive.jsx'
 import { Experiment } from './pages/Experiment.jsx'
-import { Notes } from './pages/Notes.jsx'
 import { About } from './pages/About.jsx'
 import { Career } from './pages/Career.jsx'
 import { NotFound } from './pages/NotFound.jsx'
@@ -20,8 +19,8 @@ export default function App() {
   }, [location.pathname])
 
   return <Layout><Routes>
-    <Route path="/" element={<Home />} /><Route path="/experiments" element={<Archive />} /><Route path="/experiments/:id" element={<Experiment />} /><Route path="/notes" element={<Notes />} /><Route path="/about" element={<About />} /><Route path="/career" element={<Career />} />
-    <Route path="/es" element={<Home />} /><Route path="/es/experiments" element={<Archive />} /><Route path="/es/experiments/:id" element={<Experiment />} /><Route path="/es/notes" element={<Notes />} /><Route path="/es/about" element={<About />} /><Route path="/es/career" element={<Career />} />
+    <Route path="/" element={<Home />} /><Route path="/experiments" element={<Archive />} /><Route path="/experiments/:id" element={<Experiment />} /><Route path="/about" element={<About />} /><Route path="/career" element={<Career />} />
+    <Route path="/es" element={<Home />} /><Route path="/es/experiments" element={<Archive />} /><Route path="/es/experiments/:id" element={<Experiment />} /><Route path="/es/about" element={<About />} /><Route path="/es/career" element={<Career />} />
     <Route path="*" element={<NotFound />} />
   </Routes></Layout>
 }
