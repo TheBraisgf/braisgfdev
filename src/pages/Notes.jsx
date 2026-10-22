@@ -9,19 +9,19 @@ export function Notes() {
   const prefix = pathname.startsWith('/es') ? '/es' : ''
 
   return (
-    <main className="notes-page section-pad">
+    <main className="archive-page section-pad">
       <Link className="back-link" to={prefix || '/'}>← {t('notes.back')}</Link>
       <header className="archive-hero">
         <p className="eyebrow">{t('notes.eyebrow')}</p>
         <h1>{t('notes.title')}</h1>
         <p>{t('notes.intro')}</p>
       </header>
-      <div className="notes-list">
+      <div className="archive-list">
         {notes.map((id) => (
-          <article className="note-row" key={id}>
+          <article className="archive-row" key={id}>
             <span className="archive-number">{t(`notes.items.${id}.date`)}</span>
-            <div><h2>{t(`notes.items.${id}.title`)}</h2><p>{t(`notes.items.${id}.summary`)}</p></div>
-            <span className="note-arrow">↗</span>
+            <div><span className="card-kicker">NOTE {id}</span><h2>{t(`notes.items.${id}.title`)}</h2><p>{t(`notes.items.${id}.summary`)}</p></div>
+            <span className="archive-arrow">↗</span>
           </article>
         ))}
       </div>
