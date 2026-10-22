@@ -1,3 +1,5 @@
+import { videoBlaze, videoDice, videoRoc, labHero } from './assets.js'
+
 export const values = [
   { id: 'imagine', icon: '01', accent: 'acid' },
   { id: 'create', icon: '02', accent: 'orange' },
@@ -6,10 +8,10 @@ export const values = [
 ]
 
 export const videos = [
-  { id: '01', image: '/assets/labImg/braisgfdev.jpg', platform: 'TikTok', title: 'The lab in public', url: 'https://www.tiktok.com/@braisgfroom' },
-  { id: '02', image: '/assets/labImg/blaze.jpg', platform: 'TikTok', title: 'Building a game from scratch', url: 'https://www.tiktok.com/@braisgfroom' },
-  { id: '03', image: '/assets/labImg/roc.jpg', platform: 'YouTube', title: 'Longer experiments & stories', url: 'https://www.youtube.com/@braisgfroom' },
-  { id: '04', image: '/assets/labImg/diceduel.jpeg', platform: 'Twitch', title: 'Making things live', url: 'https://www.twitch.tv/braisgfroom' }
+  { id: '01', image: labHero, platform: 'TikTok', title: 'The lab in public', url: 'https://www.tiktok.com/@braisgfroom' },
+  { id: '02', image: videoBlaze, platform: 'TikTok', title: 'Building a game from scratch', url: 'https://www.tiktok.com/@braisgfroom' },
+  { id: '03', image: videoRoc, platform: 'YouTube', title: 'Longer experiments & stories', url: 'https://www.youtube.com/@braisgfroom' },
+  { id: '04', image: videoDice, platform: 'Twitch', title: 'Making things live', url: 'https://www.twitch.tv/braisgfroom' }
 ]
 
 export const pollOptions = [
