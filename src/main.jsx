@@ -7,6 +7,7 @@ import './styles/navigation.css'
 import './styles/resources.css'
 import './styles/about.css'
 import './styles/experience.css'
+import './styles/community.css'
 import './i18n/config.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
