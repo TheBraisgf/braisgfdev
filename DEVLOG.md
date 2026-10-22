@@ -1,61 +1,35 @@
-```markdown
-# 🧾 braisgf.dev — Development Log
+# braisgf.dev — Development Log
 
-This file tracks major updates and progress across the life of this personal site.
-
----
-
-### 📅 2025-03-20 — Website Init
-
-- Project bootstrapped from scratch
-- HTML/CSS/JS layout created
-- Landing page designed
-- Hosted on Raspberry Pi 5 using NGINX
+This branch explores a new role for the site: not just a portfolio, but a consumer-first archive for Brais' experiments.
 
 ---
 
-### 📅 2025-03-25 — Creators Lab v1
+### 2026-10-22 — Experiment-first redesign
 
-- Created `projects.json` file
-- Dynamic project cards with modal
-- Status badges and locked content added
+- Created the `DEV` branch from `main`.
+- Reworked the English and Spanish homepages around the experiment concept.
+- Added a responsive visual system focused on typography, storytelling and fast navigation.
+- Added `/experiments/` as a dedicated experiment archive.
+- Added the first two experiment dossiers as proof-of-concept content.
+- Kept the site static and dependency-free so it remains compatible with the current low-cost hosting setup.
+- Reframed social platforms as discovery channels rather than the destination.
 
----
+### Design principle
 
-### 📅 2025-03-28 — Blog Integration
+> A video should create curiosity. An experiment dossier should give that curiosity somewhere to go.
 
-- Markdown parser for JSON-based blog posts
-- Post viewer modal with formatting
-- Added blog section to navigation
+The long-term goal is for every meaningful Brais project to have a recognizable experiment number, a hypothesis, a story, a result and useful artifacts when appropriate.
 
----
+### Next candidates
 
-### 📅 2025-03-30 — SEO Optimization
-
-- Meta tags, Open Graph, Twitter cards
-- Structured data schema
-- Sitemap and robots.txt added
-- Analytics configured
-
----
-
-### 📅 2025-04-01 — ES Localization
-
-- `/es/` folder structure implemented
-- Language selector with cookie support
-- Spanish versions of blog, lab, and more
+- Add richer media and progress logs to individual experiments.
+- Add RSS/Atom so people can follow the lab without an algorithmic feed.
+- Add Open Graph images per experiment.
+- Add lightweight search/filtering once the archive grows.
+- Consider a newsletter only if the archive proves people want to return.
 
 ---
 
-### 📅 2025-04-02 — Future Ideas
+Keep building. Stay curious.
 
-- Dark/light mode toggle
-- Add contact form (maybe with serverless function)
-- Add real-time project filter or tags
-- Microblog or digital garden section?
-
----
-
-✍️ Keep building, stay curious.  
 — Braisgf
-```
