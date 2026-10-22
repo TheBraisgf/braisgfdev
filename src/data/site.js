@@ -2,7 +2,7 @@ import { videoBlaze, videoDice, videoRoc, labHero } from './assets.js'
 
 export const values = [
   { id: 'imagine', icon: '01', accent: 'acid' },
-  { id: 'create', icon: '02', accent: 'orange' },
+  { id: 'create', icon: '02', accent: 'violet' },
   { id: 'share', icon: '03', accent: 'blue' },
   { id: 'repeat', icon: '04', accent: 'acid' }
 ]
@@ -16,7 +16,7 @@ export const videos = [
 
 export const pollOptions = [
   { id: 'reader', number: '002', accent: 'acid' },
-  { id: 'maker', number: '003', accent: 'orange' },
+  { id: 'maker', number: '003', accent: 'violet' },
   { id: 'wildcard', number: '004', accent: 'blue' }
 ]
 
@@ -31,7 +31,7 @@ export const career = [
 ]
 
 export const gameQuestions = [
-  { id: 'q1', answers: ['code', 'make', 'tell', 'learn'] },
+  { id: 'q1', answers: ['builder', 'explorer', 'storyteller', 'learn'] },
   { id: 'q2', answers: ['curious', 'hands', 'story', 'system'] },
-  { id: 'q3', answers: ['prototype', 'publish', 'publish', 'iterate'] }
+  { id: 'q3', answers: ['prototype', 'publish', 'iterate', 'system'] }
 ]
