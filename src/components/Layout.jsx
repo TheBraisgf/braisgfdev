@@ -29,7 +29,7 @@ export function Layout({ children }) {
         <div className="footer">
           <span>© 2026 Braisgf</span>
           <span>{t('home.footer')}</span>
-          <div className="footer-links">
+          <div className="footer-links" style={{ flexWrap: 'wrap', justifyContent: 'flex-end' }}>
             <a href="https://www.youtube.com/@braisgfroom" target="_blank" rel="noreferrer">YouTube</a><span>·</span>
             <a href="https://www.tiktok.com/@braisgfroom" target="_blank" rel="noreferrer">TikTok</a><span>·</span>
             <a href="https://www.instagram.com/braisgfroom" target="_blank" rel="noreferrer">Instagram</a><span>·</span>
