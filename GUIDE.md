@@ -1,32 +1,26 @@
 # GUIDE — Mantener y publicar braisgf.dev
 
-Esta guía existe para que dentro de seis meses puedas volver al repositorio y saber exactamente qué tocar sin reconstruir la web desde cero.
+La web es un **laboratorio personal vivo**. El código define la experiencia; los datos definen el contenido.
 
-## 1. Regla principal
-
-**El código define la experiencia. Los datos definen el contenido.**
-
-No dupliques páginas para cada idioma ni copies HTML para cada publicación.
-
-La aplicación está hecha con React + Vite. La traducción de interfaz vive en `src/i18n/` y el contenido reutilizable vive en `src/data/`.
-
----
-
-## 2. Estructura que importa
+## Arquitectura
 
 ```text
 src/
-├── components/          # Piezas reutilizables de UX
+├── components/          # UX reutilizable + interacciones
 │   ├── AccessibilityMenu.jsx
 │   ├── CommunityLab.jsx
 │   ├── LabTest.jsx
 │   ├── Layout.jsx
+│   ├── LivePulse.jsx
 │   ├── ResourceList.jsx
+│   ├── Reveal.jsx
+│   ├── TikTokFeed.jsx
 │   ├── ValuesLoop.jsx
 │   └── VideoGallery.jsx
 ├── data/
-│   ├── experiments.js   # Índice de experimentos + recursos
-│   └── site.js          # Valores, vídeos, carrera y comunidad
+│   ├── assets.js
+│   ├── experiments.js
+│   └── site.js
 ├── i18n/
 │   ├── config.js
 │   ├── en.json
@@ -40,245 +34,140 @@ src/
 │   └── Notes.jsx
 └── styles/
     ├── global.css
-    └── resources.css
+    ├── navigation.css
+    ├── resources.css
+    ├── about.css
+    ├── experience.css
+    ├── community.css
+    └── motion.css
 
 public/
 ├── robots.txt
 ├── sitemap.xml
-└── files/              # Archivos descargables / adjuntos de publicaciones
+└── files/              # Adjuntos de experimentos
 ```
 
-Los assets históricos están en `assets/`. No los dupliques sin necesidad.
+Los assets históricos siguen disponibles en `main` y se consumen temporalmente mediante URLs raw para no perder material mientras se sustituyen por fotografías nuevas.
 
----
+## Experimentos
 
-## 3. Cómo añadir un experimento / publicación
-
-Abre `src/data/experiments.js` y añade una entrada:
+Añade el índice en `src/data/experiments.js`:
 
 ```js
 {
   id: '004',
   slug: 'nombre-del-experimento',
-  image: '/assets/labImg/imagen.jpg',
-  attachments: [
-    {
-      label: 'Código fuente',
-      href: '/files/004/source.zip',
-      kind: 'ZIP'
-    },
-    {
-      label: 'Informe PDF',
-      href: '/files/004/report.pdf',
-      kind: 'PDF'
-    },
-    {
-      label: 'Demo online',
-      href: 'https://example.com',
-      kind: 'URL',
-      external: true
-    }
-  ],
+  image: '/ruta/o/import',
+  accent: 'acid',
+  attachments: [],
   links: []
 }
 ```
 
 Después añade las traducciones en `src/i18n/en.json` y `src/i18n/es.json` bajo `experiments.004`.
 
-### El dossier admite cualquier tipo de recurso
+El dossier acepta recursos arbitrarios:
 
-El sistema de recursos no está limitado a imágenes:
-
-- imágenes: JPG, JPEG, PNG, GIF, WebP, AVIF, SVG
-- vídeo: MP4, WebM, MOV, M4V
-- audio: MP3, WAV, OGG, M4A, FLAC
-- documentos: PDF
-- código: `.js`, `.ts`, `.py`, `.cpp`, `.html`, `.css`, etc.
-- comprimidos: ZIP, 7Z, TAR, GZ, RAR, etc.
-- modelos y binarios: STL, OBJ, GLB, APK, EXE, etc.
+- imágenes
+- vídeo
+- audio
+- PDF
+- código
+- ZIP/7Z/TAR/GZ/RAR
+- STL/OBJ/GLB/APK/EXE
 - URLs externas
 
-Los formatos conocidos se previsualizan. El resto se presenta como archivo descargable/enlazable.
-
-### Dónde poner los archivos
-
-Para un experimento concreto:
+Para archivos propios usa:
 
 ```text
 public/files/004/
 ├── source.zip
 ├── report.pdf
 ├── prototype.mp4
-├── wiring.png
 └── notes.txt
 ```
 
-**No hace falta registrar cada extensión en React.** Solo hay que añadir el recurso al array `attachments`.
+Los formatos conocidos se previsualizan. Los demás se ofrecen como descarga/enlace.
 
-Para archivos muy grandes, no metas gigabytes en Git. Usa almacenamiento externo, releases o un servicio de objetos y guarda la URL como `external: true`.
+## Vídeos
 
----
+La galería tiene dos capas:
 
-## 4. Publicar un artículo o nota antigua
+1. **TikTok live**: `TikTokFeed.jsx` embebe el perfil de `@braisgfroom`. TikTok mantiene ahí la selección de vídeos recientes, así que no hay que congelar manualmente una miniatura cada vez que publiques.
+2. **Archivo social**: `src/data/site.js` mantiene enlaces visuales a YouTube, Twitch y otras plataformas.
 
-Las notas antiguas se mantienen en `src/i18n/en.json` y `src/i18n/es.json` dentro de `notes.items`.
+Si cambias la estrategia de vídeo, conserva la idea: la web debe enseñar contenido real y reciente, no capturas decorativas.
 
-Si una nota crece hasta convertirse en una publicación importante, conviértela en una publicación/dossier propio en vez de seguir aumentando el componente de notas.
+## Comunidad
 
-La regla es:
+La encuesta pública ya no depende de GitHub Discussions.
 
-> **Una página = una idea que merece ser encontrada, compartida y conservada.**
+`CommunityLab.jsx` genera una **encuesta pública sin cuenta** mediante el Quick Poll público de Polling.com. La selección rápida de la propia web sigue siendo local para ofrecer feedback inmediato sin obligar a nadie a salir de la página.
 
-Esto también ayuda al SEO: cada pieza importante debe tener una URL estable, título descriptivo, descripción y contenido propio.
+### Buzón de ideas
 
----
-
-## 5. Cómo actualizar los vídeos
-
-Edita `src/data/site.js`:
-
-```js
-export const videos = [
-  {
-    id: '05',
-    image: '/assets/labImg/mi-miniatura.jpg',
-    platform: 'YouTube',
-    title: 'Mi nuevo experimento',
-    url: 'https://www.youtube.com/watch?v=...'
-  }
-]
-```
-
-Añade el texto traducido en `videos.05` de ambos JSON.
-
-La galería está pensada como **puerta de entrada**, no como el centro de la web. El vídeo dice "sí, este es el Brais que conoces de redes" y el CTA intenta llevar al visitante al laboratorio.
-
----
-
-## 6. Cambiar "Imaginar → Crear → Compartir → Repetir"
-
-El componente está en `src/components/ValuesLoop.jsx`.
-
-El contenido está en:
+El formulario acepta un endpoint externo mediante:
 
 ```text
-src/i18n/en.json
-src/i18n/es.json
+VITE_SUGGESTION_ENDPOINT=https://tu-endpoint-de-formulario
 ```
 
-Cada etapa tiene:
+Si la variable existe, se envía JSON a ese endpoint. Si no existe, se abre el cliente de correo del visitante con la sugerencia preparada.
 
-- título
-- titular
-- explicación
-- color/acento
+Para un buzón público real, conecta un endpoint de formularios (por ejemplo FormSubmit/FormDrop/Formz o uno propio) en Vercel. **No metas claves privadas en el frontend.**
 
-No cambies el componente para modificar el texto. Cambia las traducciones.
+## Interacciones
 
----
+`Reveal.jsx` proporciona entrada por scroll mediante `IntersectionObserver`.
 
-## 7. Cambiar la encuesta
+`LivePulse.jsx` rota señales del laboratorio.
 
-Las opciones viven en `src/data/site.js` (`pollOptions`).
+`ValuesLoop.jsx` cambia automáticamente entre IMAGINE → CREATE → SHARE → REPEAT y también admite interacción manual.
 
-El texto vive en `poll` dentro de los JSON de idioma.
+La reducción de movimiento se respeta mediante `prefers-reduced-motion` y el menú de accesibilidad.
 
-Actualmente la selección local se recuerda en `localStorage`. El enlace de votación pública apunta a GitHub Discussions para que exista un espacio comunitario real y auditable.
+## Carrera profesional
 
-Si se habilita un backend de votación posteriormente, **mantén el componente `CommunityLab` como interfaz** y cambia solo la capa de persistencia. No vuelvas a meter lógica de backend en la landing.
+`Career.jsx` usa la trayectoria profesional y recupera temporalmente los logos históricos de:
 
----
+- Universidad
+- formación audiovisual
+- Hack A Boss
+- Zara
+- Santander
 
-## 8. Buzón de sugerencias
+Cada evento tiene su propio acento, logo, microanimación y comportamiento hover.
 
-El buzón abre una nueva propuesta de GitHub Issue con el texto escrito por el visitante.
+Cuando haya fotografías/proyectos nuevos, sustituye `careerLogos` en `src/data/assets.js`.
 
-Esto evita crear un formulario propio con una base de datos y, al mismo tiempo, deja las ideas públicas y moderables.
+## Accesibilidad
 
-Si en el futuro se añade un backend propio, conserva la misma UX y sustituye únicamente `sendSuggestion()`.
-
----
-
-## 9. Test / minijuego
-
-`src/components/LabTest.jsx` contiene el pequeño test de visitante del lab.
-
-Es deliberadamente local:
-
-- no guarda datos
-- no necesita backend
-- no usa analytics para calcular el resultado
-- se puede repetir
-
-Si se amplía, mantén el resultado rápido, compartible y sin convertirlo en un cuestionario interminable.
-
----
-
-## 10. Accesibilidad
-
-El menú de accesibilidad está siempre disponible mediante el pequeño botón `A` de la esquina inferior izquierda.
-
-También se puede abrir con:
-
-```text
-Alt + A
-```
-
-Incluye:
+El menú `A` permite:
 
 - texto grande
 - contraste alto
 - enlaces subrayados
 - reducción de movimiento
-- restauración de preferencias
+- restaurar preferencias
 
-Además existe un enlace "Saltar al contenido principal" visible al recibir foco.
+También existe un skip-link y estados ARIA en los controles interactivos.
 
-No elimines los `aria-*`, los estados `aria-selected`/`aria-pressed` ni los elementos semánticos al editar componentes.
+## SEO
 
-La reducción de movimiento también respeta `prefers-reduced-motion`.
+La aplicación actualiza por ruta:
 
----
-
-## 11. SEO
-
-El SEO se trata como parte de la arquitectura, no como una capa de keywords al final.
-
-La app genera en navegación:
-
-- `<title>` específico
-- `description`
+- `<title>`
+- description
 - canonical
 - `hreflang` EN/ES/x-default
 - Open Graph
-- datos estructurados JSON-LD de persona, sitio y página
+- JSON-LD de persona, sitio y página
 
-También existen:
+También existen `public/robots.txt` y `public/sitemap.xml`.
 
-```text
-public/robots.txt
-public/sitemap.xml
-```
+Una página indexable nueva necesita URL estable, título, descripción, contenido real y entrada en sitemap.
 
-### Regla para nuevas páginas
-
-Una página nueva debe tener:
-
-1. URL legible.
-2. Título específico.
-3. Descripción específica.
-4. Contenido que aporte algo por sí mismo.
-5. Enlace desde otra página relevante.
-6. Variante EN/ES si corresponde.
-7. Entrada en `public/sitemap.xml` si es una página indexable permanente.
-
-No generes páginas vacías solo para posicionar palabras clave.
-
-El objetivo es que Google y otros sistemas de descubrimiento puedan entender quién es Brais, qué hace y qué ha construido, pero siempre con contenido real para personas.
-
----
-
-## 12. Contador de visitas
+## Contador
 
 El contador usa GoatCounter.
 
@@ -288,76 +177,29 @@ Configura en Vercel:
 VITE_GOATCOUNTER_CODE=tu-codigo
 ```
 
-Sin esa variable el sitio simplemente muestra `—`; **no rompe la página**.
+Sin esa variable se muestra `—`; no se inventa una cifra.
 
-La integración está pensada para ser ligera y respetuosa con la privacidad.
-
----
-
-## 13. Desarrollo local
+## Desarrollo
 
 ```bash
 npm install
 npm run dev
-```
-
-Build de producción:
-
-```bash
 npm run build
 npm run preview
 ```
 
-Antes de publicar:
+Antes de publicar revisa EN/ES, rutas profundas, móvil, accesibilidad, consola y carga de assets.
 
-- probar `/`
-- probar `/es`
-- abrir `/about` y `/es/about`
-- abrir `/career` y `/es/career`
-- abrir los tres experimentos en ambos idiomas
-- probar el cambio de idioma desde una página profunda
-- probar móvil
-- activar todas las opciones de accesibilidad
-- comprobar consola sin errores
-- comprobar que los assets cargan
+## Despliegue
 
----
+Durante esta fase Vercel debe desplegar `DEV`. `main` permanece como referencia del sitio anterior hasta que la nueva experiencia esté validada.
 
-## 14. Despliegue
+## Regla creativa
 
-Vercel debe desplegar la rama `DEV` durante esta fase.
+No convertir la web en una colección de animaciones sin propósito.
 
-`vercel.json` declara explícitamente:
+La sensación buscada es:
 
-```text
-npm run build
-output: dist
-SPA rewrite: /(.*) → /index.html
-```
+> **cada visita encuentra algo distinto, pero todo parece pertenecer al mismo laboratorio.**
 
-Cuando el sitio esté validado visual y funcionalmente, se hará el merge a `main`.
-
----
-
-## 15. Filosofía del repositorio
-
-No volver a crear:
-
-- una carpeta HTML por idioma
-- un CSS por página
-- un JS duplicado para cada sección
-- componentes gigantes que hagan veinte cosas
-- páginas creadas solo para "tener más SEO"
-- una nueva librería para cada animación
-
-Sí crear:
-
-- componentes pequeños
-- contenido separado de presentación
-- URLs estables
-- recursos reutilizables
-- experiencias que tengan un motivo para existir
-- accesibilidad desde el principio
-- documentación cuando una decisión no sea obvia
-
-**La web es un laboratorio. El repositorio también debería sentirse como uno.**
+Movimiento, imágenes, vídeo, datos, estados, hover, scroll y pequeñas sorpresas deben reforzar esa sensación sin convertirla en una feria de efectos.
