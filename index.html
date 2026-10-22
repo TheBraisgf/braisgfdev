@@ -1,125 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- SEO BASICS -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Braisgf.dev – Fullstack Developer & Maker</title>
-    <meta
-      name="description"
-      content="Welcome to Braisgf.dev – A geeky digital lab, fullstack dev portfolio, and experimental playground built and hosted on Raspberry Pi by Brais, a developer and creator from Spain."
-    />
-    <meta
-      name="keywords"
-      content="Braisgf, fullstack developer, portfolio, Raspberry Pi, maker, indie dev, software, Unity, AWS, JavaScript, blog, tech"
-    />
-    <meta name="author" content="Braisgf" />
-    <link rel="canonical" href="https://braisgf.dev/" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/" />
-    <link rel="alternate" hreflang="en" href="https://braisgf.dev/" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Braisgf — Experiments, builds & ideas</title>
+  <meta name="description" content="Brais builds things, learns strange skills and documents the experiments. Code, maker projects, geek culture and creative chaos.">
+  <meta name="author" content="Braisgf">
+  <link rel="canonical" href="https://braisgf.dev/">
+  <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/">
+  <link rel="alternate" hreflang="en" href="https://braisgf.dev/">
+  <meta property="og:title" content="Braisgf — Experiments, builds & ideas">
+  <meta property="og:description" content="I have an idea. I try to make it real. Then I show you what happened.">
+  <meta property="og:image" content="https://braisgf.dev/assets/Braisgf.jpeg">
+  <meta property="og:url" content="https://braisgf.dev/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/dev.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="/">BRAISGF<span>.DEV</span></a>
+    <nav>
+      <a href="#experiments">Experiments</a>
+      <a href="#about">The idea</a>
+      <a href="/lab">Archive</a>
+    </nav>
+    <a class="lang" href="/es/">ES</a>
+  </header>
 
-    <!-- FAVICON -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-
-    <!-- FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- OPEN GRAPH / FACEBOOK -->
-    <meta property="og:title" content="Braisgf.dev – Fullstack Dev & Maker" />
-    <meta
-      property="og:description"
-      content="Explore projects, blogs, experiments and fullstack builds by Brais. Hosted on Raspberry Pi. Made with ❤️ by a maker."
-    />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-    <meta property="og:url" content="https://braisgf.dev/" />
-    <meta property="og:type" content="website" />
-
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Braisgf.dev – Fullstack Dev & Maker" />
-    <meta
-      name="twitter:description"
-      content="Personal dev lab by Braisgf – featuring code, hardware, projects and ideas."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-
-    <!-- PWA MANIFEST -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- STRUCTURED DATA -->
-    <script type="application/ld+json" src="/schema.json"></script>
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
-    </script>
-  </head>
-  <body>
-    <canvas id="bgCanvas"></canvas>
-
-    <main class="container">
-      <section class="hero">
-        <div class="hero-content">
-          <div class="hero-container">
-            <img
-              src="/assets/Braisgf.jpeg"
-              alt="Photo of Braisgf"
-              class="profile-img"
-            />
-            <div class="hero-texts">
-              <h1>Braisgf.dev</h1>
-              <p class="position">Full Stack Developer & Creator</p>
-              <p class="motto">"Imagine, Code, Create, Share, Repeat"</p>
-            </div>
-          </div>
-          <div class="buttons">
-            <a href="/about" class="btn">About Me 👤</a>
-            <a href="/career" class="btn">My Career 💼</a>
-            <a href="/stack" class="btn">Skill Cloud 🧠</a>
-            <a href="/lab" class="btn">Creators Lab 🧪</a>
-            <a href="/blog" class="btn">Creator Blog 📖</a>
-            <a href="/social" class="btn">Social Media 🌐</a>
-          </div>
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">PERSONAL LAB / ONLINE SINCE 2025</p>
+        <h1>I have an idea.<br><em>I make it real.</em></h1>
+        <p class="lede">I'm Brais. Developer, maker, geek and professional collector of things I probably shouldn't start. This is where I turn curiosity into experiments.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#experiments">Explore experiments <span>↓</span></a>
+          <a class="button ghost" href="https://www.youtube.com/@braisgfroom" target="_blank" rel="noopener">Watch the chaos ↗</a>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/thebraisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
-    </footer>
+      </div>
+      <div class="hero-terminal" aria-label="Current experiment terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span><b>experiment.log</b></div>
+        <div class="terminal-body">
+          <p><i>brais@lab</i>:~$ ./current-experiment</p>
+          <p class="accent">#001 — BUILD SOMETHING WORTH KEEPING</p>
+          <p>status: <strong>RUNNING</strong></p>
+          <p>skills: code / maker / storytelling</p>
+          <p>success: <strong>undefined</strong></p>
+          <p>next: <span class="cursor">█</span></p>
+        </div>
+      </div>
+    </section>
 
-    <div class="lang-switch-container">
-      <span class="flag">EN</span>
-      <label class="lang-toggle">
-        <input type="checkbox" id="lang-toggle" />
-        <span class="slider"></span>
-      </label>
-      <span class="flag">ES</span>
-    </div>
+    <section id="experiments" class="section shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE MAIN EVENT</p><h2>Experiments</h2></div>
+        <p>Not tutorials. Not a portfolio.<br>Things I actually tried.</p>
+      </div>
+      <article class="featured">
+        <div class="featured-image"><img src="/assets/labImg/braisgfdev.jpg" alt="Braisgf.dev laboratory"></div>
+        <div class="featured-copy">
+          <p class="tag">#001 · META</p>
+          <h3>Turn my personal website into a place worth visiting.</h3>
+          <p>The first experiment is the lab itself: a consumer-first home for everything I build, learn and inevitably break.</p>
+          <a href="/experiments/#001" class="text-link">Open experiment →</a>
+        </div>
+      </article>
+      <div class="experiment-grid">
+        <article class="experiment-card"><span class="number">#002</span><h3>Build a better digital reader</h3><p>Can I make reading comics and books feel fundamentally better?</p><a href="/experiments/#002">Read the hypothesis →</a></article>
+        <article class="experiment-card"><span class="number">#003</span><h3>Learn a skill by making something</h3><p>Instead of studying forever, build the thing that forces you to learn.</p><a href="/experiments/#003">Read the hypothesis →</a></article>
+        <article class="experiment-card muted"><span class="number">#004</span><h3>???</h3><p>The next experiment is not decided yet.</p><a href="/experiments/#004">Leave a suggestion →</a></article>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <section id="about" class="manifesto">
+      <div class="shell manifesto-inner">
+        <p class="eyebrow">WHY THIS EXISTS</p>
+        <h2>I don't want to pick one thing.</h2>
+        <p>I like programming. I like comics. I like making things. I like learning. I like telling stories. Instead of turning those interests into ten separate identities, I'm testing what happens when they all feed the same creative practice.</p>
+        <div class="loop"><span>IMAGINE</span><b>→</b><span>CREATE</span><b>→</b><span>SHARE</span><b>→</b><span>REPEAT</span></div>
+      </div>
+    </section>
+
+    <section class="section shell next">
+      <div><p class="eyebrow">FOLLOW THE LAB</p><h2>You don't need another feed.</h2><p>Follow an experiment when you care about it. Read the full story, see the failures, grab the files and decide what I should try next.</p></div>
+      <div class="links"><a href="/experiments/">Experiment archive ↗</a><a href="/blog">Old lab notes ↗</a><a href="https://github.com/TheBraisgf" target="_blank" rel="noopener">Open source ↗</a></div>
+    </section>
+  </main>
+
+  <footer class="footer shell"><span>© 2026 Braisgf</span><span>Imagine. Code. Create. Share. Repeat.</span><span><a href="/es/">ES</a> · <a href="/about">About</a></span></footer>
+</body>
 </html>
