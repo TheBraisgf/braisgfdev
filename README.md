@@ -44,10 +44,11 @@ The current site is a small React application built with Vite.
 │   ├── pages/
 │   │   ├── Home.jsx
 │   │   ├── Archive.jsx
-│   │   └── Experiment.jsx
+│   │   ├── Experiment.jsx
+│   │   └── Notes.jsx
 │   └── styles/
 │       └── global.css      # Visual system + responsive layout
-└── ...legacy files         # Kept in Git history while the new app takes over deployment
+└── legacy content          # Existing archive kept while the new app takes over deployment
 ```
 
 ### Why React + Vite?
@@ -86,6 +87,8 @@ npm run preview
 ## Deployment
 
 The `DEV` branch is intended to be deployed by Vercel. The application builds to a static Vite bundle and uses a small SPA rewrite for client-side routes.
+
+The repository now declares the build command and `dist` output explicitly in `vercel.json`, so the old static-site deployment settings should not be able to silently take over again.
 
 There is no runtime database or backend dependency.
 
