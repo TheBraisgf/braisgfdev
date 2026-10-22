@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import i18n from './i18n/config.js'
 import { Layout } from './components/Layout.jsx'
@@ -8,12 +8,15 @@ import { Experiment } from './pages/Experiment.jsx'
 import { Notes } from './pages/Notes.jsx'
 
 export default function App() {
+  const location = useLocation()
+
   useEffect(() => {
-    const spanish = window.location.pathname === '/es' || window.location.pathname.startsWith('/es/')
+    const spanish = location.pathname === '/es' || location.pathname.startsWith('/es/')
     const language = spanish ? 'es' : 'en'
     if (i18n.language !== language) i18n.changeLanguage(language)
     document.documentElement.lang = language
-  }, [])
+    document.title = spanish ? 'braisgf.dev — Laboratorio personal' : 'braisgf.dev — Personal Lab'
+  }, [location.pathname])
 
   return (
     <Layout>
