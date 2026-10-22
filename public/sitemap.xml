@@ -12,6 +12,6 @@
   <url><loc>https://braisgf.dev/es/experiments/001</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/001"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/001"/><priority>0.8</priority></url>
   <url><loc>https://braisgf.dev/experiments/002</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/002"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/002"/><priority>0.8</priority></url>
   <url><loc>https://braisgf.dev/es/experiments/002</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/002"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/002"/><priority>0.8</priority></url>
-  <url><loc>https://braisgf.dev/experiments/003</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/003"/><priority>0.8</priority></url>
+  <url><loc>https://braisgf.dev/experiments/003</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/003"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/003"/><priority>0.8</priority></url>
   <url><loc>https://braisgf.dev/es/experiments/003</loc><xhtml:link rel="alternate" hreflang="en" href="https://braisgf.dev/experiments/003"/><xhtml:link rel="alternate" hreflang="es" href="https://braisgf.dev/es/experiments/003"/><priority>0.8</priority></url>
 </urlset>
