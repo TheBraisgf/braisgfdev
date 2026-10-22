@@ -26,19 +26,12 @@ export function Home() {
               <span>{t('home.updated')}: <strong>OCT 2026</strong></span>
             </div>
           </div>
-
           <div className="terminal-card" aria-label={t('home.terminalTitle')}>
             <div className="terminal-top"><span className="terminal-lights"><i /><i /><i /></span><span>{t('home.terminalTitle')}</span><small>{t('home.terminalLive')}</small></div>
             <div className="terminal-content">
               <p className="mono-muted">brais@lab:~$ {t('home.current')}</p>
-              <p className="terminal-title">{t('home.currentTitle')}</p>
-              <div className="terminal-line" />
-              <dl>
-                <div><dt>status</dt><dd>{t('home.running')}</dd></div>
-                <div><dt>mode</dt><dd>{t('home.public')}</dd></div>
-                <div><dt>skills</dt><dd>code / maker / storytelling</dd></div>
-                <div><dt>success</dt><dd>{t('home.success')}</dd></div>
-              </dl>
+              <p className="terminal-title">{t('home.currentTitle')}</p><div className="terminal-line" />
+              <dl><div><dt>status</dt><dd>{t('home.running')}</dd></div><div><dt>mode</dt><dd>{t('home.public')}</dd></div><div><dt>skills</dt><dd>code / maker / storytelling</dd></div><div><dt>success</dt><dd>{t('home.success')}</dd></div></dl>
               <p className="terminal-next">{t('home.next')} <span className="blink">█</span></p>
             </div>
           </div>
@@ -46,59 +39,22 @@ export function Home() {
       </section>
 
       <section className="section-pad experiments-section" id="experiments">
-        <div className="section-intro">
-          <div><p className="eyebrow">{t('home.event')}</p><h2>{t('home.experiments')}</h2></div>
-          <p>{t('home.experimentIntro')}<br /><strong>{t('home.experimentIntroStrong')}</strong></p>
-        </div>
-
+        <div className="section-intro"><div><p className="eyebrow">{t('home.event')}</p><h2>{t('home.experiments')}</h2></div><p>{t('home.experimentIntro')}<br /><strong>{t('home.experimentIntroStrong')}</strong></p></div>
         <article className="featured-card">
-          <div className="featured-visual">
-            <img src={experiments[0].image} alt="Braisgf.dev personal lab" loading="eager" />
-            <span>{t('home.featuredLabel')}</span>
-          </div>
-          <div className="featured-body">
-            <p className="card-kicker">{t('home.featuredTag')}</p>
-            <h3>{t('home.featuredTitle')}</h3>
-            <p>{t('home.featuredText')}</p>
-            <div className="hypothesis"><span>{t('home.hypothesis')}</span><p>{t('home.hypothesisText')}</p></div>
-            <Link className="arrow-link" to={`${prefix}/experiments/001`}>{t('home.openExperiment')} <Arrow /></Link>
-          </div>
+          <div className="featured-visual"><img src={experiments[0].image} alt="Braisgf.dev personal lab" loading="eager" /><span>{t('home.featuredLabel')}</span></div>
+          <div className="featured-body"><p className="card-kicker">{t('home.featuredTag')}</p><h3>{t('home.featuredTitle')}</h3><p>{t('home.featuredText')}</p><div className="hypothesis"><span>{t('home.hypothesis')}</span><p>{t('home.hypothesisText')}</p></div><Link className="arrow-link" to={`${prefix}/experiments/001`}>{t('home.openExperiment')} <Arrow /></Link></div>
         </article>
-
         <div className="card-grid">
-          <Link className="experiment-card" to={`${prefix}/experiments/002`}>
-            <div className="card-meta"><span>#002</span><b>IDEA</b></div>
-            <h3>{t('home.reader')}</h3><p>{t('home.readerText')}</p><span className="card-link">{t('home.readHypothesis')} →</span>
-          </Link>
-          <Link className="experiment-card" to={`${prefix}/experiments/003`}>
-            <div className="card-meta"><span>#003</span><b>PLANNED</b></div>
-            <h3>{t('home.learn')}</h3><p>{t('home.learnText')}</p><span className="card-link">{t('home.readHypothesis')} →</span>
-          </Link>
-          <div className="experiment-card card-open">
-            <div className="card-meta"><span>#004</span><b>{t('home.open')}</b></div>
-            <h3>{t('home.unknown')}</h3><p>{t('home.unknownText')}</p><Link className="card-link" to={`${prefix}/experiments`}>{t('home.archive')} →</Link>
-          </div>
+          <Link className="experiment-card" to={`${prefix}/experiments/002`}><div className="card-meta"><span>#002</span><b>IDEA</b></div><h3>{t('home.reader')}</h3><p>{t('home.readerText')}</p><span className="card-link">{t('home.readHypothesis')} →</span></Link>
+          <Link className="experiment-card" to={`${prefix}/experiments/003`}><div className="card-meta"><span>#003</span><b>PLANNED</b></div><h3>{t('home.learn')}</h3><p>{t('home.learnText')}</p><span className="card-link">{t('home.readHypothesis')} →</span></Link>
+          <div className="experiment-card card-open"><div className="card-meta"><span>#004</span><b>{t('home.open')}</b></div><h3>{t('home.unknown')}</h3><p>{t('home.unknownText')}</p><Link className="card-link" to={`${prefix}/experiments`}>{t('home.archive')} →</Link></div>
         </div>
         <Link className="archive-cta" to={`${prefix}/experiments`}>{t('home.archive')} <Arrow /></Link>
       </section>
 
-      <section className="manifesto" id="about">
-        <div className="manifesto-inner section-pad">
-          <p className="eyebrow">{t('home.why')}</p>
-          <h2>{t('home.manifestoTitleA')}<br /><em>{t('home.manifestoTitleB')}</em></h2>
-          <p className="manifesto-copy">{t('home.manifesto')}</p>
-          <div className="loop"><span>IMAGINE</span><b>→</b><span>CREATE</span><b>→</b><span>SHARE</span><b>→</b><span>REPEAT</span></div>
-        </div>
-      </section>
+      <section className="manifesto" id="about"><div className="manifesto-inner section-pad"><p className="eyebrow">{t('home.why')}</p><h2>{t('home.manifestoTitleA')}<br /><em>{t('home.manifestoTitleB')}</em></h2><p className="manifesto-copy">{t('home.manifesto')}</p><div className="loop"><span>IMAGINE</span><b>→</b><span>CREATE</span><b>→</b><span>SHARE</span><b>→</b><span>REPEAT</span></div></div></section>
 
-      <section className="section-pad follow-section">
-        <div className="follow-copy"><p className="eyebrow">{t('home.follow')}</p><h2>{t('home.followTitle')}</h2><p>{t('home.followText')}</p></div>
-        <div className="follow-links">
-          <Link to={`${prefix}/experiments`}><span>01</span>{t('nav.archive')}<b>↗</b></Link>
-          <a href={`${prefix || ''}/blog/`}><span>02</span>{t('home.oldNotes')}<b>↗</b></a>
-          <a href="https://github.com/TheBraisgf" target="_blank" rel="noreferrer"><span>03</span>{t('home.openSource')}<b>↗</b></a>
-        </div>
-      </section>
+      <section className="section-pad follow-section"><div className="follow-copy"><p className="eyebrow">{t('home.follow')}</p><h2>{t('home.followTitle')}</h2><p>{t('home.followText')}</p></div><div className="follow-links"><Link to={`${prefix}/experiments`}><span>01</span>{t('nav.archive')}<b>↗</b></Link><Link to={`${prefix}/notes`}><span>02</span>{t('home.oldNotes')}<b>↗</b></Link><a href="https://github.com/TheBraisgf" target="_blank" rel="noreferrer"><span>03</span>{t('home.openSource')}<b>↗</b></a></div></section>
     </main>
   )
 }
