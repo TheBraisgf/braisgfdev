@@ -5,6 +5,7 @@ import { Layout } from './components/Layout.jsx'
 import { Home } from './pages/Home.jsx'
 import { Archive } from './pages/Archive.jsx'
 import { Experiment } from './pages/Experiment.jsx'
+import { Notes } from './pages/Notes.jsx'
 
 export default function App() {
   useEffect(() => {
@@ -20,9 +21,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/experiments" element={<Archive />} />
         <Route path="/experiments/:id" element={<Experiment />} />
+        <Route path="/notes" element={<Notes />} />
         <Route path="/es" element={<Home />} />
         <Route path="/es/experiments" element={<Archive />} />
         <Route path="/es/experiments/:id" element={<Experiment />} />
+        <Route path="/es/notes" element={<Notes />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
