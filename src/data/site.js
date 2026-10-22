@@ -19,13 +19,13 @@ export const pollOptions = [
 ]
 
 export const career = [
-  { year: '2016 — 2020', image: '/assets/career/img/universidad.jpg', role: 'Telecommunications Engineering', company: 'University', key: 'telecom' },
-  { year: '2020 — 2021', image: '/assets/career/img/masterd.png', role: 'Filmmaking & Production', company: 'Creative training', key: 'film' },
-  { year: '2021', image: '/assets/career/img/hab.jpg', role: 'Fullstack Developer', company: 'Hack A Boss', key: 'hab' },
-  { year: '2021 — 2023', image: '/assets/career/img/zara.jpg', role: 'Frontend Developer', company: 'Zara.com', key: 'zara' },
-  { year: '2023', image: '/assets/career/img/santander.jpg', role: 'AI Image Editor', company: 'Santander', key: 'imageai' },
-  { year: '2023 — 2024', image: '/assets/career/img/santander.jpg', role: 'Smart Form Evaluator', company: 'Santander', key: 'forms' },
-  { year: '2024 — now', image: '/assets/career/img/santander.jpg', role: 'Python AI Backend', company: 'Santander / Universia', key: 'backend' }
+  { year: '2016 — 2020', role: 'Telecommunications Engineering', company: 'University', key: 'telecom' },
+  { year: '2020 — 2021', role: 'Filmmaking & Production', company: 'Creative training', key: 'film' },
+  { year: '2021', role: 'Fullstack Developer', company: 'Hack A Boss', key: 'hab' },
+  { year: '2021 — 2023', role: 'Frontend Developer', company: 'Zara.com', key: 'zara' },
+  { year: '2023', role: 'AI Image Editor', company: 'Santander', key: 'imageai' },
+  { year: '2023 — 2024', role: 'Smart Form Evaluator', company: 'Santander', key: 'forms' },
+  { year: '2024 — now', role: 'Python AI Backend', company: 'Santander / Universia', key: 'backend' }
 ]
 
 export const gameQuestions = [
