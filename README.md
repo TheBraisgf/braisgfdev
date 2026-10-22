@@ -1,94 +1,107 @@
-# 🧪 braisgf.dev — Personal Lab, Portfolio & Playground
+# braisgf.dev
 
-> Built with passion. Hosted on a Raspberry Pi 5. Maintained by curiosity.
+> **A personal lab for ideas I refuse to leave as ideas.**
 
-![Made with](https://img.shields.io/badge/Made%20with-HTML%2FCSS%2FJS-blue?style=flat-square)
-![Hosted on](https://img.shields.io/badge/Hosted%20on-Raspberry%20Pi%205-red?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Evolving-orange?style=flat-square)
+`braisgf.dev` is Brais' personal website — but it is deliberately not a traditional portfolio.
 
----
+The site is the public home of a simple loop:
 
-## 🔥 What is this?
+**IMAGINE → CREATE → SHARE → REPEAT**
 
-`braisgf.dev` is the **personal website of Braisgf** — a fullstack developer, maker, and creative from Spain.  
-It’s not just a portfolio. It’s a:
+Every interesting question can become an **experiment**. An experiment gets a number, a hypothesis, constraints, a process, failures, a result and, ideally, something tangible to show for it.
 
-- 🧪 **Lab** — for projects, experiments and digital inventions
-- 🖥️ **Playground** — with hacker aesthetics and interactive design
-- 📖 **Blog** — with devlogs, tech thoughts, tutorials and chaos
+The point is not to look like I already know everything. The point is to make the process worth following.
 
-> _Imagine. Code. Create. Share. Repeat._
+## What lives here
 
----
+- **Experiments** — software, maker projects, learning challenges, creative work and strange ideas.
+- **Dossiers** — the durable version of each experiment: what I thought, what I tried, what broke and what came out.
+- **Lab notes** — older writing and projects kept as part of the archive.
+- **Bilingual experience** — English and Spanish, with one translation catalogue rather than duplicated pages.
 
-## 🧠 Features
+## Architecture
 
-- 🎮 Retro-style terminal UI and glitchy design
-- 🌐 Multilingual support (EN 🇺🇸 / ES 🇪🇸)
-- 🧰 Project viewer powered by JSON
-- 📚 Dynamic blog with Markdown rendering
-- 🍪 Cookie system to save preferences
-- 🕵️ Easter eggs, unlockables and secrets
-- 💾 Fully **self-hosted** on a Raspberry Pi 5
+The current site is a small React application built with Vite.
 
----
-
-## 🧑‍💻 Tech Stack
-
-- HTML + CSS + Vanilla JS (No frameworks)
-- Raspberry Pi 5 + NGINX + Cloudflare Tunnel
-- Markdown rendering via JS
-- Semantic SEO, JSON-LD, robots.txt, sitemap
-- Google Analytics + Cookie Banner
-- Responsive & accessible design
-
----
-
-## 🌍 Structure
-
-```bash
+```text
 /
-├── index.html          # Landing (EN)
-├── /es/                # Spanish version
-│   ├── index.html
-│   ├── blog/
-│   ├── lab/
-│   └── ...
-├── /blog/              # Markdown blog system
-├── /lab/               # Project viewer
-├── /stack/             # Skill cloud
-├── /social/            # Social links map
-├── /career/            # Experience timeline
-├── assets/             # Images, logos, icons
-├── scripts/            # JS files
-├── styles/             # CSS files
-├── schema.json         # Structured data for SEO
-├── sitemap.xml
-├── robots.txt
-└── manifest.json
+├── index.html
+├── package.json
+├── vite.config.js
+├── vercel.json
+├── assets/                 # Existing media; Vite copies this as public assets
+├── src/
+│   ├── main.jsx            # React entry point
+│   ├── App.jsx             # Routes + application shell
+│   ├── components/
+│   │   └── Layout.jsx      # Shared navigation + footer
+│   ├── data/
+│   │   └── experiments.js  # Small, reusable content model
+│   ├── i18n/
+│   │   ├── config.js
+│   │   ├── en.json         # English copy
+│   │   └── es.json         # Spanish copy
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Archive.jsx
+│   │   └── Experiment.jsx
+│   └── styles/
+│       └── global.css      # Visual system + responsive layout
+└── ...legacy files         # Kept in Git history while the new app takes over deployment
 ```
 
-# 🚀 Deployment
+### Why React + Vite?
 
-This site is deployed via:
+The site has repeated concepts — navigation, experiment cards, dossier layouts, status labels and language handling. React makes those pieces genuinely reusable without turning a personal website into an unnecessarily large system.
 
-💻 Raspberry Pi 5
+Vite keeps the build small and boring: no server runtime, no database, no CMS required.
 
-🌐 NGINX static server
+### Why i18next?
 
-⚡ Cloudflare Tunnel (no port forwarding needed)
+All interface copy lives in `src/i18n/*.json`. Adding a sentence should mean changing a translation file, not copying an entire HTML page and hoping both versions stay in sync.
 
-🔁 Auto-refresh via script when pushing changes
+## Adding an experiment
 
-🛣️ Roadmap
-See DEVLOG.md
+1. Add its metadata to `src/data/experiments.js`.
+2. Add the same experiment key to `src/i18n/en.json` and `src/i18n/es.json`.
+3. If it needs special media or behaviour, add it to the reusable dossier component rather than creating another bespoke page.
+4. Build and check the result on both desktop and a narrow mobile viewport.
 
-# 📬 Contact
+The goal is that adding experiment `#004` should feel like adding content, not building another website.
 
-LinkedIn
+## Local development
 
-GitHub
+```bash
+npm install
+npm run dev
+```
 
-Website
+Production build:
 
-Thanks for visiting. Feel free to fork, learn or contribute if you want.
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+The `DEV` branch is intended to be deployed by Vercel. The application builds to a static Vite bundle and uses a small SPA rewrite for client-side routes.
+
+There is no runtime database or backend dependency.
+
+## Design principles
+
+- **Human before trend.** No generic "AI portfolio" look, no excessive glass, no dashboard cosplay.
+- **Editorial before decorative.** Typography, spacing and hierarchy do most of the work.
+- **Personality over polish.** A little roughness is allowed when it feels intentional.
+- **Artifacts over feeds.** A finished page, prototype, file or lesson is more valuable than another endless scroll.
+- **Mobile is a first-class experience.** The narrow layout is designed, not merely squeezed.
+- **Simple to maintain.** Content and structure should be understandable six months from now.
+
+## Status
+
+Active experiment. The website itself is **Experiment #001**.
+
+---
+
+© Braisgf — Imagine. Create. Share. Repeat.
