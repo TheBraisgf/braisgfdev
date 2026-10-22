@@ -1,35 +1,55 @@
 # braisgf.dev — Development Log
 
-This branch explores a new role for the site: not just a portfolio, but a consumer-first archive for Brais' experiments.
+## 2026-10-22 — The lab becomes an application
+
+The redesign moved from a collection of static HTML pages to a reusable React + Vite application.
+
+### Architecture
+
+- React + Vite
+- React Router
+- i18next / react-i18next
+- Reusable components for navigation, dossiers, resources, accessibility, community and interactive sections
+- Content separated from presentation
+- English and Spanish share the same routes/components
+
+### Experience
+
+- Editorial laboratory aesthetic
+- Interactive `IMAGINE → CREATE → SHARE → REPEAT`
+- "You don't need another feed" remains a core principle
+- About page + professional timeline
+- Social/video bridge for visitors who know Brais from another platform
+- Next-project voting + suggestion box
+- Small visitor personality test
+- Human 404
+- Mobile navigation
+- Keyboard-accessible accessibility menu
+- Reduced-motion support
+
+### Publishing
+
+Experiments now have a reusable resource model. A publication can carry text, URLs, images, video, audio, PDFs, code, archives and other downloadable files.
+
+See `GUIDE.md` for the publishing workflow.
+
+### Discovery
+
+- canonical URLs
+- EN/ES hreflang
+- JSON-LD Person/WebSite/WebPage data
+- robots.txt
+- bilingual sitemap
+- Open Graph/Twitter metadata
+- stable human-readable URLs
+- internal links between person, career, experiments and archive
+
+### Repository cleanup
+
+The old static `about`, `blog`, `career`, `lab`, `privacy`, `social`, `stack`, `wip` and duplicated Spanish frontends were removed from `DEV` after their useful content was migrated into the new application.
+
+`main` remains untouched.
 
 ---
 
-### 2026-10-22 — Experiment-first redesign
-
-- Created the `DEV` branch from `main`.
-- Reworked the English and Spanish homepages around the experiment concept.
-- Added a responsive visual system focused on typography, storytelling and fast navigation.
-- Added `/experiments/` as a dedicated experiment archive.
-- Added the first two experiment dossiers as proof-of-concept content.
-- Kept the site static and dependency-free so it remains compatible with the current low-cost hosting setup.
-- Reframed social platforms as discovery channels rather than the destination.
-
-### Design principle
-
-> A video should create curiosity. An experiment dossier should give that curiosity somewhere to go.
-
-The long-term goal is for every meaningful Brais project to have a recognizable experiment number, a hypothesis, a story, a result and useful artifacts when appropriate.
-
-### Next candidates
-
-- Add richer media and progress logs to individual experiments.
-- Add RSS/Atom so people can follow the lab without an algorithmic feed.
-- Add Open Graph images per experiment.
-- Add lightweight search/filtering once the archive grows.
-- Consider a newsletter only if the archive proves people want to return.
-
----
-
-Keep building. Stay curious.
-
-— Braisgf
+> The site should feel like entering Brais' workshop, not opening another portfolio.
