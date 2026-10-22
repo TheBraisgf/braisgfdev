@@ -6,7 +6,8 @@ export function Layout({ children }) {
   const location = useLocation()
   const spanish = location.pathname === '/es' || location.pathname.startsWith('/es/')
   const prefix = spanish ? '/es' : ''
-  const alternate = spanish ? '/' : '/es'
+  const currentPath = spanish ? (location.pathname.slice(3) || '/') : location.pathname
+  const alternate = spanish ? currentPath : `/es${currentPath === '/' ? '' : currentPath}`
 
   return (
     <div className="site">
