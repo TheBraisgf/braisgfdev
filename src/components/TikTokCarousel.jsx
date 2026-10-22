@@ -11,7 +11,7 @@ const fallback = [
 ]
 
 const mapVideo = (video, index) => {
-  const id = video.id || video.video_id || String(index + 1)
+  const id = video.video_id || video.id || String(index + 1)
   return {
     id,
     title: video.title || video.video_description || '',
