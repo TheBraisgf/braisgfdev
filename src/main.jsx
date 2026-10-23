@@ -10,6 +10,7 @@ import './styles/experience.css'
 import './styles/community.css'
 import './styles/motion.css'
 import './styles/polish.css'
+import './styles/markdown.css'
 import './i18n/config.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode><BrowserRouter><App /></BrowserRouter></React.StrictMode>)
