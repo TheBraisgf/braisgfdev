@@ -1,0 +1,10 @@
+{
+  "videos": [
+    { "social": "TikTok", "orientation": "vertical", "url": "https://www.tiktok.com/@braisgfroom/video/REPLACE_WITH_VIDEO_ID_01" },
+    { "social": "TikTok", "orientation": "vertical", "url": "https://www.tiktok.com/@braisgfroom/video/REPLACE_WITH_VIDEO_ID_02" },
+    { "social": "TikTok", "orientation": "vertical", "url": "https://www.tiktok.com/@braisgfroom/video/REPLACE_WITH_VIDEO_ID_03" },
+    { "social": "TikTok", "orientation": "vertical", "url": "https://www.tiktok.com/@braisgfroom/video/REPLACE_WITH_VIDEO_ID_04" },
+    { "social": "TikTok", "orientation": "vertical", "url": "https://www.tiktok.com/@braisgfroom/video/REPLACE_WITH_VIDEO_ID_05" },
+    { "social": "TikTok", "orientation": "vertical", "url": "https://www.tiktok.com/@braisgfroom/video/REPLACE_WITH_VIDEO_ID_06" }
+  ]
+}

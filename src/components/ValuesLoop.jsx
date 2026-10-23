@@ -16,7 +16,7 @@ export function ValuesLoop() {
     <div className="values-loop">
       <div className="values-tabs" role="tablist" aria-label={t('home.valuesLabel')}>
         {values.map((value) => (
-          <button key={value.id} className={`value-tab ${active === value.id ? 'is-active' : ''}`} onClick={() => setActive(value.id)} role="tab" aria-selected={active === value.id} aria-controls={`value-panel-${value.id}`}>
+          <button key={value.id} className={`value-tab accent-${value.accent} ${active === value.id ? 'is-active' : ''}`} onClick={() => setActive(value.id)} role="tab" aria-selected={active === value.id} aria-controls={`value-panel-${value.id}`}>
             <span>{value.icon}</span>{t(`values.${value.id}.title`)} <b>→</b>
           </button>
         ))}
