@@ -1,69 +1,11 @@
-import { labHero, legacyPi, legacyAws, legacyGleenk } from './assets.js'
+import { labHero, videoBlaze, videoRoc, videoDice, legacyPi, legacyGleenk } from './assets.js'
 
 export const experiments = [
-  {
-    id: '001',
-    slug: 'make-the-lab-worth-visiting',
-    image: labHero,
-    accent: '#b7ff3c',
-    attachments: [],
-    links: [],
-    markdown: {
-      es: `## El laboratorio es el experimento
-
-Un laboratorio personal es más interesante cuando documenta **intentos**, no solo éxitos.
-
-![El laboratorio personal](${labHero})
-
-### La idea
-
-Esta web es la casa para todo lo que construyo, aprendo, rompo y, de vez en cuando, termino.
-
-No quiero que cada proyecto tenga que convertirse en un portfolio perfecto. Quiero poder enseñar el proceso: decisiones, prototipos, errores, archivos y resultados.
-
-> El objetivo no es que todo salga bien. Es que siempre haya algo nuevo que probar.
-
-### Y esto es solo el principio
-
-A partir de aquí, cada curiosidad puede convertirse en un experimento numerado. El siguiente puede ser software, hardware, una historia, una pieza física o algo completamente absurdo.`,
-      en: `## The lab is the experiment
-
-A personal lab is more interesting when it documents **attempts**, not just successes.
-
-![The personal lab](${labHero})
-
-### The idea
-
-This site is the home for everything I build, learn, break and, occasionally, finish.
-
-I do not want every project to become a polished portfolio piece. I want to show the process: decisions, prototypes, failures, files and results.
-
-> The goal is not for everything to work. The goal is to always have something new to try.
-
-### And this is only the beginning
-
-From here, every curiosity can become a numbered experiment. The next one might be software, hardware, a story, a physical object or something completely absurd.`
-    }
-  },
-  {
-    id: '002',
-    slug: 'build-a-better-digital-reader',
-    image: legacyPi,
-    accent: '#a98cff',
-    attachments: [],
-    links: [],
-    markdown: { es: '', en: '' }
-  },
-  {
-    id: '003',
-    slug: 'learn-by-building-the-thing',
-    image: legacyAws,
-    accent: '#8bb8ff',
-    attachments: [],
-    links: [],
-    markdown: { es: '', en: '' }
-  }
+  { id:'001', slug:'make-the-lab-worth-visiting', image:labHero, accent:'#b7ff3c', type:'META', status:'RUNNING', title:{es:'Hacer que el laboratorio merezca la pena.',en:'Make the lab worth visiting.'}, summary:{es:'La propia web como lugar para construir, aprender y enseñar el proceso.',en:'The site itself as a place to build, learn and show the process.'}, attachments:[], links:[], markdown:{ es:`## El laboratorio es el proyecto\n\nEsta web es la casa para todo lo que construyo, aprendo, rompo y, de vez en cuando, termino.\n\n![El laboratorio personal](${labHero})\n\n### La idea\n\nNo quiero otro portfolio perfecto. Quiero enseñar el proceso: decisiones, prototipos, errores, archivos y resultados.`, en:`## The lab is the project\n\nThis site is the home for everything I build, learn, break and, occasionally, finish.\n\n![The personal lab](${labHero})\n\n### The idea\n\nI do not want another perfect portfolio. I want to show the process: decisions, prototypes, failures, files and results.` } },
+  { id:'002', slug:'rpg-bell', image:videoDice, accent:'#a98cff', type:'MAKER', status:'RUNNING', title:{es:'Una campana para una partida de rol.',en:'A bell for a tabletop RPG.'}, summary:{es:'Una pieza física impresa en 3D para acabar encima de la mesa de juego.',en:'A 3D-printed physical piece made to end up on the gaming table.'}, attachments:[], links:[], markdown:{ es:`## Una campana para una partida de rol\n\nUna pieza física, impresa en 3D y diseñada para acabar encima de la mesa de juego.\n\nAquí irá el proceso completo: diseño, pruebas, impresión, fallos y versión final.`, en:`## A bell for a tabletop RPG\n\nA physical piece, 3D printed and designed to end up on the gaming table.\n\nThe full process goes here: design, tests, prints, failures and final version.` } },
+  { id:'003', slug:'learn-drawing', image:videoRoc, accent:'#8bb8ff', type:'LEARNING', status:'RUNNING', title:{es:'Aprender a dibujar de verdad.',en:'Actually learning to draw.'}, summary:{es:'Clases, ejercicios y práctica deliberada, enseñando el antes, durante y después.',en:'Classes, exercises and deliberate practice, showing the before, during and after.'}, attachments:[], links:[], markdown:{ es:`## Aprender a dibujar de verdad\n\nClases, ejercicios y práctica deliberada. La gracia está en enseñar el antes, el durante y el después.`, en:`## Actually learning to draw\n\nClasses, exercises and deliberate practice. The interesting part is showing the before, during and after.` } },
+  { id:'004', slug:'build-in-public', image:videoBlaze, accent:'#ff6b9d', type:'CONTENT', status:'RUNNING', title:{es:'Construir en público.',en:'Building in public.'}, summary:{es:'Vídeos cortos, ideas y pruebas que comparto mientras las hago.',en:'Short videos, ideas and tests shared while I am making them.'}, attachments:[], links:[], markdown:{ es:`## Construir en público\n\nVídeos cortos, ideas, pruebas y cosas que voy compartiendo mientras las hago.`, en:`## Building in public\n\nShort videos, ideas, tests and things I share while I am making them.` } },
+  { id:'005', slug:'vault-42', image:legacyPi, accent:'#66d9ff', type:'SYSTEMS', status:'RUNNING', title:{es:'Bóveda 42.',en:'Vault 42.'}, summary:{es:'Mi laboratorio doméstico de servidores, medios, automatización y cacharreo.',en:'My home lab for servers, media, automation and tinkering.'}, attachments:[], links:[], markdown:{ es:`## Bóveda 42\n\nMi laboratorio doméstico de servidores, medios, automatización y cacharreo.`, en:`## Vault 42\n\nMy home lab for servers, media, automation and tinkering.` } }
 ]
-
 export const archiveVisuals = { wildcard: legacyGleenk }
-export const getExperiment = (id) => experiments.find((experiment) => experiment.id === id)
+export const getExperiment = (id) => experiments.find((project) => project.id === id)

@@ -6,9 +6,9 @@ export const values = [
 ]
 
 export const pollOptions = [
-  { id: 'reader', number: '002', accent: 'acid' },
-  { id: 'maker', number: '003', accent: 'violet' },
-  { id: 'wildcard', number: '004', accent: 'blue' }
+  { id: 'bell', number: '002', accent: 'violet' },
+  { id: 'drawing', number: '003', accent: 'blue' },
+  { id: 'vault', number: '005', accent: 'acid' }
 ]
 
 export const career = [
