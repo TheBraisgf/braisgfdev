@@ -1,1 +1,3 @@
-## Bóveda 42\n\nMi laboratorio doméstico de servidores, medios, automatización y cacharreo.
+## Bóveda 42
+
+Mi laboratorio doméstico de servidores, medios, automatización y cacharreo.

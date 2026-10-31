@@ -1,8 +1,10 @@
 import { createHash, randomBytes, timingSafeEqual } from 'node:crypto'
+import { execFile as execFileCallback } from 'node:child_process'
 import { createServer } from 'node:http'
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises'
-import { dirname, resolve } from 'node:path'
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'
+import { dirname, extname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { promisify } from 'node:util'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const contentDirectory = resolve(root, 'src/content')
@@ -14,6 +16,8 @@ const origin = `http://${host}:${port}`
 const knownImageKeys = new Set(['labHero', 'labDetail', 'videoBlaze', 'videoRoc', 'videoDice', 'legacyPi'])
 const validLocales = ['en', 'es']
 const server = createServer(handleRequest)
+const execFile = promisify(execFileCallback)
+let gitPublishInProgress = false
 
 if (!Number.isInteger(port) || port < 1024 || port > 65535) throw new Error('BRAIS_EDITOR_PORT must be an integer between 1024 and 65535.')
 
@@ -50,6 +54,10 @@ async function handleRequest(request, response) {
     if (request.method === 'POST' && url.pathname === '/api/projects') return await createProject(response)
     const match = url.pathname.match(/^\/api\/projects\/(\d{3})$/)
     if (request.method === 'PUT' && match) return await saveProject(request, response, match[1])
+    if (request.method === 'DELETE' && match) return await deleteProject(request, response, match[1])
+    if (request.method === 'POST' && url.pathname === '/api/images') return await uploadImage(request, response)
+    if (request.method === 'GET' && url.pathname === '/api/git/preview') return sendJson(response, 200, await getGitPreview())
+    if (request.method === 'POST' && url.pathname === '/api/git/publish') return await publishGitChanges(request, response)
     sendError(response, 404, 'Not found.')
   } catch (error) {
     sendError(response, error.status || 500, error.status ? error.message : 'Could not read or save the workspace.')
@@ -160,6 +168,122 @@ async function createProject(response) {
   await writeJsonAtomically(resolve(contentDirectory, 'projects.json'), nextProjects)
   const version = projectVersion(project, markdown)
   sendJson(response, 201, { project: { ...project, markdown, version } })
+}
+
+async function deleteProject(request, response, id) {
+  const body = await readRequestJson(request)
+  const path = resolve(contentDirectory, 'projects.json')
+  const projects = JSON.parse(await readFile(path, 'utf8'))
+  const index = projects.findIndex((project) => project.id === id)
+  if (index < 0) throw problem(404, 'Project not found.')
+  const current = projects[index]
+  const markdown = {}
+  for (const locale of validLocales) markdown[locale] = await readFile(resolve(contentDirectory, `experiments/${id}/${locale}.md`), 'utf8').catch((error) => error.code === 'ENOENT' ? '' : Promise.reject(error))
+  if (body.version !== projectVersion(current, markdown)) throw problem(409, 'This project changed on disk. Reload before deleting it.')
+  const markdownDirectory = resolve(contentDirectory, `experiments/${id}`)
+  if (!markdownDirectory.startsWith(resolve(contentDirectory, 'experiments') + '\\')) throw problem(400, 'Invalid project directory.')
+  const next = projects.filter((project) => project.id !== id)
+  await writeJsonAtomically(path, next)
+  await rm(markdownDirectory, { recursive: true, force: true })
+  sendJson(response, 200, { id, retainedAttachments: true })
+}
+
+async function uploadImage(request, response) {
+  const allowed = new Map([
+    ['.jpg', 'jpeg'], ['.jpeg', 'jpeg'], ['.png', 'png'], ['.webp', 'webp'], ['.gif', 'gif'], ['.avif', 'avif']
+  ])
+  let originalName
+  try { originalName = decodeURIComponent(request.headers['x-asset-name'] || '') } catch { throw problem(400, 'The image filename is invalid.') }
+  const extension = extname(originalName).toLowerCase()
+  const format = allowed.get(extension)
+  if (!format) throw problem(415, 'Choose a JPEG, PNG, WebP, GIF or AVIF image.')
+  const collection = request.headers['x-asset-scope'] || ''
+  const id = request.headers['x-asset-id'] || ''
+  let relativeDirectory
+  if (collection === 'project' && /^\d{3}$/.test(id)) relativeDirectory = `public/images/projects/${id}`
+  else if (collection === 'note' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) relativeDirectory = `public/images/notes/${id}`
+  else if (collection === 'journal' && !id) relativeDirectory = 'public/images/journal'
+  else throw problem(400, 'Choose a valid project, field note or journal destination.')
+  const bytes = await readRequestBuffer(request, 15_000_000)
+  if (!isImageBuffer(bytes, format)) throw problem(415, 'The file content does not match its image extension.')
+  const stem = originalName.slice(0, -extension.length).normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 70) || 'imagen'
+  const filename = `${new Date().toISOString().slice(0, 10)}-${stem}-${randomBytes(3).toString('hex')}${extension}`
+  const directory = resolve(root, relativeDirectory)
+  if (!directory.startsWith(resolve(root, 'public/images') + '\\')) throw problem(400, 'Invalid image destination.')
+  await mkdir(directory, { recursive: true })
+  await writeFile(resolve(directory, filename), bytes, { flag: 'wx' })
+  const urlPath = `/${relativeDirectory.replaceAll('\\', '/')}/${filename}`
+  sendJson(response, 201, { path: urlPath, filename, bytes: bytes.length })
+}
+
+function isImageBuffer(bytes, format) {
+  if (format === 'jpeg') return bytes.length > 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff
+  if (format === 'png') return bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))
+  if (format === 'webp') return bytes.toString('ascii', 0, 4) === 'RIFF' && bytes.toString('ascii', 8, 12) === 'WEBP'
+  if (format === 'gif') return ['GIF87a', 'GIF89a'].includes(bytes.toString('ascii', 0, 6))
+  if (format === 'avif') return bytes.toString('ascii', 4, 8) === 'ftyp' && ['avif', 'avis'].includes(bytes.toString('ascii', 8, 12))
+  return false
+}
+
+async function readRequestBuffer(request, maxBytes) {
+  let size = 0
+  const chunks = []
+  for await (const chunk of request) {
+    size += chunk.length
+    if (size > maxBytes) throw problem(413, `Image exceeds the ${Math.round(maxBytes / 1_000_000)} MB limit.`)
+    chunks.push(chunk)
+  }
+  if (!size) throw problem(400, 'The image file is empty.')
+  return Buffer.concat(chunks)
+}
+
+async function getGitPreview() {
+  const [{ stdout: status }, { stdout: branches }, { stdout: currentBranch }] = await Promise.all([
+    execFile('git', ['status', '--porcelain=v1', '--untracked-files=all'], { cwd: root, windowsHide: true }),
+    execFile('git', ['branch', '--format=%(refname:short)'], { cwd: root, windowsHide: true }),
+    execFile('git', ['branch', '--show-current'], { cwd: root, windowsHide: true })
+  ])
+  await execFile('git', ['remote', 'get-url', 'origin'], { cwd: root, windowsHide: true })
+  const files = status.split(/\r?\n/).filter(Boolean)
+  const blockedFiles = files.filter((line) => isSensitiveGitPath(line.slice(3)))
+  return { currentBranch: currentBranch.trim(), branches: branches.split(/\r?\n/).map((branch) => branch.trim()).filter(Boolean), files, blockedFiles, version: digest(status) }
+}
+
+function isSensitiveGitPath(value) {
+  const path = value.replace(/^.* -> /, '').replaceAll('\\', '/')
+  const name = path.split('/').at(-1) || ''
+  return /^\.env(?:\..*)?$/i.test(name) || /^(?:id_(?:rsa|ed25519)|credentials|secrets?)(?:\.|$)/i.test(name) || /\.(?:pem|key|p12|pfx)$/i.test(name)
+}
+
+async function publishGitChanges(request, response) {
+  if (gitPublishInProgress) throw problem(409, 'A commit and push are already running.')
+  gitPublishInProgress = true
+  try {
+    const body = await readRequestJson(request)
+    const branch = typeof body.branch === 'string' ? body.branch : ''
+    const message = typeof body.message === 'string' ? body.message.trim() : ''
+    if (body.confirmed !== true) throw problem(400, 'Review the file list and confirm before publishing.')
+    if (!message || message.length > 160 || /[\r\n]/.test(message)) throw problem(400, 'Enter a one-line commit message of up to 160 characters.')
+    const preview = await getGitPreview()
+    if (!preview.branches.includes(branch)) throw problem(400, 'Choose one of the local Git branches listed in the editor.')
+    if (body.version !== preview.version) throw problem(409, 'Files changed after the preview. Review the changes again before publishing.')
+    if (!preview.files.length) throw problem(400, 'There are no repository changes to commit.')
+    if (preview.blockedFiles.length) throw problem(400, `Remove sensitive local files from the change set before publishing: ${preview.blockedFiles.map((line) => line.slice(3)).join(', ')}`)
+    await execFile('git', ['add', '--all'], { cwd: root, windowsHide: true, maxBuffer: 2_000_000 })
+    const { stdout: commitOutput } = await execFile('git', ['commit', '-m', message], { cwd: root, windowsHide: true, maxBuffer: 2_000_000 })
+    try {
+      const { stdout: pushOutput } = await execFile('git', ['push', 'origin', `HEAD:refs/heads/${branch}`], { cwd: root, windowsHide: true, maxBuffer: 2_000_000, timeout: 120_000 })
+      sendJson(response, 200, { branch, commit: commitOutput.trim(), push: pushOutput.trim() })
+    } catch (error) {
+      sendJson(response, 502, { error: `Commit created locally, but GitHub rejected the push: ${(error.stderr || error.message).trim()}` })
+    }
+  } catch (error) {
+    if (error.status) throw error
+    const details = (error.stderr || error.message || '').trim()
+    throw problem(500, details || 'Git could not commit the repository changes.')
+  } finally {
+    gitPublishInProgress = false
+  }
 }
 
 async function saveProject(request, response, id) {

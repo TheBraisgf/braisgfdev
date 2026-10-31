@@ -9,7 +9,17 @@ const ui = {
   projectsTab: document.querySelector('#tab-projects'),
   videosTab: document.querySelector('#tab-videos'),
   siteContentTab: document.querySelector('#tab-site-content'),
-  editorListsTab: document.querySelector('#tab-editor-lists')
+  editorListsTab: document.querySelector('#tab-editor-lists'),
+  gitButton: document.querySelector('#git-publish'),
+  gitDialog: document.querySelector('#git-dialog'),
+  gitForm: document.querySelector('#git-form'),
+  gitBranch: document.querySelector('#git-branch'),
+  gitMessage: document.querySelector('#git-message'),
+  gitFiles: document.querySelector('#git-files'),
+  gitEmpty: document.querySelector('#git-empty'),
+  gitConfirm: document.querySelector('#git-confirm'),
+  gitResult: document.querySelector('#git-result'),
+  gitSubmit: document.querySelector('#git-submit')
 }
 
 const state = {
@@ -67,6 +77,7 @@ async function connect(token) {
     state.selectedId = state.projects.find((project) => project.visibility !== 'archived')?.id || state.projects[0]?.id || ''
     ui.gate.hidden = true
     ui.app.hidden = false
+    ui.gitButton.hidden = false
     render()
   } catch (error) {
     showGate(error.message)
@@ -172,9 +183,79 @@ function contentField(label,path,value,multiline=false,lines='') {
 }
 
 function renderEditorLists() {
-  const notes = state.fieldNotes.entries.map((item, index) => `<article class="content-card"><header><h3>${escapeHtml(item.title?.es || `Nota ${index + 1}`)}</h3><button type="button" class="remove-button" data-remove-note="${index}" aria-label="Eliminar nota ${index + 1}">Eliminar</button></header><div class="field-grid">${listField('Slug', `fieldNotes.entries.${index}.slug`, item.slug)}${listSelect('Visibilidad', `fieldNotes.entries.${index}.visibility`, item.visibility, [['draft','Borrador'],['public','Público'],['archived','Archivado']])}${listField('Fecha', `fieldNotes.entries.${index}.date`, item.date, 'date')}${listField('Etiquetas (separadas por coma)', `fieldNotes.entries.${index}.tags`, (item.tags || []).join(', '))}${listField('Título · ES', `fieldNotes.entries.${index}.title.es`, item.title?.es)}${listField('Title · EN', `fieldNotes.entries.${index}.title.en`, item.title?.en)}${listField('Resumen · ES', `fieldNotes.entries.${index}.summary.es`, item.summary?.es, 'textarea')}${listField('Summary · EN', `fieldNotes.entries.${index}.summary.en`, item.summary?.en, 'textarea')}${listField('Markdown · ES', `fieldNotes.entries.${index}.markdown.es`, item.markdown?.es, 'textarea')}${listField('Markdown · EN', `fieldNotes.entries.${index}.markdown.en`, item.markdown?.en, 'textarea')}</div></article>`).join('')
-  const journal = state.journal.items.map((item, index) => `<article class="content-card"><header><h3>${escapeHtml(item.title?.es || `Pieza ${index + 1}`)}</h3><button type="button" class="remove-button" data-remove-journal="${index}" aria-label="Eliminar pieza ${index + 1}">Eliminar</button></header><div class="field-grid">${listField('ID', `journal.items.${index}.id`, item.id)}${listSelect('Visibilidad', `journal.items.${index}.visibility`, item.visibility, [['draft','Borrador'],['public','Público'],['archived','Archivado']])}${listSelect('Tipo', `journal.items.${index}.type`, item.type, [['image','Foto'],['video','Vídeo']])}${listField('Fecha', `journal.items.${index}.date`, item.date, 'date')}${listField('Plataforma', `journal.items.${index}.platform`, item.platform)}${listField('Archivo local (foto)', `journal.items.${index}.src`, item.src)}${listField('URL original', `journal.items.${index}.url`, item.url)}${listField('URL de inserción (vídeo)', `journal.items.${index}.embedUrl`, item.embedUrl)}${listField('Título · ES', `journal.items.${index}.title.es`, item.title?.es)}${listField('Title · EN', `journal.items.${index}.title.en`, item.title?.en)}${listField('Descripción · ES', `journal.items.${index}.description.es`, item.description?.es, 'textarea')}${listField('Description · EN', `journal.items.${index}.description.en`, item.description?.en, 'textarea')}${listField('Texto alternativo · ES', `journal.items.${index}.alt.es`, item.alt?.es)}${listField('Alt text · EN', `journal.items.${index}.alt.en`, item.alt?.en)}</div></article>`).join('')
+  const notes = state.fieldNotes.entries.map((item, index) => `<article class="content-card"><header><h3>${escapeHtml(item.title?.es || `Nota ${index + 1}`)}</h3><button type="button" class="remove-button" data-remove-note="${index}" aria-label="Eliminar nota ${index + 1}">Eliminar</button></header><div class="field-grid">${listField('Slug', `fieldNotes.entries.${index}.slug`, item.slug)}${listSelect('Visibilidad', `fieldNotes.entries.${index}.visibility`, item.visibility, [['draft','Borrador'],['public','Público'],['archived','Archivado']])}${listField('Fecha', `fieldNotes.entries.${index}.date`, item.date, 'date')}${listField('Etiquetas (separadas por coma)', `fieldNotes.entries.${index}.tags`, (item.tags || []).join(', '))}${listField('Título · ES', `fieldNotes.entries.${index}.title.es`, item.title?.es)}${listField('Title · EN', `fieldNotes.entries.${index}.title.en`, item.title?.en)}${listField('Resumen · ES', `fieldNotes.entries.${index}.summary.es`, item.summary?.es, 'textarea')}${listField('Summary · EN', `fieldNotes.entries.${index}.summary.en`, item.summary?.en, 'textarea')}${listField('Markdown · ES', `fieldNotes.entries.${index}.markdown.es`, item.markdown?.es, 'textarea')}${imageUpload('note', item.slug, `list-fieldNotes-entries-${index}-markdown-es`, 'markdown')}${listField('Markdown · EN', `fieldNotes.entries.${index}.markdown.en`, item.markdown?.en, 'textarea')}${imageUpload('note', item.slug, `list-fieldNotes-entries-${index}-markdown-en`, 'markdown')}</div></article>`).join('')
+  const journal = state.journal.items.map((item, index) => `<article class="content-card"><header><h3>${escapeHtml(item.title?.es || `Pieza ${index + 1}`)}</h3><button type="button" class="remove-button" data-remove-journal="${index}" aria-label="Eliminar pieza ${index + 1}">Eliminar</button></header><div class="field-grid">${listField('ID', `journal.items.${index}.id`, item.id)}${listSelect('Visibilidad', `journal.items.${index}.visibility`, item.visibility, [['draft','Borrador'],['public','Público'],['archived','Archivado']])}${listSelect('Tipo', `journal.items.${index}.type`, item.type, [['image','Foto'],['video','Vídeo']])}${listField('Fecha', `journal.items.${index}.date`, item.date, 'date')}${listField('Plataforma', `journal.items.${index}.platform`, item.platform)}${listField('Archivo local (foto)', `journal.items.${index}.src`, item.src)}${imageUpload('journal', '', `list-journal-items-${index}-src`, 'field')}${listField('URL original', `journal.items.${index}.url`, item.url)}${listField('URL de inserción (vídeo)', `journal.items.${index}.embedUrl`, item.embedUrl)}${listField('Título · ES', `journal.items.${index}.title.es`, item.title?.es)}${listField('Title · EN', `journal.items.${index}.title.en`, item.title?.en)}${listField('Descripción · ES', `journal.items.${index}.description.es`, item.description?.es, 'textarea')}${listField('Description · EN', `journal.items.${index}.description.en`, item.description?.en, 'textarea')}${listField('Texto alternativo · ES', `journal.items.${index}.alt.es`, item.alt?.es)}${listField('Alt text · EN', `journal.items.${index}.alt.en`, item.alt?.en)}</div></article>`).join('')
   ui.panel.innerHTML = `<header class="editor-header"><div><p class="eyebrow">CUADERNO ABIERTO</p><h1>Notas y registro visual.</h1><p class="field hint">Crea reseñas, ideas y piezas visuales desde estos campos. Usa Markdown para dar formato y enlaza proyectos con <code>/experiments/001</code>; puedes ajustar relaciones y etiquetas en las opciones avanzadas.</p></div></header><section class="panel"><div class="panel-head"><h2>Notas de campo</h2><button class="small-button" type="button" data-new-note>+ Nueva nota</button></div><div class="panel-body">${notes || '<p class="hint">Aún no hay notas. Crea una para empezar.</p>'}</div></section><section class="panel"><div class="panel-head"><h2>Cuaderno visual</h2><button class="small-button" type="button" data-new-journal-item>+ Nueva pieza</button></div><div class="panel-body">${journal || '<p class="hint">Aún no hay piezas. Crea una para añadir fotos o vídeos.</p>'}<p class="hint">Guarda fotos en <code>public/images/journal/</code>. Usa la ruta web <code>/images/journal/nombre.webp</code>. Las piezas nuevas quedan como borrador.</p></div></section><details class="panel advanced-json"><summary>Opciones avanzadas · JSON y enlaces relacionados</summary><div class="panel-body"><label class="field full" for="field-notes-source">Notas · src/content/field-notes.json</label><textarea id="field-notes-source" rows="12" spellcheck="false">${escapeHtml(JSON.stringify(state.fieldNotes, null, 2))}</textarea><label class="field full" for="journal-source">Cuaderno · src/content/journal.json</label><textarea id="journal-source" rows="12" spellcheck="false">${escapeHtml(JSON.stringify(state.journal, null, 2))}</textarea></div></details><div class="editor-actions"><span class="shortcut-hint">Atajo: Ctrl + S</span><button class="button" id="save-current" type="button" data-save-editor-lists>Guardar notas y cuaderno <span aria-hidden="true">↗</span></button></div>`
+}
+
+function imageUpload(scope, id, target, mode) {
+  return `<label class="image-upload">Subir imagen desde el ordenador<input type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/avif" data-image-upload data-scope="${attr(scope)}" data-scope-id="${attr(id)}" data-target="${attr(target)}" data-mode="${attr(mode)}" /></label>`
+}
+
+async function handleImageUpload(event) {
+  const input = event.target
+  if (!input.matches('[data-image-upload]')) return
+  const file = input.files?.[0]
+  if (!file) return
+  input.disabled = true
+  try {
+    const response = await fetch('/api/images', { method: 'POST', headers: { Authorization: `Bearer ${state.token}`, 'Content-Type': file.type, 'X-Asset-Name': encodeURIComponent(file.name), 'X-Asset-Scope': input.dataset.scope, 'X-Asset-Id': input.dataset.scopeId || '' }, body: file })
+    const result = await response.json().catch(() => ({}))
+    if (!response.ok) throw new Error(result.error || `Upload failed (${response.status}).`)
+    if (input.dataset.mode === 'project-image') {
+      const field = ui.panel.querySelector('[data-project-field="image"]')
+      field.value = result.path
+      handleFieldChange({ target: field })
+    } else {
+      const target = document.getElementById(input.dataset.target)
+      if (!target) throw new Error('No se encontró el campo donde insertar la imagen.')
+      if (input.dataset.mode === 'markdown') {
+        const alt = file.name.replace(/\.[^.]+$/, '').replace(/[\[\]\r\n]/g, ' ').trim()
+        const insertion = `![${alt || 'Imagen'}](${result.path})`
+        const start = target.selectionStart
+        const end = target.selectionEnd
+        target.setRangeText(insertion, start, end, 'end')
+        target.dispatchEvent(new Event('input', { bubbles: true }))
+      } else {
+        target.value = result.path
+        target.dispatchEvent(new Event('input', { bubbles: true }))
+      }
+    }
+    showToast(`Imagen guardada: ${result.path}`)
+  } catch (error) { showToast(error.message, true) }
+  finally { input.disabled = false; input.value = '' }
+}
+
+async function openGitDialog() {
+  if (isDirty()) return showToast('Guarda primero los cambios del editor; después podrás incluirlos en el commit.', true)
+  ui.gitResult.textContent = 'Leyendo estado de Git...'
+  ui.gitDialog.showModal()
+  ui.gitConfirm.checked = false
+  ui.gitSubmit.disabled = true
+  try {
+    const preview = await api('/api/git/preview')
+    ui.gitBranch.replaceChildren(...preview.branches.map((name) => { const option = document.createElement('option'); option.value = name; option.textContent = name; option.selected = name === preview.currentBranch; return option }))
+    ui.gitFiles.replaceChildren(...preview.files.map((line) => { const item = document.createElement('li'); item.textContent = line; return item }))
+    ui.gitEmpty.hidden = preview.files.length > 0
+    ui.gitFiles.hidden = preview.files.length === 0
+    ui.gitSubmit.disabled = preview.files.length === 0 || preview.blockedFiles.length > 0
+    ui.gitForm.dataset.version = preview.version
+    ui.gitResult.textContent = preview.blockedFiles.length ? `No se subir\u00e1: hay archivos sensibles (${preview.blockedFiles.map((line) => line.slice(3)).join(', ')}).` : preview.files.length ? `${preview.files.length} archivo(s) se incluir\u00e1n.` : 'No hay cambios pendientes.'
+  } catch (error) { ui.gitResult.textContent = error.message; ui.gitSubmit.disabled = true }
+}
+
+async function publishFromEditor(event) {
+  event.preventDefault()
+  if (!ui.gitConfirm.checked) return
+  ui.gitSubmit.disabled = true
+  ui.gitResult.textContent = 'Creando commit y enviando a GitHub...'
+  try {
+    const result = await api('/api/git/publish', { method: 'POST', body: JSON.stringify({ branch: ui.gitBranch.value, message: ui.gitMessage.value, version: ui.gitForm.dataset.version, confirmed: ui.gitConfirm.checked }) })
+    ui.gitResult.textContent = `Cambios enviados a ${result.branch}. ${result.commit}`
+    showToast(`Push completado en ${result.branch}.`)
+    ui.gitDialog.close()
+    await openGitDialog()
+  } catch (error) { ui.gitResult.textContent = error.message; showToast(error.message, true); ui.gitSubmit.disabled = false }
 }
 
 function listField(label, path, value, kind = 'text') {
@@ -223,6 +304,7 @@ function renderProject() {
           ${field('Estado visible', 'status', project.status, 'text', 'RUNNING')}
           ${field('Año del proyecto (opcional)', 'year', project.year, 'text', 'AAAA', 'Déjalo vacío si no conoces el año real.', true)}
           ${field('Imagen de portada', 'image', project.image, 'text', '/images/portada.jpg', 'Usa un recurso @importado o una ruta local como /files/006/cover.jpg.', true)}
+          ${imageUpload('project', project.id, 'field-image', 'project-image')}
           <div class="field"><span class="field-label">Color de acento</span><div class="color-field"><input aria-label="Selector de color" type="color" value="${attr(project.accent || '#a98cff')}" data-project-field="accent"><input aria-label="Color hexadecimal" type="text" value="${attr(project.accent || '#a98cff')}" data-project-field="accent" maxlength="7"></div></div>
           ${field('Título · Español', 'title.es', project.title.es, 'text', 'Un proyecto en marcha', 'Hasta 160 caracteres.', true)}
           ${field('Título · English', 'title.en', project.title.en, 'text', 'A project in progress', 'Hasta 160 caracteres.', true)}
@@ -237,12 +319,12 @@ function renderProject() {
             <div class="toolbar-group" aria-label="Formato de texto"><button type="button" data-format="bold" aria-label="Negrita" title="Negrita (Ctrl+B)"><strong>B</strong></button><button type="button" data-format="italic" aria-label="Cursiva" title="Cursiva (Ctrl+I)"><em>I</em></button><button type="button" data-format="code" aria-label="Código en línea" title="Código">&lt;/&gt;</button></div>
             <div class="toolbar-group" aria-label="Bloques"><button type="button" data-format="ul" aria-label="Lista con viñetas" title="Lista con viñetas">Lista</button><button type="button" data-format="ol" aria-label="Lista numerada" title="Lista numerada">1. Lista</button><button type="button" data-format="quote" aria-label="Cita" title="Cita">Cita</button></div>
             <div class="toolbar-group" aria-label="Insertar"><button type="button" data-format="link" aria-label="Insertar enlace" title="Enlace (Ctrl+K)">Enlace</button><button type="button" data-format="image" aria-label="Insertar imagen" title="Imagen">Imagen</button></div>
-          </div><label class="sr-only" for="markdown-source">Texto Markdown del idioma seleccionado</label><textarea id="markdown-source" spellcheck="true" data-project-body="${state.locale}" placeholder="## La pregunta\n\n¿Qué quieres descubrir?\n\n## El proceso\n\nCuenta qué probaste, qué cambió y qué aprendiste.">${escapeHtml(project.markdown[state.locale] || '')}</textarea></div><div class="preview" aria-label="Vista previa del texto"><p class="preview-label">VISTA PREVIA · ${state.locale.toUpperCase()}</p><div id="markdown-preview">${renderMarkdown(project.markdown[state.locale] || '')}</div></div></div>
+          </div><label class="sr-only" for="markdown-source">Texto Markdown del idioma seleccionado</label><textarea id="markdown-source" spellcheck="true" data-project-body="${state.locale}" placeholder="## La pregunta\n\n¿Qué quieres descubrir?\n\n## El proceso\n\nCuenta qué probaste, qué cambió y qué aprendiste.">${escapeHtml(project.markdown[state.locale] || '')}</textarea>${imageUpload('project', project.id, 'markdown-source', 'markdown')}</div><div class="preview" aria-label="Vista previa del texto"><p class="preview-label">VISTA PREVIA · ${state.locale.toUpperCase()}</p><div id="markdown-preview">${renderMarkdown(project.markdown[state.locale] || '')}</div></div></div>
       </section>
     </div>
     ${resourceEditor(project, 'links', 'Enlaces externos', 'GitHub, vídeo, demo o fuente relacionada.')}
     ${resourceEditor(project, 'attachments', 'Archivos y recursos', 'PDF, prototipo, imagen, ZIP o descarga. Usa /files/ID/nombre.ext para archivos del repo.')}
-    <div class="editor-actions"><span class="shortcut-hint">Atajo: Ctrl + S</span><div class="editor-action-buttons"><button class="button button-secondary" type="button" data-run-review>Revisión final</button><button class="button" id="save-current" type="button" data-save-project>Guardar cambios <span aria-hidden="true">&gt;</span></button></div></div>
+    <div class="editor-actions"><span class="shortcut-hint">Atajo: Ctrl + S</span><div class="editor-action-buttons"><button class="remove-button" type="button" data-delete-project>Eliminar proyecto</button><button class="button button-secondary" type="button" data-run-review>Revisión final</button><button class="button" id="save-current" type="button" data-save-project>Guardar cambios <span aria-hidden="true">&gt;</span></button></div></div>
     <section class="review-report" id="review-report" tabindex="-1" aria-live="polite" aria-atomic="true" hidden></section>`
 }
 
@@ -364,9 +446,14 @@ document.querySelector('[role="tablist"]').addEventListener('keydown', (event) =
   tabs[next].click()
 })
 document.querySelector('#new-project').addEventListener('click', createDraft)
+ui.gitButton.addEventListener('click', openGitDialog)
+ui.gitDialog.addEventListener('click', (event) => { if (event.target.matches('[data-close-git]')) ui.gitDialog.close() })
+ui.gitDialog.addEventListener('click', (event) => { if (event.target === ui.gitDialog) ui.gitDialog.close() })
+ui.gitForm.addEventListener('submit', publishFromEditor)
 ui.panel.addEventListener('click', handlePanelClick)
 ui.panel.addEventListener('input', handleFieldChange)
 ui.panel.addEventListener('change', handleFieldChange)
+ui.panel.addEventListener('change', handleImageUpload)
 ui.panel.addEventListener('keydown', (event) => {
   if (event.target.id !== 'markdown-source' || !(event.ctrlKey || event.metaKey)) return
   const format = ({ b: 'bold', i: 'italic', k: 'link' })[event.key.toLowerCase()]
@@ -393,6 +480,18 @@ async function handlePanelClick(event) {
   if (target.matches('[data-save-project], [data-save-videos]')) return saveCurrent()
   if (target.matches('[data-save-site-content]')) return saveCurrent()
   if (target.matches('[data-save-editor-lists]')) return saveCurrent()
+  if (target.matches('[data-delete-project]')) {
+    const project = selectedProject()
+    if (!project || !window.confirm(`Eliminar el proyecto #${project.id} y sus dossiers Markdown? Los adjuntos de public/files se conservaran.${state.dirtyProjects.has(project.id) ? ' Los cambios sin guardar tambien se perderan.' : ''}`)) return
+    try {
+      await api(`/api/projects/${project.id}`, { method: 'DELETE', body: JSON.stringify({ version: project.version }) })
+      state.projects = state.projects.filter((item) => item.id !== project.id)
+      state.dirtyProjects.delete(project.id)
+      state.selectedId = state.projects[0]?.id || ''
+      render(); showToast('Proyecto eliminado del repositorio local. Confirma los cambios con Commit y push cuando quieras.')
+    } catch (error) { showToast(error.message, true) }
+    return
+  }
   if (target.matches('[data-format-content]')) {
     const area = ui.panel.querySelector('#site-content-source')
     try { area.value = JSON.stringify(JSON.parse(area.value), null, 2); area.focus() } catch { showToast('El JSON no es válido todavía.', true) }
@@ -404,10 +503,14 @@ async function handlePanelClick(event) {
     return
   }
   if (target.matches('[data-remove-note]')) {
+    const note = state.fieldNotes.entries[Number(target.dataset.removeNote)]
+    if (!window.confirm(`Quitar la nota ${note?.title?.es || note?.slug || ''}? Los cambios sin guardar tambien se perderan.`)) return
     state.fieldNotes.entries.splice(Number(target.dataset.removeNote), 1)
     state.dirtyEditorLists = true; renderEditorLists(); setSaveState(); return
   }
   if (target.matches('[data-remove-journal]')) {
+    const item = state.journal.items[Number(target.dataset.removeJournal)]
+    if (!window.confirm(`Quitar ${item?.title?.es || item?.id || ''}? Los cambios sin guardar tambien se perderan.`)) return
     state.journal.items.splice(Number(target.dataset.removeJournal), 1)
     state.dirtyEditorLists = true; renderEditorLists(); setSaveState(); return
   }
@@ -473,6 +576,7 @@ async function handlePanelClick(event) {
 
 function handleFieldChange(event) {
   const target = event.target
+  if (target.matches('[data-image-upload]')) return
   if (target.matches('[data-list-path]')) {
     const parts = target.dataset.listPath.split('.').map((part) => /^\d+$/.test(part) ? Number(part) : part)
     const value = parts.at(-1) === 'tags' ? target.value.split(',').map((tag) => tag.trim()).filter(Boolean) : target.value

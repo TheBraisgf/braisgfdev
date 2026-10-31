@@ -20,6 +20,14 @@ try {
   ])
   const { MemoryRouter } = await import('react-router-dom')
   const template = await readFile(resolve(root, 'dist/index.html'), 'utf8')
+  for (const project of experiments) {
+    for (const locale of ['en', 'es']) {
+      const markdown = project.markdown[locale]
+      if (markdown.includes('\\n') && !/\r?\n/.test(markdown)) {
+        throw new Error(`Experiment ${project.id} (${locale}) contains escaped newline text instead of Markdown line breaks.`)
+      }
+    }
+  }
   const routes = ['/', '/es', '/experiments', '/es/experiments', '/about', '/es/about', '/career', '/es/career', '/notes', '/es/notes', '/journal', '/es/journal', ...fieldNotes.filter(({ visibility }) => visibility === 'public').flatMap(({ slug }) => [`/notes/${slug}`, `/es/notes/${slug}`]), ...experiments.flatMap(({ id }) => [`/experiments/${id}`, `/es/experiments/${id}`]), '/404']
 
   for (const route of routes) {

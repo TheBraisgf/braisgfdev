@@ -36,7 +36,10 @@ public/images/            # Imágenes activas; rutas de reemplazo en IMAGE_PLAN.
 3. Abre en este ordenador el enlace de un solo uso que imprime la terminal. El enlace incluye un token temporal; no lo compartas.
 4. Elige una pestaña: Proyectos; Galería de vídeo; Trayectoria, encuesta y test; o Notas y cuaderno visual. Los dos últimos apartados tienen campos bilingües y plantillas para crear entradas.
 5. Guarda con el botón o `Ctrl+S`. Los cambios se escriben en los archivos del repositorio. Si `npm run dev` está ejecutándose en otra terminal, Vite recarga el sitio al detectar los cambios.
-6. Crea primero como borrador. Para publicar, completa título, resumen y cuerpo en ambos idiomas y cambia la visibilidad a “Público”. Para retirar sin borrar, usa “Archivado”.
+6. Puedes borrar un proyecto, nota o pieza del cuaderno visual desde su botón **Eliminar**; el editor pide confirmación. En notas y cuaderno el borrado se aplica al pulsar Guardar; al borrar un proyecto también se quitan sus dossiers Markdown y se conservan los adjuntos.
+7. Usa **Subir imagen desde el ordenador** para guardar archivos JPEG, PNG, WebP, GIF o AVIF (máximo 15 MB) en `public/images/projects/<id>/`, `public/images/notes/<slug>/` o `public/images/journal/`. El editor actualiza la portada, el campo de imagen o inserta Markdown con la ruta creada.
+8. El botón verde &#128640; muestra el estado y las rutas de todos los cambios rastreados y no rastreados, deja elegir una rama local y pide confirmación antes de ejecutar `git add`, `git commit` y `git push`. Usa las credenciales que ya tenga Git configuradas en el equipo; bloquea archivos `.env`, claves y credenciales. El commit se crea en la rama actual y se envía a la rama elegida; un rechazo remoto deja el commit local para resolverlo.
+9. Crea primero como borrador. Para publicar, completa título, resumen y cuerpo en ambos idiomas y cambia la visibilidad a “Público”. Para retirar sin borrar, usa “Archivado”.
 
 La barra sobre el texto Markdown aplica títulos, negrita, cursiva, código, listas, citas, enlaces e imágenes al texto seleccionado o a la línea actual. También puedes usar Ctrl+B, Ctrl+I y Ctrl+K para negrita, cursiva y enlace. La vista previa se actualiza mientras escribes; Ctrl+Z conserva el deshacer del navegador.
 
@@ -48,7 +51,7 @@ El editor solo escucha en `127.0.0.1`, requiere un token nuevo en cada ejecució
 
 Cada proyecto tiene un ID estable de tres cifras. Sus metadatos están en `src/content/projects.json` y sus cuerpos en `src/content/experiments/<id>/es.md` y `en.md`. Las propiedades de recursos usan `label` y `href`; las URLs deben ser HTTPS o rutas desde la raíz (`/files/006/prototype.pdf`). Las imágenes pueden usar un alias importado, como `@labHero`, una ruta local o una URL HTTPS.
 
-Los seis vídeos de portada están en `src/data/videos.json`. Cada entrada lleva `social` (`TikTok`, `YouTube`, `Instagram` o `Twitch`), `orientation` (`vertical` o `horizontal`) y una URL HTTPS válida. Los seis embeds se cargan al entrar en la página; solo el primero inicia la reproducción, silenciado.
+Los seis vídeos de portada están en `src/data/videos.json`. Cada entrada lleva `social` (`TikTok`, `YouTube`, `Instagram` o `Twitch`), `orientation` (`vertical` o `horizontal`) y una URL HTTPS válida. La galería conserva las seis entradas, pero monta solo el reproductor activo para reducir bloqueos y límites del proveedor; al elegir otra tarjeta, carga ese vídeo. El enlace original siempre está disponible si la red social deniega el embed.
 
 Si no configuras `VITE_SUGGESTION_ENDPOINT`, el buzón abre un borrador de correo con asunto prefijado y una estructura de mensaje. La dirección está definida en `SECURITY.md`; edítala allí y en `src/components/CommunityLab.jsx` solo si cambia el correo de contacto.
 

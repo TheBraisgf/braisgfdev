@@ -26,7 +26,7 @@ The site uses React, React Router and Vite. The production build prerenders ever
 
 See [GUIDE.md](./GUIDE.md) for the step-by-step project publishing workflow.
 
-Run `npm run editor` to open the local content editor. It prints a temporary, token protected link and saves projects, videos, shared copy, career, poll, personality quiz, field notes and visual journal directly to the repository. Draft and archived content stays out of public routes. The editor is not deployed; never expose its local port through a proxy.
+Run `npm run editor` to open the local content editor. It prints a temporary, token protected link and saves projects, videos, shared copy, career, poll, personality quiz, field notes and visual journal directly to the repository. Draft and archived content stays out of public routes. The editor is not deployed; never expose its local port through a proxy. It can upload images directly into the appropriate `public/images/` folder, remove projects/notes/journal entries, and offers an explicit review + commit/push dialog that uses local Git authentication and blocks common credential files.
 
 See [.agents/CONTENT_EDITOR.md](.agents/CONTENT_EDITOR.md) for content workflows and [IMAGE_PLAN.md](IMAGE_PLAN.md) for the current image inventory and replacement paths.
 

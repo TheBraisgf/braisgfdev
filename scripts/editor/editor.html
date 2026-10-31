@@ -11,8 +11,21 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#" aria-label="Editor de braisgf.dev, inicio"><span class="brand-mark">B.</span><span>braisgf<span class="muted">.dev</span><small>EDITOR LOCAL</small></span></a>
-      <div class="topbar-right"><span class="local-indicator"><i></i> Solo este ordenador</span><span class="save-state" id="save-state" role="status" aria-live="polite">Conectando…</span></div>
+      <div class="topbar-right"><span class="local-indicator"><i></i> Solo este ordenador</span><span class="save-state" id="save-state" role="status" aria-live="polite">Conectando…</span><button class="publish-rocket" id="git-publish" type="button" aria-label="Revisar cambios y hacer commit y push" title="Revisar cambios y hacer commit y push" hidden>🚀 <span>Commit y push</span></button></div>
     </header>
+
+    <dialog class="git-dialog" id="git-dialog" aria-labelledby="git-title">
+      <form id="git-form">
+        <header><div><p class="eyebrow">PUBLICACIÓN MANUAL</p><h2 id="git-title">Revisar y subir cambios</h2></div><button class="icon-button" type="button" data-close-git aria-label="Cerrar">×</button></header>
+        <p class="hint">Se incluirán todos los cambios del repositorio que aparecen en esta lista. La herramienta usa tu configuración local de Git; no guarda credenciales de GitHub. Guarda primero en el editor el contenido que quieras incluir.</p>
+        <label class="field" for="git-branch">Rama de destino<select id="git-branch" required></select></label>
+        <label class="field" for="git-message">Mensaje del commit<input id="git-message" maxlength="160" value="Update site content" required /></label>
+        <section class="git-file-preview" aria-labelledby="git-files-label"><strong id="git-files-label">Archivos que se incluirán</strong><ul id="git-files"></ul><p id="git-empty" hidden>No hay cambios pendientes.</p></section>
+        <label class="git-confirm"><input id="git-confirm" type="checkbox" required /><span>He revisado la lista y confirmo crear el commit y hacer push a la rama elegida.</span></label>
+        <p class="git-result" id="git-result" role="status" aria-live="polite"></p>
+        <footer><button class="button-secondary" type="button" data-close-git>Cancelar</button><button class="git-submit" id="git-submit" type="submit">🚀 Commit y push</button></footer>
+      </form>
+    </dialog>
 
     <div class="access-gate" id="access-gate" hidden>
       <div class="gate-mark">B.</div>
