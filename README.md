@@ -1,94 +1,64 @@
-# 🧪 braisgf.dev — Personal Lab, Portfolio & Playground
+# braisgf.dev
 
-> Built with passion. Hosted on a Raspberry Pi 5. Maintained by curiosity.
+> A personal lab for ideas I refuse to leave as ideas.
 
-![Made with](https://img.shields.io/badge/Made%20with-HTML%2FCSS%2FJS-blue?style=flat-square)
-![Hosted on](https://img.shields.io/badge/Hosted%20on-Raspberry%20Pi%205-red?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Evolving-orange?style=flat-square)
+braisgf.dev is Brais's personal lab: software, maker projects, learning experiments, creative work and the process behind them. It is deliberately not a conventional portfolio or an endless social feed.
 
----
+**IMAGINE -> CREATE -> SHARE -> REPEAT**
 
-## 🔥 What is this?
+## Stack and structure
 
-`braisgf.dev` is the **personal website of Braisgf** — a fullstack developer, maker, and creative from Spain.  
-It’s not just a portfolio. It’s a:
+The site uses React, React Router and Vite. The production build prerenders every public English and Spanish route into static HTML, then hydrates those pages in the browser. Deployment stays static while each page is useful to crawlers before JavaScript runs.
 
-- 🧪 **Lab** — for projects, experiments and digital inventions
-- 🖥️ **Playground** — with hacker aesthetics and interactive design
-- 📖 **Blog** — with devlogs, tech thoughts, tutorials and chaos
+- `src/pages/`: route-level pages
+- `src/components/`: reusable interface and interactions
+- `src/content/projects.json`: bilingual project metadata, visibility and resources
+- `src/content/experiments/<id>/<locale>.md`: project writing in Markdown
+- `src/content/site-content.json`: shared copy, career timeline, poll and personality test
+- `src/content/field-notes.json` and `src/content/journal.json`: reviews/notes and dated visual media
+- `src/data/experiments.js`: validates and prepares the public project registry
+- `src/data/seo.js`: localized page metadata and JSON-LD data
+- `src/i18n/`: English and Spanish interface text
+- `src/styles/`: visual system
+- `public/files/<id>/`: project attachments
+- `scripts/prerender.js`: static routes, sitemap and model discovery index
+- `scripts/editor/`: local only content editor, served at `127.0.0.1`
 
-> _Imagine. Code. Create. Share. Repeat._
+See [GUIDE.md](./GUIDE.md) for the step-by-step project publishing workflow.
 
----
+Run `npm run editor` to open the local content editor. It prints a temporary, token protected link and saves projects, videos, shared copy, career, poll, personality quiz, field notes and visual journal directly to the repository. Draft and archived content stays out of public routes. The editor is not deployed; never expose its local port through a proxy. It can upload images directly into the appropriate `public/images/` folder, remove projects/notes/journal entries, and offers an explicit review + commit/push dialog that uses local Git authentication and blocks common credential files.
 
-## 🧠 Features
+See [.agents/CONTENT_EDITOR.md](.agents/CONTENT_EDITOR.md) for content workflows and [IMAGE_PLAN.md](IMAGE_PLAN.md) for the current image inventory and replacement paths.
 
-- 🎮 Retro-style terminal UI and glitchy design
-- 🌐 Multilingual support (EN 🇺🇸 / ES 🇪🇸)
-- 🧰 Project viewer powered by JSON
-- 📚 Dynamic blog with Markdown rendering
-- 🍪 Cookie system to save preferences
-- 🕵️ Easter eggs, unlockables and secrets
-- 💾 Fully **self-hosted** on a Raspberry Pi 5
+## Search and discovery
 
----
+Each prerendered page includes a localized title and description, canonical URL, EN/ES alternate links, Open Graph and Twitter metadata, and JSON-LD. The build generates a bilingual XML sitemap and `llms.txt` from the project registry. `robots.txt` permits general and AI search crawlers.
 
-## 🧑‍💻 Tech Stack
+These measures improve crawlability and machine-readable context; no site can guarantee placement in search results. Useful, original and accurate project writing remains essential.
 
-- HTML + CSS + Vanilla JS (No frameworks)
-- Raspberry Pi 5 + NGINX + Cloudflare Tunnel
-- Markdown rendering via JS
-- Semantic SEO, JSON-LD, robots.txt, sitemap
-- Google Analytics + Cookie Banner
-- Responsive & accessible design
-
----
-
-## 🌍 Structure
+## Local development
 
 ```bash
-/
-├── index.html          # Landing (EN)
-├── /es/                # Spanish version
-│   ├── index.html
-│   ├── blog/
-│   ├── lab/
-│   └── ...
-├── /blog/              # Markdown blog system
-├── /lab/               # Project viewer
-├── /stack/             # Skill cloud
-├── /social/            # Social links map
-├── /career/            # Experience timeline
-├── assets/             # Images, logos, icons
-├── scripts/            # JS files
-├── styles/             # CSS files
-├── schema.json         # Structured data for SEO
-├── sitemap.xml
-├── robots.txt
-└── manifest.json
+npm install
+npm run dev
+npm run editor
+npm run build
+npm run preview
 ```
 
-# 🚀 Deployment
+After deployment, submit `https://braisgf.dev/sitemap.xml` in Google Search Console and Bing Webmaster Tools, then check each service's sitemap status. See [GUIDE.md](./GUIDE.md) for the steps and links.
 
-This site is deployed via:
+## Deployment
 
-💻 Raspberry Pi 5
+Vercel serves the prerendered routes in the static `dist/` output and a custom 404 page. A visitor counter may be enabled with `VITE_GOATCOUNTER_CODE`. Public `VITE_*` values are bundled into the client and must never contain secrets.
 
-🌐 NGINX static server
+## Design principles
 
-⚡ Cloudflare Tunnel (no port forwarding needed)
+- People and real work before trends.
+- Editorial hierarchy before decoration.
+- Intentional roughness is welcome; broken interaction is not.
+- Projects leave durable artifacts instead of becoming a feed.
+- Accessibility, responsive layouts and reduced motion are part of the design.
+- Adding an experiment should be a content task, not a new page implementation.
 
-🔁 Auto-refresh via script when pushing changes
-
-🛣️ Roadmap
-See DEVLOG.md
-
-# 📬 Contact
-
-LinkedIn
-
-GitHub
-
-Website
-
-Thanks for visiting. Feel free to fork, learn or contribute if you want.
+Copyright Braisgf. Imagine. Create. Share. Repeat.

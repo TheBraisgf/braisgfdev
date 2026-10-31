@@ -1,0 +1,8 @@
+import { Link, useLocation } from 'react-router-dom'
+import { experiments } from '../data/experiments.js'
+import { Reveal } from '../components/Reveal.jsx'
+export function Archive(){
+ const {pathname}=useLocation(); const spanish=pathname.startsWith('/es'); const prefix=spanish?'/es':''; const lang=spanish?'es':'en'
+ const labels=spanish?{eyebrow:'EL LABORATORIO',title:'Proyectos',intro:'Ideas con un número. Una pregunta. Un proceso. Un resultado. Algunos están terminados; otros siguen creciendo.',back:'Volver al inicio',open:'ABRIR PROYECTO'}:{eyebrow:'THE LAB',title:'Projects',intro:'Ideas with a number. A question. A process. A result. Some are finished; others are still growing.',back:'Back home',open:'OPEN PROJECT'}
+ return <main className="archive-page section-pad"><Reveal><header className="archive-hero"><Link className="back-link" to={prefix||'/'}>← {labels.back}</Link><p className="eyebrow">{labels.eyebrow}</p><h1>{labels.title}</h1><p>{labels.intro}</p></header></Reveal><div className="archive-list">{experiments.map((project,index)=><Reveal key={project.id} delay={index*70}><Link className="archive-row" style={{'--row-accent':project.accent}} to={`${prefix}/experiments/${project.id}`}><span className="archive-number">{project.id}</span><div className="archive-thumb"><img src={project.image} alt="" loading="lazy"/></div><div><span className="card-kicker">{project.type} · {project.status}</span><h2>{project.title[lang]}</h2><p>{project.summary[lang]}</p><span className="archive-open-label">{labels.open} ↗</span></div><span className="archive-arrow" aria-hidden="true">↗</span></Link></Reveal>)}</div></main>
+}

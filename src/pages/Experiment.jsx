@@ -1,0 +1,37 @@
+import { Link, useLocation, useParams } from 'react-router-dom'
+import { experiments, getExperiment } from '../data/experiments.js'
+import { ResourceList } from '../components/ResourceList.jsx'
+import { MarkdownContent } from '../components/MarkdownContent.jsx'
+import { Reveal } from '../components/Reveal.jsx'
+
+export function Experiment() {
+  const { id } = useParams()
+  const { pathname } = useLocation()
+  const spanish = pathname.startsWith('/es')
+  const prefix = spanish ? '/es' : ''
+  const lang = spanish ? 'es' : 'en'
+  const project = getExperiment(id)
+  const labels = spanish
+    ? { notFound: 'Ese proyecto todavía no existe.', project: 'PROYECTO', status: 'ESTADO', year: 'AÑO', imageAlt: 'Material del laboratorio', resources: 'RECURSOS', alive: 'Este proyecto sigue vivo.', next: 'Siguiente proyecto' }
+    : { notFound: 'That project does not exist yet.', project: 'PROJECT', status: 'STATUS', year: 'YEAR', imageAlt: 'Lab material', resources: 'RESOURCES', alive: 'This project is still alive.', next: 'Next project' }
+
+  if (!project) return <main className="not-found section-pad"><p className="eyebrow">404</p><h1>{labels.notFound}</h1><Link to={`${prefix}/experiments`}>← {spanish ? 'Proyectos' : 'Projects'}</Link></main>
+
+  const markdown = project.markdown?.[lang]?.trim()
+  const resources = [...project.attachments, ...project.links]
+  const projectIndex = experiments.findIndex((item) => item.id === project.id)
+  const nextProject = experiments[(projectIndex + 1) % experiments.length]
+
+  return <main className="dossier section-pad">
+    <Reveal><Link className="back-link" to={`${prefix}/experiments`}>← {spanish ? 'Proyectos' : 'Projects'}</Link></Reveal>
+    <Reveal delay={80}><header className="dossier-head" style={{ '--experiment-accent': project.accent }}><div className="dossier-number">#{id}</div><div><p className="eyebrow">{project.type} · {project.status}</p><h1>{project.title[lang]}</h1></div></header></Reveal>
+    <div className="dossier-layout">
+      <Reveal><aside className="dossier-side" style={{ '--experiment-accent': project.accent }}><span>{labels.project}</span><strong>#{id}</strong><span>{labels.status}</span><strong>{project.status}</strong>{project.year && <><span>{labels.year}</span><strong>{project.year}</strong></>}</aside></Reveal>
+      <article className="dossier-content">
+        {markdown ? <Reveal delay={100}><MarkdownContent source={markdown} /></Reveal> : <Reveal delay={100}>{project.image && <img className="dossier-image" src={project.image} alt={labels.imageAlt} loading="eager" />}</Reveal>}
+        {resources.length > 0 && <Reveal delay={130}><section className="resources"><p className="label">{labels.resources}</p><ResourceList resources={resources} labels={{ file: spanish ? 'ARCHIVO' : 'FILE', open: spanish ? 'ABRIR' : 'OPEN' }} /></section></Reveal>}
+        <Reveal delay={160}><div className="dossier-footer"><span>{labels.alive}</span>{nextProject && <Link to={`${prefix}/experiments/${nextProject.id}`}>{labels.next} →</Link>}</div></Reveal>
+      </article>
+    </div>
+  </main>
+}

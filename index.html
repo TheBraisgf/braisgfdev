@@ -1,125 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <!-- SEO BASICS -->
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Braisgf.dev – Fullstack Developer & Maker</title>
-    <meta
-      name="description"
-      content="Welcome to Braisgf.dev – A geeky digital lab, fullstack dev portfolio, and experimental playground built and hosted on Raspberry Pi by Brais, a developer and creator from Spain."
-    />
-    <meta
-      name="keywords"
-      content="Braisgf, fullstack developer, portfolio, Raspberry Pi, maker, indie dev, software, Unity, AWS, JavaScript, blog, tech"
-    />
-    <meta name="author" content="Braisgf" />
-    <link rel="canonical" href="https://braisgf.dev/" />
-    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es/" />
-    <link rel="alternate" hreflang="en" href="https://braisgf.dev/" />
-
-    <!-- FAVICON -->
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
-
-    <!-- FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Grotesk:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- OPEN GRAPH / FACEBOOK -->
-    <meta property="og:title" content="Braisgf.dev – Fullstack Dev & Maker" />
-    <meta
-      property="og:description"
-      content="Explore projects, blogs, experiments and fullstack builds by Brais. Hosted on Raspberry Pi. Made with ❤️ by a maker."
-    />
-    <meta
-      property="og:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-    <meta property="og:url" content="https://braisgf.dev/" />
+    <meta name="theme-color" content="#f2efe7" />
+    <meta name="description" content="Brais' personal lab: experiments, software, maker projects, AI, learning and things worth building." />
+    <meta name="author" content="Brais" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta property="og:title" content="braisgf.dev — Personal Lab" />
+    <meta property="og:description" content="Ideas become experiments. Builds, failures, weird skills and things worth making." />
+    <meta property="og:image" content="https://braisgf.dev/og.svg" />
     <meta property="og:type" content="website" />
-
-    <!-- TWITTER CARD -->
+    <meta property="og:site_name" content="Braisgf.dev" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Braisgf.dev – Fullstack Dev & Maker" />
-    <meta
-      name="twitter:description"
-      content="Personal dev lab by Braisgf – featuring code, hardware, projects and ideas."
-    />
-    <meta
-      name="twitter:image"
-      content="https://braisgf.dev/assets/Braisgf.jpeg"
-    />
-
-    <!-- PWA MANIFEST -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- STRUCTURED DATA -->
-    <script type="application/ld+json" src="/schema.json"></script>
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-CVE80CP3QT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-CVE80CP3QT");
+    <meta name="twitter:title" content="braisgf.dev — Personal Lab" />
+    <meta name="twitter:description" content="Brais' personal lab for experiments, software, maker projects and curious ideas." />
+    <meta name="twitter:image" content="https://braisgf.dev/og.svg" />
+    <link rel="canonical" href="https://braisgf.dev/" />
+    <link rel="alternate" hreflang="en" href="https://braisgf.dev/" />
+    <link rel="alternate" hreflang="es" href="https://braisgf.dev/es" />
+    <link rel="alternate" hreflang="x-default" href="https://braisgf.dev/" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Person","@id":"https://braisgf.dev/#brais","name":"Brais","alternateName":"Braisgf","url":"https://braisgf.dev/","jobTitle":"Developer and maker","sameAs":["https://github.com/TheBraisgf","https://www.linkedin.com/in/braisgf","https://www.youtube.com/@braisgfroom","https://www.tiktok.com/@braisgfroom","https://www.instagram.com/braisgfroom","https://www.twitch.tv/braisgfroom"]}
     </script>
+    <title>braisgf.dev — Personal Lab</title>
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   </head>
   <body>
-    <canvas id="bgCanvas"></canvas>
-
-    <main class="container">
-      <section class="hero">
-        <div class="hero-content">
-          <div class="hero-container">
-            <img
-              src="/assets/Braisgf.jpeg"
-              alt="Photo of Braisgf"
-              class="profile-img"
-            />
-            <div class="hero-texts">
-              <h1>Braisgf.dev</h1>
-              <p class="position">Full Stack Developer & Creator</p>
-              <p class="motto">"Imagine, Code, Create, Share, Repeat"</p>
-            </div>
-          </div>
-          <div class="buttons">
-            <a href="/about" class="btn">About Me 👤</a>
-            <a href="/career" class="btn">My Career 💼</a>
-            <a href="/stack" class="btn">Skill Cloud 🧠</a>
-            <a href="/lab" class="btn">Creators Lab 🧪</a>
-            <a href="/blog" class="btn">Creator Blog 📖</a>
-            <a href="/social" class="btn">Social Media 🌐</a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p>&copy; 2025 Braisgf.dev</p>
-      <a href="https://github.com/thebraisgf" class="social">GitHub</a>
-      <a href="https://linkedin.com/in/braisgf" class="social">LinkedIn</a>
-    </footer>
-
-    <div class="lang-switch-container">
-      <span class="flag">EN</span>
-      <label class="lang-toggle">
-        <input type="checkbox" id="lang-toggle" />
-        <span class="slider"></span>
-      </label>
-      <span class="flag">ES</span>
-    </div>
-
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

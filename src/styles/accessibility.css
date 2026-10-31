@@ -1,0 +1,52 @@
+/* High-visibility keyboard focus that works on both light and dark surfaces. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid #7040b5;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--paper, #f2efe7);
+}
+
+.skip-link:focus-visible {
+  color: #171714;
+  background: #b7ff3c;
+}
+
+.a11y-trigger,
+.a11y-head button,
+.media-controls > button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.media-dots button {
+  position: relative;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.media-dots button::before {
+  position: absolute;
+  inset: 10px 0;
+  background: inherit;
+  content: '';
+}
+
+.a11y-large body,
+.a11y-large button,
+.a11y-large input,
+.a11y-large textarea,
+.a11y-large .dossier-content,
+.a11y-large .archive-row,
+.a11y-large .experiment-card > p,
+.a11y-large .featured-body > p,
+.a11y-large .community-section p {
+  font-size: 1.125em;
+}
+
+.a11y-motion { scroll-behavior: auto !important; }
+
+@media (max-width: 420px) {
+  .a11y-panel {
+    max-height: min(75vh, 440px);
+    overflow-y: auto;
+  }
+}
