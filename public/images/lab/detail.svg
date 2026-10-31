@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">Detalle del laboratorio personal</title>
+<desc id="desc">Ilustración editorial de un escritorio de creador con libros, bocetos, dados, miniaturas y tecnología frente a una ventana al atardecer.</desc>
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#202b43"/><stop offset=".55" stop-color="#73506c"/><stop offset="1" stop-color="#e78459"/></linearGradient>
+  <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#75513c"/><stop offset="1" stop-color="#241b19"/></linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10151b"/><stop offset="1" stop-color="#273346"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<rect width="1200" height="800" fill="#111216"/>
+<rect x="660" width="540" height="520" fill="url(#sky)"/>
+<circle cx="930" cy="275" r="72" fill="#ffd59a" opacity=".5" filter="url(#glow)"/>
+<circle cx="930" cy="275" r="40" fill="#ffd59a"/>
+<path d="M660 390 Q760 320 850 395 T1040 370 T1200 390 V520 H660Z" fill="#253247" opacity=".9"/>
+<path d="M660 445 Q770 390 875 445 T1060 430 T1200 445 V520 H660Z" fill="#172331"/>
+<rect x="640" width="20" height="520" fill="#101116"/>
+<rect x="1180" width="20" height="520" fill="#101116"/>
+<rect width="660" height="520" fill="#19191b"/>
+<rect x="55" y="52" width="540" height="22" rx="11" fill="#303139"/>
+<g fill="#34353d">
+ <rect x="55" y="95" width="165" height="130" rx="9"/><rect x="245" y="95" width="165" height="130" rx="9"/><rect x="435" y="95" width="165" height="130" rx="9"/>
+ <rect x="55" y="250" width="165" height="130" rx="9"/><rect x="245" y="250" width="165" height="130" rx="9"/><rect x="435" y="250" width="165" height="130" rx="9"/>
+</g>
+<g fill="#b7ff3c" opacity=".72"><circle cx="92" cy="130" r="9"/><circle cx="282" cy="155" r="12"/><circle cx="480" cy="132" r="8"/><circle cx="120" cy="300" r="11"/><circle cx="310" cy="320" r="8"/></g>
+<g fill="#5b6675" opacity=".7"><rect x="78" y="175" width="90" height="5"/><rect x="268" y="175" width="115" height="5"/><rect x="458" y="175" width="75" height="5"/><rect x="78" y="335" width="120" height="5"/><rect x="268" y="335" width="85" height="5"/></g>
+<rect y="520" width="1200" height="280" fill="url(#desk)"/>
+<rect x="95" y="485" width="390" height="28" rx="12" fill="#3b2a24"/>
+<rect x="110" y="390" width="390" height="155" rx="14" fill="#20242b"/>
+<rect x="130" y="410" width="350" height="115" rx="9" fill="url(#screen)"/>
+<g stroke="#b7ff3c" stroke-width="5" opacity=".8"><path d="M152 438h85"/><path d="M152 460h150"/><path d="M152 482h110"/><path d="M152 504h175"/></g>
+<rect x="520" y="440" width="105" height="92" rx="12" fill="#292d34"/>
+<rect x="535" y="452" width="75" height="62" rx="7" fill="#11151b"/>
+<circle cx="570" cy="483" r="18" fill="#8bb8ff" opacity=".7"/>
+<rect x="670" y="500" width="390" height="235" rx="14" fill="#382820" opacity=".55"/>
+<rect x="720" y="540" width="310" height="130" rx="9" fill="#d5c3a6" transform="rotate(-3 875 605)"/>
+<path d="M750 575q55-35 100 4t90-12t65 15" fill="none" stroke="#5c5147" stroke-width="6" opacity=".75"/>
+<path d="M750 620q50-28 90 5t90-18t80 9" fill="none" stroke="#8a7966" stroke-width="5" opacity=".7"/>
+<g fill="#b7ff3c" opacity=".85"><rect x="760" y="635" width="40" height="6"/><rect x="820" y="635" width="72" height="6"/></g>
+<g fill="#4a3328"><rect x="40" y="585" width="150" height="34"/><rect x="40" y="620" width="150" height="34"/><rect x="40" y="655" width="150" height="34"/></g>
+<g fill="#f2efe7" font-family="sans-serif" font-size="19" font-weight="700"><text x="58" y="608">D&amp;D</text><text x="58" y="643">ZELDA</text><text x="58" y="678">POKÉMON</text></g>
+<g transform="translate(230 575)"><path d="M0 70q25-65 52-78q36 20 55 72l-18 14H18Z" fill="#24252a"/><path d="M18 50q28-65 52-70q28 18 38 66" fill="none" stroke="#ff6945" stroke-width="8"/><circle cx="50" cy="32" r="6" fill="#ffd59a"/><circle cx="78" cy="34" r="6" fill="#ffd59a"/></g>
+<g transform="translate(410 600)"><polygon points="45,0 88,25 74,72 18,72 0,25" fill="#b43e55"/><text x="43" y="48" text-anchor="middle" fill="#f2efe7" font-family="monospace" font-size="22">20</text></g>
+<g transform="translate(500 575)"><path d="M0 70q15-52 58-63q44 18 58 63Z" fill="#5f6b4c"/><path d="M20 48q38-70 76-44q-18 35-22 61" fill="#55714a"/><rect x="48" y="56" width="30" height="16" rx="8" fill="#7f5d43"/></g>
+<g transform="translate(1020 650)"><rect width="95" height="75" rx="15" fill="#e9d6b4"/><rect x="95" y="20" width="28" height="38" rx="14" fill="none" stroke="#e9d6b4" stroke-width="12"/><text x="47" y="50" text-anchor="middle" fill="#24201d" font-family="monospace" font-size="24" font-weight="700">42</text></g>
+<g fill="#56714d"><path d="M1080 470q30-90 72-105q-12 65-34 115Z"/><path d="M1110 480q22-75 60-92q-5 60-30 100Z"/></g>
+<rect x="1050" y="445" width="85" height="18" rx="9" fill="#76543e"/>
+</svg>
