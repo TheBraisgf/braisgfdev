@@ -1,0 +1,1 @@
+## Construir en público\n\nVídeos cortos, ideas, pruebas y cosas que voy compartiendo mientras las hago.

@@ -1,21 +1,40 @@
-# Braisgf.dev — image generation plan
+# Mapa de imágenes de braisgf.dev
 
-Priority order for visuals to generate and add to the repository.
+Coloca las imágenes generadas en estas rutas dentro de `public/images/`. El sitio ya usa esos nombres; puedes sustituir los archivos actuales conservando el nombre y la extensión. No cambies `src/data/assets.js` si mantienes las rutas de esta lista.
 
-1. **Lab hero / workshop** — 16:9. Editorial photograph of a real personal maker/developer workspace: 3D printer, electronics, sketchbook, cables, books, tools and a computer. No people, no readable screens. This is the main visual identity.
-2. **Lab detail texture** — 3:2. Close-up of hands-free workbench details: filament, calipers, soldering tools, paper notes, dice and small components. High texture, natural light.
-3. **Braisgf.dev project cover** — 16:10. Physical/digital hybrid scene representing a personal lab website: monitor glow, notebook, code fragments as abstract shapes, camera and maker objects. No readable UI.
-4. **Building in public cover** — 16:10. Creator desk with phone on tripod, small camera, microphone, lights and a half-finished project. Energetic but not influencer cliché.
-5. **3D RPG bell cover** — 16:10. A fantasy tabletop gaming table with a custom 3D-printed bell as the hero object, dice and character sheets around it. Realistic product/editorial photography.
-6. **Drawing project cover** — 16:10. Sketchbook with studies, graphite, fineliner, eraser and several stages of the same drawing. Human, imperfect, documentary feel.
-7. **Vault 42 cover** — 16:10. Compact home server rack / homelab with Raspberry Pi, storage, network gear and a subtle sci-fi atmosphere. No logos or readable IP addresses.
-8. **Imagine / Create / Share / Repeat visual** — 16:9. Abstract physical loop made from sketches, printed parts, code-like marks, camera media and arrows. Editorial, slightly strange, not corporate.
-9. **Community section visual** — 3:2. A tabletop covered with several tempting project ideas represented by physical objects: dice, pencil, filament spool, small electronics, notebook and server component.
-10. **Video gallery ambient backdrop** — 16:9. Dark studio/workbench texture designed to sit behind embedded social videos without competing with them.
-11. **404 image** — 16:9. A funny abandoned workbench with an open toolbox, one missing part and a handwritten-looking abstract note. Weird but tasteful.
-12. **Footer / old-web homage texture** — 3:1. Minimal monochrome maker texture with tiny hardware details, grain and subtle imperfections.
-13. **Project archive wildcard** — 16:10. A deliberately ambiguous object on a workbench, suggesting “something not decided yet” without looking like a generic mystery box.
-14. **Markdown media filler** — 4:3. Neutral documentary lab photograph usable inside long project entries between text blocks.
-15. **Open Graph / share image** — 1.91:1. Strong Braisgf.dev visual identity using the acid green, black and off-white palette, with the wordmark but no extra copy.
+Exporta fotografías como JPEG de calidad 85–90 o WebP; los nombres actuales terminan en `.jpg` para facilitar el reemplazo directo. Si exportas a WebP/PNG, cambia la extensión en `src/data/assets.js` y en `src/content/projects.json` si aplica. Convierte a sRGB, elimina metadatos privados y conserva el original fuera del repositorio.
 
-Generation rule: prefer **realistic/editorial photography or physical collage**, with imperfections and evidence of use. Avoid generic AI “developer desk” imagery, neon cyberpunk, fake code, excessive RGB, stock-photo smiles and perfectly arranged props.
+## Imágenes actuales que usa el sitio
+
+| Ruta de reemplazo | Uso | Tamaño recomendado | Relación | Dirección para generar |
+| --- | --- | ---: | ---: | --- |
+| `public/images/profile/portrait.jpg` | Retrato de portada y página «Sobre mí» | 1200 × 1500 px | 4:5 | Retrato editorial cercano de Brais en su espacio de trabajo. Mantener identidad real a partir de una foto de referencia; no inventar rasgos ni sustituir por una persona sintética. |
+| `public/images/lab/hero.png` | Imagen principal del laboratorio en la portada y portada del proyecto 001 | 1800 × 1013 px | 16:9 | Espacio maker/desarrollador realista, impresora 3D, electrónica, cuaderno, herramientas y ordenador; sin personas ni texto legible. |
+| `public/images/lab/detail.jpg` | Imagen interior del dossier del proyecto 001 | 1500 × 1000 px | 3:2 | Detalle documental de mesa de trabajo: filamento, calibre, herramientas, dados, notas y componentes usados. |
+| `public/images/projects/rpg-bell.jpg` | Portada del proyecto 002 | 1600 × 1000 px | 8:5 | Campana de rol impresa en 3D como objeto protagonista en una mesa de juego, con dados y hojas; fotografía de producto creíble. |
+| `public/images/projects/drawing.jpg` | Portada del proyecto 003 | 1600 × 1000 px | 8:5 | Cuaderno con estudios de dibujo, grafito, tinta y borrador; mostrar proceso e imperfecciones reales, sin texto añadido. |
+| `public/images/projects/building-in-public.jpg` | Portada del proyecto 004 | 1600 × 1000 px | 8:5 | Proyecto a medio hacer en un escritorio, móvil en trípode, cámara, micrófono y luz; documental, sin estética de influencer genérica. |
+| `public/images/projects/vault-42.jpg` | Portada del proyecto 005 y estantería de «Sobre mí» | 1600 × 1000 px | 8:5 | Home lab compacto con mini servidor, almacenamiento, red y luz natural; nada de direcciones IP o logotipos inventados. |
+| `public/images/about/video-transcoder.jpg` | Tarjeta de trabajo AWS en «Sobre mí» | 1200 × 900 px | 4:3 | Concepto editorial de transcodificación de vídeo y nube, sin paneles de AWS falsos ni texto legible. |
+| `public/images/about/gleenk.jpg` | Tarjeta del producto Gleenk en «Sobre mí» | 1200 × 900 px | 4:3 | Comunidad de hobbies e intereses representada como objetos compartidos; evitar personas identificables o interfaces ficticias con texto. |
+
+Los ficheros de la tabla están presentes como imágenes actuales para que la web no quede rota mientras preparas las sustituciones. Las tarjetas de trayectoria usan iniciales tipográficas: no hacen falta logotipos de empresas ni hay que generarlos con IA.
+
+## Imágenes nuevas para el cuaderno
+
+Guarda fotografías de reseñas/notas en `public/images/notes/` y fotografías del collage en `public/images/journal/`. Usa nombres descriptivos en minúsculas, por ejemplo `public/images/journal/2026-10-31-prototipo.jpg`. Recomendación: 1600 px en el lado largo, calidad 85–90, WebP/JPEG y peso objetivo menor de 400 KB. El editor referencia la ruta absoluta del sitio, como `/images/journal/2026-10-31-prototipo.jpg`.
+
+Los vídeos de YouTube, Twitch, TikTok e Instagram se insertan como URL de origen en el cuaderno visual; no descargues ni vuelvas a alojar vídeos de terceros. Se requiere que la plataforma permita la inserción y el usuario no haya desactivado embeds.
+
+## Gráficos de identidad que no conviene generar como fotos
+
+- `public/og.svg`: tarjeta social compartida. Mantén el vector y el wordmark oficiales; si se rediseña, exporta una versión de 1200 × 630 px (1.91:1), con alto contraste y texto legible en miniatura.
+- `public/favicon.svg`: icono vectorial de marca. No usar una foto generada; conservar geometría simple y probarla a 16, 32 y 180 px.
+
+## Revisión al sustituir
+
+1. Sustituye el archivo conservando la ruta indicada.
+2. Comprueba que el sujeto principal siga visible en recortes 16:10, 4:3 y móvil.
+3. Actualiza el texto alternativo si cambia el contenido descrito; la imagen decorativa debe llevar `alt=""`.
+4. Ejecuta `npm run build` y abre portada, archivo, trayectoria, «Sobre mí» y los dossiers en móvil/escritorio.
+5. Comprueba que los nuevos archivos no incluyan firmas, rostros o marcas que no tengas derecho a publicar.

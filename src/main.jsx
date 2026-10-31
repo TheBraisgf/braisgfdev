@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './styles/global.css'
@@ -12,5 +12,7 @@ import './styles/motion.css'
 import './styles/polish.css'
 import './styles/markdown.css'
 import './styles/interactive.css'
+import './styles/accessibility.css'
+import './styles/ux-polish.css'
 import './i18n/config.js'
-ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode><BrowserRouter><App/></BrowserRouter></React.StrictMode>)
+hydrateRoot(document.getElementById('root'), <React.StrictMode><BrowserRouter><App/></BrowserRouter></React.StrictMode>)

@@ -1,0 +1,1 @@
+## El laboratorio es el proyecto\n\nEsta web es la casa para todo lo que construyo, aprendo, rompo y, de vez en cuando, termino.\n\n![El laboratorio personal]({{labHero}})\n\n![Detalle del laboratorio]({{labDetail}})\n\n### La idea\n\nNo quiero otro portfolio perfecto. Quiero enseñar el proceso: decisiones, prototipos, errores, archivos y resultados.

@@ -1,0 +1,1 @@
+## Vault 42\n\nMy home lab for servers, media, automation and tinkering.

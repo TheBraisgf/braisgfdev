@@ -3,7 +3,8 @@ import { initReactI18next } from 'react-i18next'
 import en from './en.json'
 import es from './es.json'
 
-const isSpanish = window.location.pathname === '/es' || window.location.pathname.startsWith('/es/')
+const pathname = typeof window === 'undefined' ? '/' : window.location.pathname
+const isSpanish = pathname === '/es' || pathname.startsWith('/es/')
 
 i18n.use(initReactI18next).init({
   resources: { en: { translation: en }, es: { translation: es } },

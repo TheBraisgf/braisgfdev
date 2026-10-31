@@ -1,0 +1,538 @@
+{
+  "global": {
+    "navigation": {"projects":{"es":"Proyectos","en":"Projects"},"about":{"es":"Sobre mí","en":"About me"},"community":{"es":"Elige lo siguiente","en":"Choose what's next"},"career":{"es":"Trayectoria profesional","en":"Professional path"},"notes":{"es":"Notas de campo","en":"Field notes"},"journal":{"es":"Cuaderno visual","en":"Visual journal"}},
+    "footer": {"es":"Imagina. Programa. Crea. Comparte. Repite.","en":"Imagine. Code. Create. Share. Repeat."},
+    "banner": {"es":"","en":"","href":"","label":{"es":"","en":""}}
+  },
+  "career": [
+    {
+      "key": "telecom",
+      "year": "2016 — 2020",
+      "role": {
+        "es": "Ingeniería de Telecomunicaciones",
+        "en": "Telecommunications Engineering"
+      },
+      "company": {
+        "es": "Universidad · 2016–2020",
+        "en": "University · 2016–2020"
+      },
+      "text": {
+        "es": "Una base técnica en sistemas, lógica, hardware y el hábito de entender cómo encajan las piezas.",
+        "en": "A technical foundation in systems, logic, hardware and the habit of understanding how the pieces fit together."
+      },
+      "highlights": [
+        {
+          "es": "Sistemas y lógica",
+          "en": "Systems and logic"
+        },
+        {
+          "es": "Fundamentos de hardware",
+          "en": "Hardware foundations"
+        }
+      ]
+    },
+    {
+      "key": "film",
+      "year": "2020 — 2021",
+      "role": {
+        "es": "Cine y Producción",
+        "en": "Filmmaking & Production"
+      },
+      "company": {
+        "es": "Formación creativa · 2020–2021",
+        "en": "Creative training · 2020–2021"
+      },
+      "text": {
+        "es": "Lenguaje visual, storytelling y cómo las decisiones técnicas pueden crear una experiencia emocional.",
+        "en": "Learning visual language, storytelling and how technical decisions can create an emotional experience."
+      },
+      "highlights": [
+        {
+          "es": "Lenguaje visual",
+          "en": "Visual language"
+        },
+        {
+          "es": "Narrativa y producción",
+          "en": "Storytelling and production"
+        }
+      ]
+    },
+    {
+      "key": "hab",
+      "year": "2021",
+      "role": {
+        "es": "Desarrollador Fullstack",
+        "en": "Fullstack Developer"
+      },
+      "company": {
+        "es": "Hack A Boss · 2021",
+        "en": "Hack A Boss · 2021"
+      },
+      "text": {
+        "es": "Un bootcamp intensivo que convirtió la curiosidad en una práctica profesional de desarrollo de software.",
+        "en": "An intensive fullstack bootcamp that turned curiosity into a professional software practice."
+      },
+      "highlights": [
+        {
+          "es": "Desarrollo fullstack",
+          "en": "Fullstack development"
+        },
+        {
+          "es": "Práctica profesional de software",
+          "en": "Professional software practice"
+        }
+      ]
+    },
+    {
+      "key": "zara",
+      "year": "2021 — 2023",
+      "role": {
+        "es": "Frontend Developer",
+        "en": "Frontend Developer"
+      },
+      "company": {
+        "es": "Zara.com · 2021–2023",
+        "en": "Zara.com · 2021–2023"
+      },
+      "text": {
+        "es": "Interfaces escalables y herramientas internas con React y Python, tocando también UX, contenido editorial y branding digital.",
+        "en": "Scalable interfaces and internal tools across React and Python, with work touching UX, editorial content and digital branding."
+      },
+      "highlights": [
+        {
+          "es": "Interfaces con React",
+          "en": "React interfaces"
+        },
+        {
+          "es": "Herramientas internas con Python",
+          "en": "Internal tools with Python"
+        },
+        {
+          "es": "UX y contenido editorial",
+          "en": "UX and editorial content"
+        }
+      ]
+    },
+    {
+      "key": "imageai",
+      "year": "2023",
+      "role": {
+        "es": "Editor de imágenes con IA",
+        "en": "AI Image Editor"
+      },
+      "company": {
+        "es": "Santander · 2023",
+        "en": "Santander · 2023"
+      },
+      "text": {
+        "es": "Una interfaz Angular y LitElement para máscaras inteligentes, filtros y generación de imágenes mediante prompts.",
+        "en": "An Angular and LitElement interface for smart masks, filters and prompt-based image generation."
+      },
+      "highlights": [
+        {
+          "es": "Interfaz Angular y LitElement",
+          "en": "Angular and LitElement interface"
+        },
+        {
+          "es": "Máscaras, filtros e imágenes generativas",
+          "en": "Masks, filters and generated images"
+        }
+      ]
+    },
+    {
+      "key": "forms",
+      "year": "2023 — 2024",
+      "role": {
+        "es": "Evaluador inteligente de formularios",
+        "en": "Smart Form Evaluator"
+      },
+      "company": {
+        "es": "Santander · 2023–2024",
+        "en": "Santander · 2023–2024"
+      },
+      "text": {
+        "es": "Interfaces Angular que usan IA para evaluar y validar documentos legales dentro de un flujo corporativo complejo.",
+        "en": "Angular interfaces using AI to evaluate and validate legal documents in a complex corporate workflow."
+      },
+      "highlights": [
+        {
+          "es": "Evaluación de documentos con IA",
+          "en": "AI document evaluation"
+        },
+        {
+          "es": "Validación en flujos corporativos",
+          "en": "Validation in corporate workflows"
+        }
+      ]
+    },
+    {
+      "key": "backend",
+      "year": "2024 — ahora",
+      "role": {
+        "es": "Backend Python para IA",
+        "en": "Python AI Backend"
+      },
+      "company": {
+        "es": "Santander / Universia · 2024–actualidad",
+        "en": "Santander / Universia · 2024–now"
+      },
+      "text": {
+        "es": "APIs Python que conectan productos con servicios de IA generativa para generar contenido y puntuar entradas de usuario a escala.",
+        "en": "Python APIs connecting products with generative AI services to generate content and score user inputs at scale."
+      },
+      "highlights": [
+        {
+          "es": "APIs en Python",
+          "en": "Python APIs"
+        },
+        {
+          "es": "Integración con IA generativa",
+          "en": "Generative AI integration"
+        },
+        {
+          "es": "Generación y evaluación de contenido",
+          "en": "Content generation and evaluation"
+        }
+      ]
+    }
+  ],
+  "poll": {
+    "title": {
+      "es": "¿Qué debería construir Brais después?",
+      "en": "What should Brais build next?"
+    },
+    "description": {
+      "es": "Sin cuenta. Resultados públicos. Elige un agujero de conejo.",
+      "en": "No account. Public results. Pick one rabbit hole."
+    },
+    "options": [
+      {
+        "id": "bell",
+        "number": "002",
+        "accent": "violet",
+        "label": {
+          "es": "Una campana para rol",
+          "en": "A tabletop RPG bell"
+        },
+        "description": {
+          "es": "Una pieza física para la mesa.",
+          "en": "A physical piece for the gaming table."
+        }
+      },
+      {
+        "id": "drawing",
+        "number": "003",
+        "accent": "blue",
+        "label": {
+          "es": "Aprender a dibujar",
+          "en": "Learn to draw"
+        },
+        "description": {
+          "es": "Clases, ejercicios y práctica.",
+          "en": "Classes, exercises and practice."
+        }
+      },
+      {
+        "id": "vault",
+        "number": "005",
+        "accent": "acid",
+        "label": {
+          "es": "Bóveda 42",
+          "en": "Vault 42"
+        },
+        "description": {
+          "es": "Servidores, medios y cacharreo.",
+          "en": "Servers, media and tinkering."
+        }
+      }
+    ]
+  },
+  "personality": {
+    "profiles": {
+      "builder": {
+        "title": {
+          "es": "El Constructor",
+          "en": "The Builder"
+        },
+        "text": {
+          "es": "Te entusiasma convertir una idea en algo que se puede probar, tocar o usar. Disfrutas tomando decisiones y aprendiendo mientras haces.",
+          "en": "You enjoy turning an idea into something people can try, touch or use. You like making decisions and learning by doing."
+        }
+      },
+      "explorer": {
+        "title": {
+          "es": "El Explorador",
+          "en": "The Explorer"
+        },
+        "text": {
+          "es": "Te mueve la curiosidad. Investigas caminos nuevos, conectas temas distintos y no necesitas tener todas las respuestas para empezar.",
+          "en": "Curiosity moves you. You investigate new paths, connect different topics and do not need every answer before starting."
+        }
+      },
+      "storyteller": {
+        "title": {
+          "es": "El Narrador",
+          "en": "The Storyteller"
+        },
+        "text": {
+          "es": "Te importa cómo una idea se entiende y se siente. Das forma a mensajes, experiencias y detalles que ayudan a otras personas a conectar.",
+          "en": "You care about how an idea is understood and felt. You shape messages, experiences and details that help people connect."
+        }
+      },
+      "systems": {
+        "title": {
+          "es": "El Arquitecto de Sistemas",
+          "en": "The Systems Architect"
+        },
+        "text": {
+          "es": "Disfrutas viendo el conjunto: cómo se relacionan las piezas, qué se puede simplificar y qué hará que algo siga funcionando mañana.",
+          "en": "You enjoy seeing the whole: how parts relate, what can be simplified and what will keep something working tomorrow."
+        }
+      },
+      "connector": {
+        "title": {
+          "es": "El Conector",
+          "en": "The Connector"
+        },
+        "text": {
+          "es": "Te gusta reunir personas, disciplinas e ideas. Encuentras valor en compartir el proceso y crear cosas que invitan a participar.",
+          "en": "You like bringing people, disciplines and ideas together. You find value in sharing the process and making things people can join."
+        }
+      },
+      "craftsperson": {
+        "title": {
+          "es": "El Artesano",
+          "en": "The Craftsperson"
+        },
+        "text": {
+          "es": "Te atrae cuidar los detalles y mejorar con práctica. Prefieres una solución bien rematada, útil y honesta antes que algo vistoso sin fondo.",
+          "en": "You enjoy caring for details and improving through practice. You prefer a thoughtful, useful and honest solution over empty polish."
+        }
+      }
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": {
+          "es": "Encuentras una idea que te intriga. ¿Qué haces primero?",
+          "en": "You find an idea that intrigues you. What do you do first?"
+        },
+        "answers": [
+          {
+            "text": {
+              "es": "Monto una versión pequeña para probarla.",
+              "en": "I make a small version to try it."
+            },
+            "type": "builder"
+          },
+          {
+            "text": {
+              "es": "Investigo qué hay detrás y qué falta por explorar.",
+              "en": "I research how it works and what remains unexplored."
+            },
+            "type": "explorer"
+          },
+          {
+            "text": {
+              "es": "Pienso cómo contársela a alguien para que la entienda.",
+              "en": "I think about how to explain it so someone gets it."
+            },
+            "type": "storyteller"
+          },
+          {
+            "text": {
+              "es": "Dibujo cómo encajan sus partes.",
+              "en": "I map how its parts fit together."
+            },
+            "type": "systems"
+          }
+        ]
+      },
+      {
+        "id": "q2",
+        "prompt": {
+          "es": "¿Qué te da más satisfacción al terminar algo?",
+          "en": "What feels most satisfying when you finish something?"
+        },
+        "answers": [
+          {
+            "text": {
+              "es": "Que funcione en el mundo real.",
+              "en": "It works in the real world."
+            },
+            "type": "builder"
+          },
+          {
+            "text": {
+              "es": "Haber descubierto algo que no sabía.",
+              "en": "I discovered something I did not know."
+            },
+            "type": "explorer"
+          },
+          {
+            "text": {
+              "es": "Que otra persona conecte con ello.",
+              "en": "Someone else connects with it."
+            },
+            "type": "connector"
+          },
+          {
+            "text": {
+              "es": "Que cada detalle tenga un motivo.",
+              "en": "Every detail has a reason."
+            },
+            "type": "craftsperson"
+          }
+        ]
+      },
+      {
+        "id": "q3",
+        "prompt": {
+          "es": "En un equipo sueles aportar…",
+          "en": "In a team, you often contribute…"
+        },
+        "answers": [
+          {
+            "text": {
+              "es": "Prototipos y soluciones prácticas.",
+              "en": "Prototypes and practical solutions."
+            },
+            "type": "builder"
+          },
+          {
+            "text": {
+              "es": "Preguntas y perspectivas nuevas.",
+              "en": "Questions and fresh perspectives."
+            },
+            "type": "explorer"
+          },
+          {
+            "text": {
+              "es": "Claridad, contexto y una historia común.",
+              "en": "Clarity, context and a shared story."
+            },
+            "type": "storyteller"
+          },
+          {
+            "text": {
+              "es": "Orden, conexiones y visión de conjunto.",
+              "en": "Structure, connections and a wider view."
+            },
+            "type": "systems"
+          }
+        ]
+      },
+      {
+        "id": "q4",
+        "prompt": {
+          "es": "Cuando algo falla, tu impulso es…",
+          "en": "When something fails, your instinct is…"
+        },
+        "answers": [
+          {
+            "text": {
+              "es": "Cambiar una pieza y volver a probar.",
+              "en": "Change one part and test again."
+            },
+            "type": "builder"
+          },
+          {
+            "text": {
+              "es": "Seguir la pista hasta entender la causa.",
+              "en": "Trace it until I understand the cause."
+            },
+            "type": "systems"
+          },
+          {
+            "text": {
+              "es": "Pedir otra mirada y contrastar hipótesis.",
+              "en": "Ask for another perspective and compare ideas."
+            },
+            "type": "connector"
+          },
+          {
+            "text": {
+              "es": "Revisar con calma cada detalle.",
+              "en": "Review each detail carefully."
+            },
+            "type": "craftsperson"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "prompt": {
+          "es": "¿Qué te apetece aprender ahora?",
+          "en": "What would you like to learn next?"
+        },
+        "answers": [
+          {
+            "text": {
+              "es": "Una herramienta que me permita construir algo.",
+              "en": "A tool that lets me build something."
+            },
+            "type": "builder"
+          },
+          {
+            "text": {
+              "es": "Un tema completamente nuevo.",
+              "en": "A completely new subject."
+            },
+            "type": "explorer"
+          },
+          {
+            "text": {
+              "es": "A comunicar mejor mis ideas.",
+              "en": "How to communicate my ideas better."
+            },
+            "type": "storyteller"
+          },
+          {
+            "text": {
+              "es": "A perfeccionar una habilidad con práctica.",
+              "en": "How to refine a skill through practice."
+            },
+            "type": "craftsperson"
+          }
+        ]
+      },
+      {
+        "id": "q6",
+        "prompt": {
+          "es": "Elige el proyecto que más te atraería.",
+          "en": "Choose the project that would attract you most."
+        },
+        "answers": [
+          {
+            "text": {
+              "es": "Un objeto interactivo hecho desde cero.",
+              "en": "An interactive object made from scratch."
+            },
+            "type": "builder"
+          },
+          {
+            "text": {
+              "es": "Una ruta para explorar lugares e ideas.",
+              "en": "A journey for exploring places and ideas."
+            },
+            "type": "explorer"
+          },
+          {
+            "text": {
+              "es": "Una experiencia que cuente algo importante.",
+              "en": "An experience that tells an important story."
+            },
+            "type": "storyteller"
+          },
+          {
+            "text": {
+              "es": "Una herramienta que conecte personas y procesos.",
+              "en": "A tool that connects people and processes."
+            },
+            "type": "systems"
+          }
+        ]
+      }
+    ]
+  }
+}

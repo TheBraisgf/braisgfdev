@@ -1,0 +1,1 @@
+## Building in public\n\nShort videos, ideas, tests and things I share while I am making them.

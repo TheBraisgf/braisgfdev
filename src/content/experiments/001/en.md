@@ -1,0 +1,1 @@
+## The lab is the project\n\nThis site is the home for everything I build, learn, break and, occasionally, finish.\n\n![The personal lab]({{labHero}})\n\n![Lab detail]({{labDetail}})\n\n### The idea\n\nI do not want another perfect portfolio. I want to show the process: decisions, prototypes, failures, files and results.

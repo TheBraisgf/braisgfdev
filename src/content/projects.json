@@ -1,0 +1,116 @@
+[
+  {
+    "id": "001",
+    "slug": "make-the-lab-worth-visiting",
+    "visibility": "public",
+    "image": "@labHero",
+    "accent": "#b7ff3c",
+    "type": "META",
+    "status": "RUNNING",
+    "title": {
+      "es": "Hacer que el laboratorio merezca la pena.",
+      "en": "Make the lab worth visiting."
+    },
+    "summary": {
+      "es": "La propia web como lugar para construir, aprender y enseñar el proceso.",
+      "en": "The site itself as a place to build, learn and show the process."
+    },
+    "attachments": [],
+    "links": []
+  },
+  {
+    "id": "002",
+    "slug": "rpg-bell",
+    "visibility": "public",
+    "image": "@videoDice",
+    "accent": "#a98cff",
+    "type": "MAKER",
+    "status": "RUNNING",
+    "title": {
+      "es": "Una campana para una partida de rol.",
+      "en": "A bell for a tabletop RPG."
+    },
+    "summary": {
+      "es": "Una pieza física impresa en 3D para acabar encima de la mesa de juego.",
+      "en": "A 3D-printed physical piece made to end up on the gaming table."
+    },
+    "attachments": [],
+    "links": []
+  },
+  {
+    "id": "003",
+    "slug": "learn-drawing",
+    "visibility": "public",
+    "image": "@videoRoc",
+    "accent": "#8bb8ff",
+    "type": "LEARNING",
+    "status": "RUNNING",
+    "title": {
+      "es": "Aprender a dibujar de verdad.",
+      "en": "Actually learning to draw."
+    },
+    "summary": {
+      "es": "Clases, ejercicios y práctica deliberada, enseñando el antes, durante y después.",
+      "en": "Classes, exercises and deliberate practice, showing the before, during and after."
+    },
+    "attachments": [],
+    "links": []
+  },
+  {
+    "id": "004",
+    "slug": "build-in-public",
+    "visibility": "public",
+    "image": "@videoBlaze",
+    "accent": "#ff6b9d",
+    "type": "CONTENT",
+    "status": "RUNNING",
+    "title": {
+      "es": "Construir en público.",
+      "en": "Building in public."
+    },
+    "summary": {
+      "es": "Vídeos cortos, ideas y pruebas que comparto mientras las hago.",
+      "en": "Short videos, ideas and tests shared while I am making them."
+    },
+    "attachments": [],
+    "links": []
+  },
+  {
+    "id": "005",
+    "slug": "vault-42",
+    "visibility": "public",
+    "image": "@legacyPi",
+    "accent": "#66d9ff",
+    "type": "SYSTEMS",
+    "status": "RUNNING",
+    "title": {
+      "es": "Bóveda 42.",
+      "en": "Vault 42."
+    },
+    "summary": {
+      "es": "Mi laboratorio doméstico de servidores, medios, automatización y cacharreo.",
+      "en": "My home lab for servers, media, automation and tinkering."
+    },
+    "attachments": [],
+    "links": []
+  },
+  {
+    "id": "006",
+    "slug": "new-experiment-006",
+    "visibility": "draft",
+    "image": "@labHero",
+    "accent": "#a98cff",
+    "type": "MAKER",
+    "status": "PLANNED",
+    "title": {
+      "es": "TEST",
+      "en": "TEST English"
+    },
+    "summary": {
+      "es": "ES UN TEsT DEL EDITOR",
+      "en": "It be a editor test"
+    },
+    "attachments": [],
+    "links": []
+  }
+]

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>Editor local · braisgf.dev</title>
+    <link rel="stylesheet" href="/editor.css" />
+    <script type="module" src="/editor.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Editor de braisgf.dev, inicio"><span class="brand-mark">B.</span><span>braisgf<span class="muted">.dev</span><small>EDITOR LOCAL</small></span></a>
+      <div class="topbar-right"><span class="local-indicator"><i></i> Solo este ordenador</span><span class="save-state" id="save-state" role="status" aria-live="polite">Conectando…</span></div>
+    </header>
+
+    <div class="access-gate" id="access-gate" hidden>
+      <div class="gate-mark">B.</div>
+      <p class="eyebrow">HERRAMIENTA LOCAL</p>
+      <h1>Abre el enlace de sesión del terminal.</h1>
+      <p>Pega el enlace completo que imprime la terminal al ejecutar <code>npm run editor</code>. La sesión solo se guarda en este navegador.</p>
+      <form class="gate-form" id="session-form">
+        <label for="session-link">Enlace de sesión del terminal</label>
+        <input id="session-link" name="session" type="text" inputmode="url" autocomplete="url" placeholder="http://127.0.0.1:4179/#auth=..." required />
+        <button class="button" type="submit">Conectar editor <span aria-hidden="true">&gt;</span></button>
+        <p class="gate-error" id="gate-error" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="app-shell" id="app-shell" hidden>
+      <aside class="sidebar" aria-label="Navegación del editor">
+        <div class="sidebar-heading"><span class="eyebrow">TU CONTENIDO</span><button id="new-project" class="icon-button add-project" type="button" aria-label="Crear borrador de proyecto" title="Nuevo proyecto">+</button></div>
+        <label class="search-box"><span class="sr-only">Buscar proyectos</span><span aria-hidden="true">⌕</span><input id="project-search" type="search" placeholder="Buscar proyecto…" autocomplete="off" /></label>
+        <div class="project-filters" role="group" aria-label="Filtrar proyectos">
+          <button type="button" data-filter="all" aria-pressed="true">Todos</button><button type="button" data-filter="draft" aria-pressed="false">Borradores</button><button type="button" data-filter="public" aria-pressed="false">Publicados</button><button type="button" data-filter="archived" aria-pressed="false">Archivados</button>
+        </div>
+        <nav class="project-nav" id="project-list" aria-label="Proyectos"></nav>
+        <div class="sidebar-bottom"><span class="status-dot"></span><span>Los cambios se guardan<br />en el repositorio local.</span></div>
+      </aside>
+
+      <main class="editor-main">
+        <div class="section-switch" role="tablist" aria-label="Contenido editable">
+          <button role="tab" id="tab-projects" aria-selected="true" aria-controls="editor-panel">Proyectos</button>
+          <button role="tab" id="tab-videos" aria-selected="false" aria-controls="editor-panel">Galería de vídeo</button>
+          <button role="tab" id="tab-site-content" aria-selected="false" aria-controls="editor-panel">Trayectoria, encuesta y test</button>
+          <button role="tab" id="tab-editor-lists" aria-selected="false" aria-controls="editor-panel">Notas y cuaderno visual</button>
+        </div>
+        <section id="editor-panel" role="tabpanel" aria-labelledby="tab-projects" tabindex="-1"></section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

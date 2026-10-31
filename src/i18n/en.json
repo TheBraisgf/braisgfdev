@@ -1,38 +1,250 @@
 {
-  "nav": { "main": "Main navigation", "experiments": "Experiments", "about": "About me", "community": "Choose what's next", "archive": "Archive", "career": "Professional path", "language": "ES" },
+  "nav": {
+    "main": "Main navigation",
+    "experiments": "Experiments",
+    "about": "About me",
+    "community": "Choose what's next",
+    "archive": "Archive",
+    "career": "Professional path",
+    "language": "ES"
+  },
   "home": {
-    "eyebrow": "PERSONAL LAB / ONLINE SINCE 2025", "heroTitleA": "I have an idea.", "heroTitleB": "I make it real.", "heroText": "I'm Brais. Developer, maker, geek and professional collector of things I probably shouldn't start. This is where curiosity turns into experiments — and experiments turn into things.", "explore": "Explore experiments", "me": "Meet Brais", "watch": "Watch the chaos", "status": "LAB STATUS", "online": "ONLINE", "updated": "LAST UPDATED", "terminalTitle": "experiment.log", "terminalLive": "LIVE", "current": "./current-experiment", "currentTitle": "#001 — MAKE THE LAB WORTH VISITING", "running": "RUNNING", "public": "PUBLIC", "success": "undefined", "next": "next:", "event": "THE MAIN EVENT", "experiments": "Experiments", "experimentIntro": "Not tutorials. Not a portfolio.", "experimentIntroStrong": "Things I actually tried.", "featuredLabel": "EXPERIMENT 001 / THE LAB ITSELF", "featuredTag": "#001 · META · RUNNING", "featuredTitle": "Make the lab worth visiting.", "featuredText": "The first experiment is the place itself: a home for everything I build, learn, break and occasionally finish.", "hypothesis": "HYPOTHESIS", "hypothesisText": "A personal lab is more interesting when it documents attempts, not just achievements.", "openExperiment": "Open experiment", "reader": "Build a better digital reader", "readerText": "Can I make reading comics and books feel fundamentally better?", "learn": "Learn by building the thing", "learnText": "Pick a skill I barely have and make something that forces me to learn it.", "open": "OPEN", "unknown": "???", "unknownText": "The next experiment is not decided yet. That's part of the fun.", "readHypothesis": "Read the hypothesis", "archive": "View the complete experiment archive", "why": "WHY THIS EXISTS", "manifestoTitleA": "I don't want", "manifestoTitleB": "to pick one thing.", "manifesto": "I like programming. I like comics. I like making things. I like learning. I like telling stories. Instead of turning those interests into ten separate identities, I'm testing what happens when they all feed the same creative practice.", "valuesLabel": "The four-part creative loop", "aboutEyebrow": "THE PERSON BEHIND THE LAB", "aboutTitle": "The projects are the point. I'm the weird constant.", "aboutText": "There's a professional story behind all this too: telecommunications, filmmaking, fullstack development, large-scale frontend work and AI systems. It's useful context — just not the headline.", "aboutButton": "About me", "careerButton": "See the professional path", "videoEyebrow": "IF YOU FOUND ME ELSEWHERE", "videoTitle": "Yep. That's me.", "videoIntro": "Short videos are the front door. The lab is where the rabbit hole starts.", "socialProof": "You may know me from", "communityEyebrow": "YOUR TURN", "communityTitle": "What should I build next?", "communityIntro": "I make the final call. But if enough people point at the same shiny object, I'm going to have a very hard time ignoring it.", "pollLabel": "NEXT EXPERIMENT", "pollOpen": "OPEN", "pollVoted": "YOUR PICK SAVED", "pollQuestion": "If you had to choose the next rabbit hole:", "pollNote": "Your choice is remembered on this device. Public voting lives in the lab's community space.", "publicVote": "Open the public vote", "suggestionLabel": "THE SUGGESTION BOX", "suggestionTitle": "Give me a terrible idea.", "suggestionText": "Seriously. Weird projects, useful tools, ridiculous experiments. If it can be made, I want to hear it.", "suggestionPlaceholder": "What should I make?", "suggestionButton": "Send suggestion", "suggestionSent": "Opening the suggestion box…", "testEyebrow": "MINI EXPERIMENT", "testTitle": "What kind of lab visitor are you?", "testIntro": "Three questions. No data collection. Absolutely no scientific validity. Surprisingly accurate anyway.", "testQuestion": "Pick the answer that feels most like you.", "testResult": "RESULT", "testAgain": "Run it again", "follow": "FOLLOW THE LAB", "followTitle": "You don't need another feed.", "followText": "Follow an experiment when you care about it. Read the full story, see the failures, grab the files and decide what I should try next. The internet gets enough endless feeds. I want to leave artifacts.", "oldNotes": "Old lab notes", "openSource": "Open source", "counterLabel": "VISITORS", "counterSuffix": "to this lab", "counterHint": "A tiny homage to the old web. Counts are powered by GoatCounter.", "footer": "Imagine. Code. Create. Share. Repeat."
+    "eyebrow": "PERSONAL LAB / ONLINE SINCE 2025",
+    "heroTitleA": "I have an idea.",
+    "heroTitleB": "I make it real.",
+    "heroText": "I'm Brais. Developer, maker, geek and professional collector of things I probably shouldn't start. This is where curiosity turns into experiments — and experiments turn into things.",
+    "explore": "Explore experiments",
+    "me": "Meet Brais",
+    "watch": "Watch the chaos",
+    "status": "LAB STATUS",
+    "online": "ONLINE",
+    "updated": "LAST UPDATED",
+    "terminalTitle": "experiment.log",
+    "terminalLive": "LIVE",
+    "current": "./current-experiment",
+    "currentTitle": "#001 — MAKE THE LAB WORTH VISITING",
+    "running": "RUNNING",
+    "public": "PUBLIC",
+    "success": "undefined",
+    "next": "next:",
+    "event": "THE MAIN EVENT",
+    "experiments": "Experiments",
+    "experimentIntro": "Not tutorials. Not a portfolio.",
+    "experimentIntroStrong": "Things I actually tried.",
+    "featuredLabel": "EXPERIMENT 001 / THE LAB ITSELF",
+    "featuredTag": "#001 · META · RUNNING",
+    "featuredTitle": "Make the lab worth visiting.",
+    "featuredText": "The first experiment is the place itself: a home for everything I build, learn, break and occasionally finish.",
+    "hypothesis": "HYPOTHESIS",
+    "hypothesisText": "A personal lab is more interesting when it documents attempts, not just achievements.",
+    "openExperiment": "Open experiment",
+    "reader": "Build a better digital reader",
+    "readerText": "Can I make reading comics and books feel fundamentally better?",
+    "learn": "Learn by building the thing",
+    "learnText": "Pick a skill I barely have and make something that forces me to learn it.",
+    "open": "OPEN",
+    "unknown": "???",
+    "unknownText": "The next experiment is not decided yet. That's part of the fun.",
+    "readHypothesis": "Read the hypothesis",
+    "archive": "View the complete experiment archive",
+    "why": "WHY THIS EXISTS",
+    "manifestoTitleA": "I don't want",
+    "manifestoTitleB": "to pick one thing.",
+    "manifesto": "I like programming. I like comics. I like making things. I like learning. I like telling stories. Instead of turning those interests into ten separate identities, I'm testing what happens when they all feed the same creative practice.",
+    "valuesLabel": "The four-part creative loop",
+    "aboutEyebrow": "THE PERSON BEHIND THE LAB",
+    "aboutTitle": "The projects are the point. I'm the weird constant.",
+    "aboutText": "There's a professional story behind all this too: telecommunications, filmmaking, fullstack development, large-scale frontend work and AI systems. It's useful context — just not the headline.",
+    "aboutButton": "About me",
+    "careerButton": "See the professional path",
+    "videoEyebrow": "IF YOU FOUND ME ELSEWHERE",
+    "videoTitle": "Yep. That's me.",
+    "videoIntro": "Short videos are the front door. The lab is where the rabbit hole starts.",
+    "socialProof": "You may know me from",
+    "communityEyebrow": "YOUR TURN",
+    "communityTitle": "What should I build next?",
+    "communityIntro": "I make the final call. But if enough people point at the same shiny object, I'm going to have a very hard time ignoring it.",
+    "pollLabel": "NEXT EXPERIMENT",
+    "pollOpen": "OPEN",
+    "pollVoted": "YOUR PICK SAVED",
+    "pollQuestion": "If you had to choose the next rabbit hole:",
+    "pollNote": "Your choice is remembered on this device. Public voting lives in the lab's community space.",
+    "publicVote": "Open the public vote",
+    "suggestionLabel": "THE SUGGESTION BOX",
+    "suggestionTitle": "Give me a terrible idea.",
+    "suggestionText": "Seriously. Weird projects, useful tools, ridiculous experiments. If it can be made, I want to hear it.",
+    "suggestionPlaceholder": "What should I make?",
+    "suggestionButton": "Send suggestion",
+    "suggestionSent": "Opening the suggestion box…",
+    "testEyebrow": "MINI EXPERIMENT",
+    "testTitle": "What kind of lab visitor are you?",
+    "testIntro": "Three questions. No data collection. Absolutely no scientific validity. Surprisingly accurate anyway.",
+    "testQuestion": "Pick the answer that feels most like you.",
+    "testResult": "RESULT",
+    "testAgain": "Run it again",
+    "follow": "FOLLOW THE LAB",
+    "followTitle": "You don't need another feed.",
+    "followText": "Follow an experiment when you care about it. Read the full story, see the failures, grab the files and decide what I should try next. The internet gets enough endless feeds. I want to leave artifacts.",
+    "oldNotes": "Old lab notes",
+    "openSource": "Open source",
+    "counterLabel": "VISITORS",
+    "counterSuffix": "to this lab",
+    "counterHint": "A tiny homage to the old web. Counts are powered by GoatCounter.",
+    "footer": "Imagine. Code. Create. Share. Repeat."
   },
   "values": {
-    "imagine": { "title": "IMAGINE", "headline": "Start with the question, not the answer.", "text": "A weird thought, a problem I can't stop poking, a sketch on a napkin. This is where the rabbit hole starts." },
-    "create": { "title": "CREATE", "headline": "Make the thing before the excuse gets good.", "text": "Prototype it. Print it. Code it. Draw it. Build the smallest real version that can teach me something." },
-    "share": { "title": "SHARE", "headline": "Put the process where people can see it.", "text": "The polished result is useful. The mistakes are often more useful. I want both — and I want people to play with them." },
-    "repeat": { "title": "REPEAT", "headline": "Keep the loop alive.", "text": "Learn, steal the lesson, start another experiment. The point isn't to arrive. It's to keep making interesting things." }
+    "imagine": {
+      "title": "IMAGINE",
+      "headline": "Start with the question, not the answer.",
+      "text": "A weird thought, a problem I can't stop poking, a sketch on a napkin. This is where the rabbit hole starts."
+    },
+    "create": {
+      "title": "CREATE",
+      "headline": "Make the thing before the excuse gets good.",
+      "text": "Prototype it. Print it. Code it. Draw it. Build the smallest real version that can teach me something."
+    },
+    "share": {
+      "title": "SHARE",
+      "headline": "Put the process where people can see it.",
+      "text": "The polished result is useful. The mistakes are often more useful. I want both — and I want people to play with them."
+    },
+    "repeat": {
+      "title": "REPEAT",
+      "headline": "Keep the loop alive.",
+      "text": "Learn, steal the lesson, start another experiment. The point isn't to arrive. It's to keep making interesting things."
+    }
   },
-  "videos": { "01": { "title": "The lab in public" }, "02": { "title": "Building a game from scratch" }, "03": { "title": "Longer experiments & stories" }, "04": { "title": "Making things live" } },
-  "poll": { "reader": { "title": "A better digital reader", "text": "Comics + books + immersion" }, "maker": { "title": "Learn by building", "text": "Pick a skill. Make something." }, "wildcard": { "title": "Something completely ridiculous", "text": "You decide what the rabbit hole is." } },
-  "test": {
-    "questions": { "one": "You get a free weekend. What happens?", "two": "What makes you lose track of time?", "three": "Your prototype is a mess. You…" },
-    "choices": { "builder": "Open the toolbox.", "explorer": "Start researching weird possibilities.", "storyteller": "Turn it into a story.", "learn": "Learn the missing skill.", "curious": "Chase the rabbit hole.", "hands": "Make something physical.", "story": "Explain it to someone.", "system": "Figure out how it all connects.", "prototype": "Ship the ugly version.", "publish": "Show someone and get feedback.", "iterate": "Break it again, better." },
-    "results": { "builder": { "title": "THE BUILDER", "text": "You don't need permission. Give you a pile of parts and you'll eventually make a thing out of them." }, "explorer": { "title": "THE EXPLORER", "text": "You are powered by questions. The destination is optional; the rabbit hole is the point." }, "storyteller": { "title": "THE STORYTELLER", "text": "You make things memorable. You notice the human bit hiding underneath the technical bit." }, "systems": { "title": "THE SYSTEMS THINKER", "text": "You can't leave a loose wire alone. You want to understand how the whole machine works." } }
+  "videos": {
+    "01": {
+      "title": "The lab in public"
+    },
+    "02": {
+      "title": "Building a game from scratch"
+    },
+    "03": {
+      "title": "Longer experiments & stories"
+    },
+    "04": {
+      "title": "Making things live"
+    }
   },
-  "about": { "back": "Back home", "eyebrow": "ABOUT THE HUMAN", "titleA": "Hi. I'm Brais.", "titleB": "This is my workshop.", "photoAlt": "Portrait of Brais", "lead": "I like making things enough that I stopped trying to separate all the things I like making.", "copy1": "I'm a developer, maker and geek based in Spain. My background started in Telecommunications Engineering, wandered through filmmaking, and eventually landed in software — but the thread through all of it has always been the same: curiosity followed by making.", "copy2": "I build software, play with electronics, 3D printing and servers, make videos, read too many comics and occasionally start projects that are much larger than the amount of free time I have. This site is where those threads meet.", "fact1": "Developer", "fact2": "Maker", "fact3": "Storyteller", "fact4": "Professional tinkerer", "careerEyebrow": "THE OTHER SIDE OF THE LAB", "careerTitle": "Professional path", "fullCareer": "See the full timeline", "ctaEyebrow": "NOW YOU KNOW", "ctaTitle": "Let's see what happens next.", "ctaButton": "Enter the experiments" },
-  "careerPage": { "back": "Back to About", "eyebrow": "THE PROFESSIONAL TIMELINE", "title": "How I got here.", "intro": "The CV version, but with enough context to explain why a telecom engineer ended up building AI systems and personal labs." },
-  "career": {
-    "telecom": { "role": "Telecommunications Engineering", "company": "University · 2016–2020", "text": "A technical foundation in systems, logic, hardware and the habit of understanding how the pieces fit together." },
-    "film": { "role": "Filmmaking & Production", "company": "Creative training · 2020–2021", "text": "Learning visual language, storytelling and how technical decisions can create an emotional experience." },
-    "hab": { "role": "Fullstack Developer", "company": "Hack A Boss · 2021", "text": "An intensive fullstack bootcamp that turned the curiosity into a professional software practice." },
-    "zara": { "role": "Frontend Developer", "company": "Zara.com · 2021–2023", "text": "Scalable interfaces and internal tools across React and Python, with work touching UX, editorial content and digital branding." },
-    "imageai": { "role": "AI Image Editor", "company": "Santander · 2023", "text": "An Angular and LitElement interface for smart masks, filters and prompt-based image generation." },
-    "forms": { "role": "Smart Form Evaluator", "company": "Santander · 2023–2024", "text": "Angular interfaces using AI to evaluate and validate legal documents in a complex corporate workflow." },
-    "backend": { "role": "Python AI Backend", "company": "Santander / Universia · 2024–now", "text": "Python APIs connecting products with generative AI services to generate content and score user inputs at scale." }
+  "poll": {
+    "reader": {
+      "title": "A better digital reader",
+      "text": "Comics + books + immersion"
+    },
+    "maker": {
+      "title": "Learn by building",
+      "text": "Pick a skill. Make something."
+    },
+    "wildcard": {
+      "title": "Something completely ridiculous",
+      "text": "You decide what the rabbit hole is."
+    }
   },
-  "archive": { "eyebrow": "THE ARCHIVE", "title": "Experiments", "intro": "Ideas with a number. A hypothesis. A constraint. A result. Some work. Some fail spectacularly. All of them teach me something.", "back": "Back home", "meta": "EXPERIMENT", "read": "Open dossier", "status": { "RUNNING": "RUNNING", "IDEA": "IDEA", "PLANNED": "PLANNED", "OPEN": "OPEN" } },
-  "notes": { "eyebrow": "THE OLD NOTEBOOK", "title": "Lab notes", "intro": "A few things I wrote before the experiment system had a number. They stay here because the trail matters.", "back": "Back home", "read": "Read note", "items": { "1": { "title": "Welcome to Braisgf.dev — A Personal Lab & Playground", "summary": "Why this site exists, what I wanted to build with it, and why a personal website should feel more like a workshop than a CV.", "date": "07 MAR 2025" }, "2": { "title": "Being a Fullstack Unicorn in 2025", "summary": "On moving between code, creativity, hardware and product without treating curiosity as a lack of focus.", "date": "30 MAR 2025" }, "3": { "title": "How to Host a Static Website on a Raspberry Pi 5", "summary": "A practical early guide to NGINX, Raspberry Pi and putting a small site online yourself.", "date": "01 APR 2025" } } },
-  "accessibility": { "skip": "Skip to main content", "open": "Open accessibility menu (Alt+A)", "close": "Close accessibility menu", "title": "Accessibility", "hint": "Small changes. No judgement.", "large": "Larger text", "contrast": "Higher contrast", "links": "Underline links", "motion": "Reduce motion", "reset": "Reset preferences" },
+  "about": {
+    "back": "Back home",
+    "eyebrow": "ABOUT THE HUMAN",
+    "titleA": "Hi. I'm Brais.",
+    "titleB": "This is my workshop.",
+    "photoAlt": "Portrait of Brais",
+    "lead": "I like making things enough that I stopped trying to separate all the things I like making.",
+    "copy1": "I'm a developer, maker and geek based in Spain. My background started in Telecommunications Engineering, wandered through filmmaking, and eventually landed in software — but the thread through all of it has always been the same: curiosity followed by making.",
+    "copy2": "I build software, play with electronics, 3D printing and servers, make videos, read too many comics and occasionally start projects that are much larger than the amount of free time I have. This site is where those threads meet.",
+    "fact1": "Developer",
+    "fact2": "Maker",
+    "fact3": "Storyteller",
+    "fact4": "Professional tinkerer",
+    "careerEyebrow": "THE OTHER SIDE OF THE LAB",
+    "careerTitle": "Professional path",
+    "fullCareer": "See the full timeline",
+    "ctaEyebrow": "NOW YOU KNOW",
+    "ctaTitle": "Let's see what happens next.",
+    "ctaButton": "Enter the experiments"
+  },
+  "careerPage": {
+    "back": "Back to About",
+    "eyebrow": "THE PROFESSIONAL TIMELINE",
+    "title": "How I got here.",
+    "intro": "The CV version, but with enough context to explain why a telecom engineer ended up building AI systems and personal labs."
+  },
+  "archive": {
+    "eyebrow": "THE ARCHIVE",
+    "title": "Experiments",
+    "intro": "Ideas with a number. A hypothesis. A constraint. A result. Some work. Some fail spectacularly. All of them teach me something.",
+    "back": "Back home",
+    "meta": "EXPERIMENT",
+    "read": "Open dossier",
+    "status": {
+      "RUNNING": "RUNNING",
+      "IDEA": "IDEA",
+      "PLANNED": "PLANNED",
+      "OPEN": "OPEN"
+    }
+  },
+  "notes": {
+    "eyebrow": "THE OLD NOTEBOOK",
+    "title": "Lab notes",
+    "intro": "A few things I wrote before the experiment system had a number. They stay here because the trail matters.",
+    "back": "Back home",
+    "read": "Read note",
+    "items": {
+      "1": {
+        "title": "Welcome to Braisgf.dev — A Personal Lab & Playground",
+        "summary": "Why this site exists, what I wanted to build with it, and why a personal website should feel more like a workshop than a CV.",
+        "date": "07 MAR 2025"
+      },
+      "2": {
+        "title": "Being a Fullstack Unicorn in 2025",
+        "summary": "On moving between code, creativity, hardware and product without treating curiosity as a lack of focus.",
+        "date": "30 MAR 2025"
+      },
+      "3": {
+        "title": "How to Host a Static Website on a Raspberry Pi 5",
+        "summary": "A practical early guide to NGINX, Raspberry Pi and putting a small site online yourself.",
+        "date": "01 APR 2025"
+      }
+    }
+  },
+  "accessibility": {
+    "skip": "Skip to main content",
+    "open": "Open accessibility menu (Alt+A)",
+    "close": "Close accessibility menu",
+    "title": "Accessibility",
+    "hint": "Small changes. No judgement.",
+    "large": "Larger text",
+    "contrast": "Higher contrast",
+    "links": "Underline links",
+    "motion": "Reduce motion",
+    "reset": "Reset preferences"
+  },
   "experiments": {
-    "001": { "title": "Make the lab worth visiting.", "type": "META", "status": "RUNNING", "hypothesis": "A personal lab is more interesting when it documents attempts, not just achievements.", "objective": "Build a repeatable home for ideas, builds, failures and results — not another polished portfolio.", "constraint": "It has to stay fast, responsive and cheap to host.", "success": "Someone discovers an experiment, gets something useful or entertaining from it, and wants to see what happens next." },
-    "002": { "title": "Build a better digital reader.", "type": "SOFTWARE", "status": "IDEA", "hypothesis": "Most digital readers optimise for features. A great reader should optimise for immersion.", "objective": "Prototype a reading engine from scratch and see whether the experience can feel closer to owning the book.", "constraint": "Start small. Web first. No giant platform before the first good reading session.", "success": "A comic or book feels so good to read that the interface gets out of the way." },
-    "003": { "title": "Learn by building the thing.", "type": "LEARNING", "status": "PLANNED", "hypothesis": "Real constraints create better learning than passive study.", "objective": "Pick an unfamiliar skill and ship one small, finished artifact with it.", "constraint": "No waiting until I'm good enough. The artifact is the curriculum.", "success": "A finished thing, a visible before/after and an honest account of what actually accelerated learning." }
+    "001": {
+      "title": "Make the lab worth visiting.",
+      "type": "META",
+      "status": "RUNNING",
+      "hypothesis": "A personal lab is more interesting when it documents attempts, not just achievements.",
+      "objective": "Build a repeatable home for ideas, builds, failures and results — not another polished portfolio.",
+      "constraint": "It has to stay fast, responsive and cheap to host.",
+      "success": "Someone discovers an experiment, gets something useful or entertaining from it, and wants to see what happens next."
+    },
+    "002": {
+      "title": "Build a better digital reader.",
+      "type": "SOFTWARE",
+      "status": "IDEA",
+      "hypothesis": "Most digital readers optimise for features. A great reader should optimise for immersion.",
+      "objective": "Prototype a reading engine from scratch and see whether the experience can feel closer to owning the book.",
+      "constraint": "Start small. Web first. No giant platform before the first good reading session.",
+      "success": "A comic or book feels so good to read that the interface gets out of the way."
+    },
+    "003": {
+      "title": "Learn by building the thing.",
+      "type": "LEARNING",
+      "status": "PLANNED",
+      "hypothesis": "Real constraints create better learning than passive study.",
+      "objective": "Pick an unfamiliar skill and ship one small, finished artifact with it.",
+      "constraint": "No waiting until I'm good enough. The artifact is the curriculum.",
+      "success": "A finished thing, a visible before/after and an honest account of what actually accelerated learning."
+    }
   }
 }

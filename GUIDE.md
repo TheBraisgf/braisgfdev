@@ -1,208 +1,87 @@
-# GUIDE — Mantener y publicar braisgf.dev
+# Guía de mantenimiento y publicación
 
-La web es un **laboratorio personal vivo**. El código define la experiencia; los datos definen el contenido.
+El sitio es un laboratorio personal. La interfaz vive en React; proyectos, vídeos, trayectoria, encuesta, test, notas y textos recurrentes se editan como contenido. El editor incluido permite hacer esos cambios sin tocar componentes.
 
-## Arquitectura
+## Estructura
 
 ```text
 src/
-├── components/          # UX reutilizable + interacciones
-│   ├── AccessibilityMenu.jsx
-│   ├── CommunityLab.jsx
-│   ├── LabTest.jsx
-│   ├── Layout.jsx
-│   ├── LivePulse.jsx
-│   ├── ResourceList.jsx
-│   ├── Reveal.jsx
-│   ├── TikTokCarousel.jsx
-│   ├── ValuesLoop.jsx
-│   └── VideoGallery.jsx
+├── components/          # Interfaz e interacciones reutilizables
+├── content/
+│   ├── projects.json    # Metadatos EN/ES, visibilidad y recursos de proyectos
+│   ├── site-content.json # Copia global, trayectoria, encuesta y test
+│   ├── field-notes.json  # Reseñas, ideas y notas editoriales
+│   ├── journal.json      # Fotos y vídeos fechados
+│   └── experiments/     # Markdown EN/ES por ID
 ├── data/
-│   ├── assets.js
-│   ├── experiments.js
-│   └── site.js
-├── i18n/
-│   ├── config.js
-│   ├── en.json
-│   └── es.json
-├── pages/
-│   ├── Home.jsx
-│   ├── About.jsx
-│   ├── Career.jsx
-│   ├── Archive.jsx        # índice visual de Experimentos
-│   └── Experiment.jsx
-└── styles/
-    ├── global.css
-    ├── navigation.css
-    ├── resources.css
-    ├── about.css
-    ├── experience.css
-    ├── community.css
-    ├── motion.css
-    └── polish.css
-
-public/
-├── robots.txt
-├── sitemap.xml
-└── files/              # Adjuntos de experimentos
+│   ├── assets.js        # Recursos visuales importados
+│   ├── experiments.js   # Valida y prepara el contenido público
+│   ├── seo.js           # Metadatos y datos estructurados
+│   └── videos.json      # URLs y formato de los vídeos
+├── i18n/                # Textos de interfaz EN/ES
+├── pages/               # Páginas asociadas a rutas
+└── styles/              # Sistema visual
+scripts/
+├── editor/               # Interfaz del editor local
+├── editor-server.js      # API local autenticada del editor
+└── prerender.js          # HTML estático, sitemap y llms.txt
+public/files/<id>/       # Adjuntos descargables por proyecto
+public/images/            # Imágenes activas; rutas de reemplazo en IMAGE_PLAN.md
 ```
 
-La antigua página de notas/archivo ya no está expuesta por rutas ni navegación. Los assets históricos siguen disponibles en `main` y se consumen temporalmente mediante URLs raw para no perder material mientras se sustituyen por fotografías nuevas.
+## Editar desde el editor local
 
-## Experimentos
+1. Abre una terminal en el repositorio y ejecuta `npm install` si es la primera vez.
+2. Ejecuta `npm run editor`.
+3. Abre en este ordenador el enlace de un solo uso que imprime la terminal. El enlace incluye un token temporal; no lo compartas.
+4. Elige una pestaña: Proyectos; Galería de vídeo; Trayectoria, encuesta y test; o Notas y cuaderno visual. Los dos últimos apartados tienen campos bilingües y plantillas para crear entradas.
+5. Guarda con el botón o `Ctrl+S`. Los cambios se escriben en los archivos del repositorio. Si `npm run dev` está ejecutándose en otra terminal, Vite recarga el sitio al detectar los cambios.
+6. Crea primero como borrador. Para publicar, completa título, resumen y cuerpo en ambos idiomas y cambia la visibilidad a “Público”. Para retirar sin borrar, usa “Archivado”.
 
-Añade el índice en `src/data/experiments.js`:
+La barra sobre el texto Markdown aplica títulos, negrita, cursiva, código, listas, citas, enlaces e imágenes al texto seleccionado o a la línea actual. También puedes usar Ctrl+B, Ctrl+I y Ctrl+K para negrita, cursiva y enlace. La vista previa se actualiza mientras escribes; Ctrl+Z conserva el deshacer del navegador.
 
-```js
-{
-  id: '004',
-  slug: 'nombre-del-experimento',
-  image: '/ruta/o/import',
-  accent: 'acid',
-  attachments: [],
-  links: []
-}
-```
+Antes de publicar, pulsa **Revisión final**. Comprueba los campos requeridos, límites editoriales, URLs, títulos y resúmenes por idioma, encabezados en ambos dossiers, contenido muy breve (menos de 45 palabras como orientación), texto provisional y texto alternativo de imágenes. Muestra una vista previa del título, descripción y canonical que tendrá cada idioma. Los errores bloquean la publicación, pero permiten guardar el borrador; las recomendaciones no bloquean. Es una comprobación local determinista, sin API ni coste: no puede juzgar la experiencia de primera mano, la veracidad, la calidad de la traducción o los permisos de imágenes.
 
-Después añade las traducciones en `src/i18n/en.json` y `src/i18n/es.json` bajo `experiments.004`.
+El editor solo escucha en `127.0.0.1`, requiere un token nuevo en cada ejecución y no tiene ruta en la web desplegada. Mantén la terminal abierta mientras editas y pulsa `Ctrl+C` al terminar. No configures un proxy público para el puerto 4179. Consulta [.agents/CONTENT_EDITOR.md](.agents/CONTENT_EDITOR.md) para los campos, rutas y reglas de publicación.
 
-El dossier acepta recursos arbitrarios:
+## Editar archivos directamente
 
-- imágenes
-- vídeo
-- audio
-- PDF
-- código
-- ZIP/7Z/TAR/GZ/RAR
-- STL/OBJ/GLB/APK/EXE
-- URLs externas
+Cada proyecto tiene un ID estable de tres cifras. Sus metadatos están en `src/content/projects.json` y sus cuerpos en `src/content/experiments/<id>/es.md` y `en.md`. Las propiedades de recursos usan `label` y `href`; las URLs deben ser HTTPS o rutas desde la raíz (`/files/006/prototype.pdf`). Las imágenes pueden usar un alias importado, como `@labHero`, una ruta local o una URL HTTPS.
 
-Para archivos propios usa:
+Los seis vídeos de portada están en `src/data/videos.json`. Cada entrada lleva `social` (`TikTok`, `YouTube`, `Instagram` o `Twitch`), `orientation` (`vertical` o `horizontal`) y una URL HTTPS válida. Los seis embeds se cargan al entrar en la página; solo el primero inicia la reproducción, silenciado.
 
-```text
-public/files/004/
-├── source.zip
-├── report.pdf
-├── prototype.mp4
-└── notes.txt
-```
+Si no configuras `VITE_SUGGESTION_ENDPOINT`, el buzón abre un borrador de correo con asunto prefijado y una estructura de mensaje. La dirección está definida en `SECURITY.md`; edítala allí y en `src/components/CommunityLab.jsx` solo si cambia el correo de contacto.
 
-Los formatos conocidos se previsualizan. Los demás se ofrecen como descarga/enlace.
+El archivo de proyectos y los dossiers usan la misma lista pública. Los borradores y archivados no aparecen en la web, el sitemap ni `llms.txt`. Las páginas públicas, los datos estructurados, sitemap y `llms.txt` se generan desde el mismo registro.
 
-## Vídeos
+## SEO y publicación
 
-La galería principal es un carrusel editorial, no un perfil incrustado. `TikTokCarousel.jsx` rota automáticamente entre piezas y acepta una fuente externa opcional:
+La build prerenderiza EN y ES como HTML, con título, descripción, canonical, alternates, Open Graph, Twitter y JSON-LD. Durante esa generación valida que las páginas públicas conserven esas señales, un único H1, que el 404 lleve `noindex`, que el sitemap tenga todas las rutas públicas y que `robots.txt` permita OAI-SearchBot y anuncie el sitemap. `llms.txt` es un índice complementario: no garantiza indexación ni posiciones. GEO no requiere repetir palabras clave ni añadir un marcado especial; prioriza contenido original, útil, preciso y basado en experiencia real.
 
-```text
-VITE_TIKTOK_FEED_ENDPOINT=https://tu-endpoint
-```
+Antes de publicar, revisa la vista previa de títulos, descripciones y canonicals. Ejecuta `npm run build`; comprueba las rutas en `dist/`, `dist/404.html`, el sitemap y `llms.txt`. El build falla si faltan las señales SEO comprobadas. No edites a mano los archivos generados. Vercel sirve estas rutas estáticas y la página 404.
 
-El endpoint puede devolver un array de objetos con `id`, `image`, `url` y `platform`. Si no existe, se usan piezas visuales reales que ya viven en el repo como fallback.
+Después de desplegar el sitemap y verificar la propiedad del dominio en cada servicio:
 
-Para conseguir **siempre los últimos vídeos de TikTok**, la integración correcta a futuro es la Display API de TikTok (`/v2/video/list/`) y sus metadatos/players. Esa integración requiere la app y permisos de TikTok; no se debe intentar raspar TikTok desde el navegador.
+1. En [Google Search Console](https://search.google.com/search-console), abre **Sitemaps** y envía `https://braisgf.dev/sitemap.xml`.
+2. En [Bing Webmaster Tools](https://www.bing.com/webmasters), abre **Sitemaps** y envía la misma URL.
+3. Revisa el estado de lectura y los errores que muestre cada servicio. Vuelve a compilar y desplegar si cambian las rutas o los proyectos; comprueba después el sitemap publicado.
 
-## Comunidad
+Enviar el sitemap facilita que esos buscadores descubran las URLs; no garantiza rastreo, indexación ni posición. La verificación del dominio y el envío se hacen en las cuentas del propietario después del despliegue.
 
-La encuesta pública ya no depende de GitHub Discussions.
+La revisión sigue las [pautas de Google para contenido en experiencias de IA](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?version=published), sus recomendaciones para [títulos](https://developers.google.com/search/docs/appearance/title-link) y [descripciones/snippets](https://developers.google.com/search/docs/appearance/snippet), y las [directrices de rastreo de OpenAI](https://developers.openai.com/api/docs/bots). Los buscadores pueden truncar títulos y generar sus propios snippets; los límites del editor son de almacenamiento editorial, no una longitud que garantice posicionamiento.
 
-`CommunityLab.jsx` genera una **encuesta pública sin cuenta** mediante el Quick Poll público de Polling.com. La selección rápida de la propia web sigue siendo local para ofrecer feedback inmediato.
+## Accesibilidad y experiencia
 
-### Buzón de ideas
+Conserva HTML semántico, nombres accesibles, navegación por teclado, foco visible, preferencias de movimiento reducido y objetivos táctiles cómodos. Comprueba el sitio en escritorio y en móvil estrecho tras cambios de layout. Mantén el contenido y los controles utilizables sin depender solo del color, el hover o el movimiento. Conserva la jerarquía, tipografía y composición visual existentes salvo que se solicite un rediseño.
 
-El formulario acepta un endpoint externo mediante:
-
-```text
-VITE_SUGGESTION_ENDPOINT=https://tu-endpoint-de-formulario
-```
-
-Si la variable existe, se envía JSON a ese endpoint. Si no existe, se abre el cliente de correo del visitante con la sugerencia preparada. No se necesita GitHub.
-
-## Interacciones
-
-`Reveal.jsx` proporciona entrada por scroll mediante `IntersectionObserver`.
-
-`LivePulse.jsx` rota señales del laboratorio y está traducido EN/ES.
-
-`ValuesLoop.jsx` cambia automáticamente entre IMAGINE → CREATE → SHARE → REPEAT y también admite interacción manual.
-
-`LabTest.jsx` cambia las cuatro opciones según la pregunta; no reutiliza la misma lista de respuestas en las tres pantallas.
-
-La reducción de movimiento se respeta mediante `prefers-reduced-motion` y el menú de accesibilidad.
-
-## Carrera profesional
-
-`Career.jsx` usa la trayectoria profesional y recupera temporalmente los logos históricos de:
-
-- Universidad
-- formación audiovisual
-- Hack A Boss
-- Zara
-- Santander
-
-Cada evento tiene su propio acento, logo, microanimación y comportamiento hover. El color naranja ya no forma parte del sistema visual: se sustituyó por violeta.
-
-Cuando haya fotografías/proyectos nuevos, sustituye `careerLogos` en `src/data/assets.js`.
-
-## Accesibilidad
-
-El menú `A` permite:
-
-- texto grande
-- contraste alto
-- enlaces subrayados
-- reducción de movimiento
-- restaurar preferencias
-
-También existe un skip-link y estados ARIA en los controles interactivos.
-
-## SEO
-
-La aplicación actualiza por ruta:
-
-- `<title>`
-- description
-- canonical
-- `hreflang` EN/ES/x-default
-- Open Graph
-- JSON-LD de persona, sitio y página
-
-También existen `public/robots.txt` y `public/sitemap.xml`.
-
-Una página indexable nueva necesita URL estable, título, descripción, contenido real y entrada en sitemap.
-
-## Contador
-
-El contador usa GoatCounter y ahora ocupa una sección propia y mucho más visible del pie.
-
-Configura en Vercel:
-
-```text
-VITE_GOATCOUNTER_CODE=tu-codigo
-```
-
-Sin esa variable se muestra `—`; no se inventa una cifra.
-
-## Desarrollo
+## Comandos
 
 ```bash
 npm install
-npm run dev
-npm run build
-npm run preview
+npm run dev       # Servidor Vite para previsualizar el sitio
+npm run editor    # Editor de contenido local
+npm run build     # Sitio estático, sitemap y llms.txt
+npm run preview   # Previsualizar dist/
 ```
 
-Antes de publicar revisa EN/ES, rutas profundas, móvil, accesibilidad, consola y carga de assets.
-
-## Despliegue
-
-Durante esta fase Vercel debe desplegar `DEV`. `main` permanece como referencia del sitio anterior hasta que la nueva experiencia esté validada.
-
-## Regla creativa
-
-No convertir la web en una colección de animaciones sin propósito.
-
-La sensación buscada es:
-
-> **cada visita encuentra algo distinto, pero todo parece pertenecer al mismo laboratorio.**
-
-Movimiento, imágenes, vídeo, datos, estados, hover, scroll y pequeñas sorpresas deben reforzar esa sensación sin convertirla en una feria de efectos.
+Consulta [IMAGE_PLAN.md](IMAGE_PLAN.md) para el inventario exacto de imágenes activas, sus tamaños recomendados y las rutas donde sustituirlas.

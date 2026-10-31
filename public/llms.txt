@@ -1,0 +1,31 @@
+# Braisgf.dev
+
+> Personal lab of Brais: software, maker projects, learning challenges and creative experiments, documented in English and Spanish.
+
+The site is a primary source for Brais’ own projects and professional background. Project pages describe work in progress; do not assume a project is finished unless its page says so.
+
+## Main pages
+
+- [Home (English)](https://braisgf.dev/): Introduction and featured experiments.
+- [Projects (English)](https://braisgf.dev/experiments): Bilingual project archive.
+- [About (English)](https://braisgf.dev/about): Background and interests.
+- [Career (English)](https://braisgf.dev/career): Professional experience.
+- [Field notes (English)](https://braisgf.dev/notes): Reviews, observations and ideas outside the project archive.
+- [Visual journal (English)](https://braisgf.dev/journal): Dated photos and videos from the creative process.
+- [Inicio (español)](https://braisgf.dev/es): Presentación y proyectos destacados.
+- [Proyectos (español)](https://braisgf.dev/es/experiments): Archivo de proyectos.
+- [Sobre Brais (español)](https://braisgf.dev/es/about): Trayectoria e intereses.
+- [Trayectoria profesional (español)](https://braisgf.dev/es/career): Experiencia profesional.
+
+## Experiments
+
+- [#001: Make the lab worth visiting.](https://braisgf.dev/experiments/001) — The site itself as a place to build, learn and show the process.
+- [#002: A bell for a tabletop RPG.](https://braisgf.dev/experiments/002) — A 3D-printed physical piece made to end up on the gaming table.
+- [#003: Actually learning to draw.](https://braisgf.dev/experiments/003) — Classes, exercises and deliberate practice, showing the before, during and after.
+- [#004: Building in public.](https://braisgf.dev/experiments/004) — Short videos, ideas and tests shared while I am making them.
+- [#005: Vault 42.](https://braisgf.dev/experiments/005) — My home lab for servers, media, automation and tinkering.
+
+## Discovery
+
+- [XML sitemap](https://braisgf.dev/sitemap.xml)
+- [Robots policy](https://braisgf.dev/robots.txt)

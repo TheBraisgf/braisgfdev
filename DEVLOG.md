@@ -1,5 +1,14 @@
 # braisgf.dev — Development Log
 
+## 2026-10-31 — Version 2.1.0: editable content and discoverable pages
+
+- Added bilingual field notes (`/notes`) for reviews and editorial entries, with links between notes and experiments.
+- Added a dated visual journal (`/journal`) for original photos and social video embeds.
+- Expanded the loopback-only editor to manage projects, six homepage videos, shared site copy, career entries, poll, personality quiz, field notes and journal items.
+- Added prerender validation for localized metadata, structured data, public routes, sitemap and `llms.txt`.
+- Improved responsive interaction, keyboard access, reduced-motion handling, route-specific visit counting and the career timeline.
+- See `README.md`, `GUIDE.md`, `.agents/SOURCE_OF_TRUTH.md` and `IMAGE_PLAN.md` for current workflows and architecture.
+
 ## 2026-10-22 — The lab becomes an application
 
 The redesign moved from a collection of static HTML pages to a reusable React + Vite application.
